@@ -1,0 +1,24 @@
+export const DATA={
+    links:[
+        {
+            id:1,
+            url:'/',
+            text:'Home'
+        },
+        {
+           id:2,
+           url:'/about',
+           text:'About'
+        },
+        {
+            id:3,
+            url:'contact-us',
+            text:'Contact'
+        },
+        {
+            id:4,
+            url:'menu',
+            text:'Menu'
+        }
+    ]
+}
