@@ -1,12 +1,23 @@
-import React from 'react'
-import { Navbar } from './components'
+import { useState, useCallback } from 'react'
+import { Sidebar, Navbar } from './components'
 import './styles/common.scss'
+
 const App = () => {
-  return (
-    <div className='container'>
-      <Navbar/>
-    </div>
-  )
+	const [isSidebarVisible, setSidebarVisibility] = useState(true)
+
+	const sidebarVisibilteToggle = useCallback(
+		() => setSidebarVisibility((prevState) => !prevState),
+		[],
+	)
+	return (
+		<div className='container'>
+			{isSidebarVisible ? (
+				<Navbar sidebarVisibilteToggle={sidebarVisibilteToggle} />
+			) : (
+				<Sidebar sidebarVisibilteToggle={sidebarVisibilteToggle} />
+			)}
+		</div>
+	)
 }
 
 export default App

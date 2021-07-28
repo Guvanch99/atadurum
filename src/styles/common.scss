@@ -3,11 +3,23 @@
 @import './variables';
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 
+%button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 3em;
+}
 ul{
     list-style: none;
 }
 a{
     text-decoration: none;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    color: $textColor;
+    &:hover{
+        border-bottom: 1px solid $hoverColor;
+    }
 }
 .container{
     max-width: 72rem;

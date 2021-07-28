@@ -1,0 +1,21 @@
+@import 'src/styles/common.scss';
+
+.menu {
+	@include flex(center);
+	&__list {
+		padding-left: 1rem;
+	}
+	&__link {
+		@include flex(center);
+	}
+	&__icon {
+		padding-left: 0.4rem;
+		font-size: 0.8em;
+		position: relative;
+	}
+	.order-count {
+		position: absolute;
+		font-size: 0.7em;
+		color: #cf1717;
+	}
+}
