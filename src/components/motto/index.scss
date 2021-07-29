@@ -1,0 +1,26 @@
+@import 'src/styles/common.scss';
+
+.motto {
+  @include flex(space-evenly);
+  &__image {
+    width: 40rem;
+    height: 30rem;
+  }
+  &__svg {
+    position: relative;
+    width: 30rem;
+    height: 25rem;
+  }
+  &__text {
+    position: absolute;
+    color: $WhiteColor;
+    right: 18rem;
+    &_h2 {
+      font-family: 'Style Script', cursive;
+      padding-bottom: 2rem;
+    }
+    &_h1 {
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+}

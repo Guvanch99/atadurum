@@ -1,0 +1,8 @@
+@import 'src/styles/common.scss';
+
+.contacts {
+  @include flex(space-evenly);
+
+  background-color: $LighterBlackColor;
+  max-height: 18rem;
+}

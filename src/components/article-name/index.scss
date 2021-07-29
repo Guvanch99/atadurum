@@ -1,0 +1,8 @@
+@import 'src/styles/common.scss';
+.article-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  border-bottom: 1px solid $HoverColor;
+  text-align: center;
+  margin-top: 1rem;
+}

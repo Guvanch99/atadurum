@@ -1,3 +1,8 @@
 export { default as Navbar } from './navbar'
 export { default as Sidebar } from './sidebar'
 export { default as Footer } from './footer'
+export { default as ImageSlider } from './image-slider'
+export { default as Motto } from './motto'
+export { default as ArticleName } from './article-name'
+export { default as FeaturedFood } from './featured-food'
+export { default as Contacts } from './contacts'

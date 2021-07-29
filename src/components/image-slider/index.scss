@@ -1,0 +1,26 @@
+@import 'src/styles/common.scss';
+.slider {
+  height: 30rem;
+  position: relative;
+  padding-bottom: 2rem;
+  @include flex(center);
+  .image {
+    width: 80rem;
+    height: 30rem;
+    border-radius: 2%;
+    transition: all 1s ease-in;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+.left-arrow {
+  @extend %sliderIcon;
+  left: 14rem;
+  position: absolute;
+}
+.right-arrow {
+  @extend %sliderIcon;
+  right: 14rem;
+  position: absolute;
+}

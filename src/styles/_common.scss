@@ -1,0 +1,40 @@
+@import './mixin';
+@import './reset';
+@import './variables';
+@import './fonts';
+
+%button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 3em;
+}
+%sliderIcon {
+  top: 40%;
+  font-size: 3rem;
+  color: $WhiteColor;
+  background-color: $BlackColor;
+  z-index: 1;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 0.2rem;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  color: $BlackColor;
+  &:hover {
+    border-bottom: 1px solid $HoverColor;
+  }
+}
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}

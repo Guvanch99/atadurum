@@ -1,0 +1,31 @@
+@import 'src/styles/common.scss';
+
+.card {
+  @include flex(center);
+  flex-direction: column;
+  color: $WhiteColor;
+  padding: 2rem 0;
+
+  .header {
+    margin: 1rem 0;
+    font-family: 'Style Script', cursive;
+  }
+  .information {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    &__list {
+      @include flex(center);
+      margin: 1rem 0;
+    }
+    &__icon {
+      color: $HoverColor;
+      font-size: 1.8em;
+    }
+    &__text {
+      font-family: 'Roboto', sans-serif;
+      padding-left: 1rem;
+    }
+  }
+}

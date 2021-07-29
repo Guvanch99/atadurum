@@ -1,6 +1,6 @@
 import './index.scss'
-const About = () => {
+const Menu = () => {
   return <div></div>
 }
 
-export default About
+export default Menu
