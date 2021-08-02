@@ -1,12 +1,16 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
+
 import { DATA } from '../../data'
 import RouterIcon from '../router-icon'
+
 import './index.scss'
+
 const { links, logo } = DATA
+
 const Navbar = ({ sidebarVisibilteToggle }) => {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="navbar__container">
         <Link to="/">
           <img className="logo" src={logo} alt="durum" />
@@ -29,7 +33,7 @@ const Navbar = ({ sidebarVisibilteToggle }) => {
       <button onClick={sidebarVisibilteToggle} className="navbar__hamburger">
         <i className="fas fa-bars" />
       </button>
-    </div>
+    </nav>
   )
 }
 

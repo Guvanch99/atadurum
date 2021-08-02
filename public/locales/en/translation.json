@@ -1,0 +1,58 @@
+{
+  "aboutPageText":{
+    "OurValue":[
+      {
+        "id": 1,
+        "main": "It is our indispensable goal to always be the best.",
+        "secondary":
+          "Our main goal is to be the best in quality, service and production resources and to protect the image we have. In the food industry, in which we have been operating since 2013, we are always improving ourselves to achieve our goals and we keep customer satisfaction above all else"
+      },
+      {
+        "id": 2,
+        "main": "Our most important capital is our human resources.",
+        "secondary":
+          "The quality of our products and services starts with the quality of our employees. While incorporating the best personnel and adult human power, we benefit from their talents, power and creativity; It is the way we have chosen to increase their productivity, to allow them to develop, to create a working environment with solidarity, to ensure the continuity of the Ata Family for generations."
+      },
+      {
+        "id": 3,
+        "main": "The demands of our customers are our guide.",
+        "secondary":
+          "Creating value for our customers, responding to their expectations with a standard and sustainable quality approach is one of the most important issues for our organization. As the Ata Döner family grows, our efforts to increase customer loyalty continue steadily."
+      },
+      {
+        "id": 4,
+        "main": "Our aim is to constantly improve and move forward.",
+        "secondary":
+          "Our primary goal is to protect the Turkmen taste and to make Ata Döner, a Turkmen brand, a global brand. In order to realize the continuity of the service and our growth targets; We ensure the rational use of all our resources in order to realize the necessary investments, encourage the merger of small and large savings, and create employment. While contributing to the economic and social development of the society, it is one of our main principles to create an honest working environment suitable for business ethics for each member of the Ata Döner family. We work hard to fulfill our responsibilities towards today people and future generations.."
+      }
+    ],
+    "WhyWe":[
+      {
+        "id": 1,
+        "main": "Healthy and Delicious Products",
+        "secondary":
+          "Since 2013, we have been offering unchanging Turkmen flavors to our customers in a completely different concept with our own production of special sauces, fresh vegetables and marinades."
+      },
+      {
+        "id": 2,
+        "main": "Food Quality and Safety",
+        "secondary":
+          "We carry out our activities by using the highest quality products within the framework of the regulations and regulations published by the Ministry. At every stage of production and shipment, we strictly comply with food safety rules under the control of our expert team, such as food engineers and veterinarians."
+      },
+      {
+        "id": 3,
+        "main": "Stylish Restaurant Concept",
+        "secondary":
+          "Thanks to our restaurant concept, which draws attention with its colorful architectural structure and distinctive kitchen design, we differentiate the dining experience not only with taste, but also with presentation and venue"
+      },
+      {
+        "id": 4,
+        "main": "Affordable Price Policy",
+        "secondary":
+          "Through our own production facility, we offer healthy and delicious products with the most affordable price policy. We always carry out our activities with approved suppliers."
+      }
+    ]
+  }
+
+
+}

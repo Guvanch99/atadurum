@@ -1,6 +1,8 @@
 import { DATA } from '../../data'
 import { ArticleName } from '..'
+
 import './index.scss'
+
 const { mottoImage } = DATA
 
 const Motto = () => (
@@ -20,8 +22,8 @@ const Motto = () => (
         />
       </svg>
       <div className="motto__text">
-        <h2 className="motto__text_h2">Доставка еды за 30 мин или </h2>
-        <h1 className="motto__text_h1">Дурум бесплатно !!!</h1>
+        <h2 className="motto__text_h2">Delivery is more than 30 min </h2>
+        <h1 className="motto__text_h1">Take it free !!!</h1>
       </div>
     </div>
   </>

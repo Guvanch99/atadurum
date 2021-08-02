@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import RouterIcon from '../router-icon'
 
 import { DATA } from '../../data'
+
 import './index.scss'
+
 const { links, logo } = DATA
+
 const Sidebar = ({ sidebarVisibilteToggle }) => {
   return (
     <div className="sidebar">

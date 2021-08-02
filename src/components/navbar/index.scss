@@ -18,7 +18,7 @@
   }
   &__hamburger {
     @extend %button;
-    color: $HoverColor;
+    color: $MainColor;
   }
 }
 .navbar_menu:first-child {

@@ -1,6 +1,9 @@
 import { useState } from 'react'
+
 import { DATA } from '../../data'
+
 import './index.scss'
+
 const { images } = DATA
 
 const ImageSlider = () => {

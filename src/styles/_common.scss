@@ -13,7 +13,7 @@
   top: 40%;
   font-size: 3rem;
   color: $WhiteColor;
-  background-color: $BlackColor;
+  background-color: $SecondaryColor;
   z-index: 1;
   cursor: pointer;
   width: 3.5rem;
@@ -29,9 +29,9 @@ a {
   text-decoration: none;
   font-family: 'Dancing Script', cursive;
   font-size: 2em;
-  color: $BlackColor;
+  color: $SecondaryColor;
   &:hover {
-    border-bottom: 1px solid $HoverColor;
+    border-bottom: 1px solid $MainColor;
   }
 }
 .container {
