@@ -1,20 +1,38 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { fetchGallery } from '../../redux/home/actionCreator'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { FeaturedFood, ImageSlider, Motto, Contacts } from '../../components'
+import { fetchFeaturedProducts } from '../../redux/home/actionCreator'
+import { Loaded, Loading } from '../../redux/global/actionCreators'
+
+import {
+  FeaturedFood,
+  ImageSlider,
+  Motto,
+  Contacts,
+  Spinner
+} from '../../components'
 
 const Home = () => {
   const dispatch = useDispatch()
+  const { Load } = useSelector(state => state.global)
   useEffect(() => {
-    dispatch(fetchGallery())
+    dispatch(Loading)
+    dispatch(fetchFeaturedProducts())
+    dispatch(Loaded)
   }, [dispatch])
+
   return (
     <>
-      <ImageSlider />
-      <Motto />
-      <FeaturedFood />
-      <Contacts />
+      {Load ? (
+        <Spinner />
+      ) : (
+        <>
+          <ImageSlider />
+          <Motto />
+          <FeaturedFood />
+          <Contacts />
+        </>
+      )}
     </>
   )
 }

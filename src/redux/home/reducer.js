@@ -1,7 +1,8 @@
 import { GET_FEATURED_PRODUCTS } from './type'
 
 const initialState = {
-  featuredProducts: []
+  featuredProducts: [],
+  loading: false
 }
 
 export const homeReducer = (state = initialState, { type, payload }) => {

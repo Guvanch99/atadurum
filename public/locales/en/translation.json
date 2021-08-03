@@ -1,4 +1,7 @@
 {
+  "SortText":{
+"buttonNames":["All","Combo","Doner","Beverage"]
+  },
   "aboutPageText":{
     "OurValue":[
       {

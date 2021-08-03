@@ -26,7 +26,7 @@ const Navbar = ({ sidebarVisibilteToggle }) => {
         </ul>
       </div>
       <RouterIcon />
-      <h1>Weather api Feature</h1>
+
       <div>
         <button>Theme Change</button>
       </div>

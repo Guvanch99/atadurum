@@ -1,4 +1,7 @@
 {
+   "SortText":{
+      "buttonNames":["Все","Комбо","Донер","Напитки"]
+   },
   "aboutPageText":{
      "ourValue":{
         "firstValue":{

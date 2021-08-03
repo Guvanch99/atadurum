@@ -1,0 +1,49 @@
+@import 'src/styles/common.scss';
+
+.sort-container {
+  @include flex(space-between);
+  margin-top: 1rem;
+  &__views {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    .views__button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .views__icon {
+      font-size: 2rem;
+      border: none;
+      color: $MainColor;
+    }
+  }
+  &__buttons {
+    @include flex(space-between);
+    width: 40rem;
+    .sort__button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 2rem;
+      font-size: 2em;
+      font-family: 'Dancing Script', sans-serif;
+    }
+  }
+  &__select {
+    .sort {
+      &__text {
+        text-transform: capitalize;
+        font-size: 2em;
+        font-family: 'Dancing Script', sans-serif;
+      }
+      &__input {
+        border-color: transparent;
+        font-family: 'Dancing Script', sans-serif;
+        font-size: 1rem;
+        text-transform: capitalize;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
+}

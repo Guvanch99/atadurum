@@ -2,9 +2,8 @@ import { useState, useCallback } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
 import { Sidebar, Navbar, Footer } from '../components'
-import Home from '../pages/home'
-import About from '../pages/about'
-import Menu from '../pages/products'
+
+import { Home, Menu, About, SingleProducts } from '../pages'
 
 import './index.scss'
 
@@ -24,7 +23,8 @@ const App = () => {
       )}
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/menu" component={Menu} />
+        <Route exact path="/menu" component={Menu} />
+        <Route exact path="/menu/:id" children={<SingleProducts />} />
         <Route exact path="/about" component={About} />
         <Redirect to="/" />
       </Switch>

@@ -1,0 +1,45 @@
+@import 'src/styles/common.scss';
+
+.list {
+  display: flex;
+  align-items: flex-start;
+
+  flex-direction: column;
+  &__container {
+    @include flex(center);
+  }
+  &__image {
+    width: 25rem;
+    height: 25rem;
+  }
+  &__info {
+    height: 19rem;
+    padding-left: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+}
+.info {
+  &_name {
+    font-size: 3.2em;
+    font-family: 'Style Script', sans-serif;
+  }
+  &_price {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
+    color: $MainColor;
+    font-weight: bold;
+  }
+  &_description {
+    font-size: 1.6em;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+.product__buy_button {
+  background: $MainColor;
+  color: $WhiteColor;
+  padding: 0.3rem 3rem;
+  border-radius: 13%;
+}
