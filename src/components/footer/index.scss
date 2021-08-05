@@ -1,13 +1,9 @@
 @import 'src/styles/common.scss';
 
 .footer {
-  width: 100%;
   background-color: $SecondaryColor;
   height: 5rem;
   margin-top: 0.1rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 
   &__text {
     padding: 2.5rem;

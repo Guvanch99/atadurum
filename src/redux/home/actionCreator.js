@@ -9,9 +9,9 @@ const getFeaturedProducts = payload => {
   }
 }
 export const fetchFeaturedProducts = () => async dispatch => {
-  dispatch(loading)
+  dispatch(loading())
   await DB('/featured-products').then(products =>
     dispatch(getFeaturedProducts(products.data))
   )
-  dispatch(loaded)
+  dispatch(loaded())
 }

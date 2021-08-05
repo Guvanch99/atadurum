@@ -6,7 +6,12 @@ import {
   TOGGLE_CART_PRODUCT_AMOUNT
 } from './type'
 
-const initialState = {}
+const initialState = {
+  cart: [],
+  total_items: 0,
+  total_amount: 0,
+  shipping_fee: 2
+}
 
 export const cartReducer = (state = initialState, { type, payload }) => {
   switch (type) {

@@ -1,9 +1,18 @@
 import { useState, useCallback } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 
-import { Sidebar, Navbar, Footer } from '../components'
+import { Sidebar, Navbar, Footer, PrivateRoute } from '../components'
 
-import { Home, Menu, About, SingleProduct, Login, SignUp, Cart } from '../pages'
+import {
+  Home,
+  Menu,
+  About,
+  SingleProduct,
+  Login,
+  SignUp,
+  Cart,
+  CheckOut
+} from '../pages'
 
 import './index.scss'
 
@@ -29,6 +38,9 @@ const App = () => {
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/sign-up" component={SignUp} />
+        <PrivateRoute exact path="/checkout">
+          <CheckOut />
+        </PrivateRoute>
         <Redirect to="/" />
       </Switch>
       <Footer />

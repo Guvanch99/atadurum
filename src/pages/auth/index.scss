@@ -42,4 +42,13 @@
     padding: 0.2rem 2rem;
     border: none;
   }
+  &__login {
+    color: $WhiteColor;
+    background: $MainColor;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    padding: 0.2rem 2rem;
+    border: none;
+    margin-bottom: 10rem;
+  }
 }

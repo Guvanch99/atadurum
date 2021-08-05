@@ -1,3 +1,43 @@
-.loading {
-  font-size: 10rem;
+@import 'src/styles/common.scss';
+.spinner {
+  margin: 12rem 0;
+  @include flex(center);
+  &_img {
+    animation: spinner 3s ease 0s infinite normal none;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    box-shadow: 0.8em 0.4em 0 0;
+  }
+  100% {
+    left: 2em;
+    transform: translate(-50px, -50px);
+    background: $LighterBlackColor;
+  }
+  25% {
+    left: 2em;
+    transform: translate(50px);
+    background: red;
+    box-shadow: 0 1.6em 0 0 $LighterBlackColor;
+  }
+  50% {
+    left: 2em;
+    transform: translate(50px, 50px);
+    background: blue;
+
+    box-shadow: -1rem 0 0 0 $LighterBlackColor;
+  }
+  75% {
+    left: 2em;
+    transform: translate(-50px, 50px);
+    background: green;
+    box-shadow: -0.1em -1em 0 0 $LighterBlackColor;
+  }
+}
+
+/* Add the animation: property to whichever element you want to animate */
+#elementToAnimate {
+  animation: yourAnimation 3s ease 0s infinite normal none;
 }

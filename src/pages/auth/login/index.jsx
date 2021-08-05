@@ -56,7 +56,7 @@ const Login = () => {
           />
           <p className="form__group_error">Error</p>
         </div>
-        <button className="form__submit">Login</button>
+        <button className="form__login">Login</button>
       </form>
     </>
   )

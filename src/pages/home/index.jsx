@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchFeaturedProducts())
   }, [dispatch])
-
+  console.log(Load)
   return (
     <>
       {Load ? (

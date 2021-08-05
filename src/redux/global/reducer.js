@@ -1,7 +1,7 @@
 import { LOADING, LOADED } from './type'
 
 const initialState = {
-  Load: false
+  Load: true
 }
 
 export const globalReducer = (state = initialState, { type, payload }) => {
