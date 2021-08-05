@@ -2,19 +2,27 @@ import { Link } from 'react-router-dom'
 
 import './index.scss'
 
-const RouterIcon = () => (
+const RouterIcon = ({ sidebarVisibilteToggle }) => (
   <ul className="menu">
     <li className="menu__list">
-      <Link className="menu_link" to="/card">
+      <Link onClick={sidebarVisibilteToggle} className="menu_link" to="/card">
         Cart
         <i className="fas fa-cart-plus menu__icon" />
         <span className="order-count">2</span>
       </Link>
     </li>
     <li className="menu__list">
-      <Link className="menu__link" to="/login">
+      <Link onClick={sidebarVisibilteToggle} className="menu__link" to="/login">
         Login
         <i className="fas fa-user menu__icon" />
+      </Link>
+      <Link
+        onClick={sidebarVisibilteToggle}
+        className="menu__link"
+        to="/sign-up"
+      >
+        Sign-up
+        <i className="fas fa-user-plus menu__icon" />
       </Link>
     </li>
   </ul>

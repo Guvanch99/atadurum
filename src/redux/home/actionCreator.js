@@ -1,5 +1,5 @@
 import { DB } from '../../core/axios'
-
+import { loading, loaded } from '../global/actionCreators'
 import { GET_FEATURED_PRODUCTS } from './type'
 
 const getFeaturedProducts = payload => {
@@ -8,8 +8,10 @@ const getFeaturedProducts = payload => {
     payload
   }
 }
-
-export const fetchFeaturedProducts = () => dispatch =>
-  DB('/featured-products').then(products =>
+export const fetchFeaturedProducts = () => async dispatch => {
+  dispatch(loading)
+  await DB('/featured-products').then(products =>
     dispatch(getFeaturedProducts(products.data))
   )
+  dispatch(loaded)
+}

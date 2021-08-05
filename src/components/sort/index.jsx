@@ -16,8 +16,9 @@ const Sort = ({ view, viewHandler }) => {
   const { sort, sortCategory } = useSelector(state => state.menu)
 
   const updateSort = e => {
-    const value = e.target.value
-    const name = e.target.name
+    const { value } = e.target
+
+    const { name } = e.target
     const payload = {
       name,
       value

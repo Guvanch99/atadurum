@@ -12,8 +12,10 @@ const Navbar = ({ sidebarVisibilteToggle }) => {
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        <Link to="/">
-          <img className="logo" src={logo} alt="durum" />
+        <Link to={'/'}>
+          <div>
+            <img className="navbar__logo" src={logo} alt="durum" />
+          </div>
         </Link>
         <ul className="navbar__menu">
           {links.map(({ id, url, text }) => (
@@ -26,7 +28,6 @@ const Navbar = ({ sidebarVisibilteToggle }) => {
         </ul>
       </div>
       <RouterIcon />
-
       <div>
         <button>Theme Change</button>
       </div>

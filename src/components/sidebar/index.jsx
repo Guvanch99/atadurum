@@ -12,18 +12,24 @@ const Sidebar = ({ sidebarVisibilteToggle }) => {
   return (
     <div className="sidebar">
       <Link>
-        <img className="logo" src={logo} alt="durum" />
+        <div>
+          <img className="logo" src={logo} alt="durum" />
+        </div>
       </Link>
       <ul className="sidebar__menu">
         {links.map(({ id, url, text }) => (
           <li className="sidebar__menu_list" key={id}>
-            <Link className="sidebar__menu_link" to={url}>
+            <Link
+              onClick={sidebarVisibilteToggle}
+              className="sidebar__menu_link"
+              to={url}
+            >
               {text}
             </Link>
           </li>
         ))}
       </ul>
-      <RouterIcon />
+      <RouterIcon sidebarVisibilteToggle={sidebarVisibilteToggle} />
       <button onClick={sidebarVisibilteToggle} className="sidebar__times">
         <i className="fas fa-times"></i>
       </button>

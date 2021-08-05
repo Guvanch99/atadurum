@@ -118,27 +118,19 @@ export const DATA = {
   aboutWhyWeText: [
     {
       id: 1,
-      maintext: 'Healthy and Delicious Products',
-      secondarytext:
-        'Since 2013, we have been offering unchanging Turkmen flavors to our customers in a completely different concept with our own production of special sauces, fresh vegetables and marinades.'
+      maintext: 'Healthy and Delicious Products'
     },
     {
       id: 2,
-      maintext: 'Food Quality and Safety',
-      secondarytext:
-        'We carry out our activities by using the highest quality products within the framework of the regulations and regulations published by the Ministry. At every stage of production and shipment, we strictly comply with food safety rules under the control of our expert team, such as food engineers and veterinarians.'
+      maintext: 'Food Quality and Safety'
     },
     {
       id: 3,
-      maintext: 'Stylish Restaurant Concept',
-      secondarytext:
-        'Thanks to our restaurant concept, which draws attention with its colorful architectural structure and distinctive kitchen design, we differentiate the dining experience not only with taste, but also with presentation and venue'
+      maintext: 'Stylish Restaurant Concept'
     },
     {
       id: 4,
-      maintext: 'Affordable Price Policy',
-      secondarytext:
-        'Through our own production facility, we offer healthy and delicious products with the most affordable price policy. We always carry out our activities with approved suppliers.'
+      maintext: 'Affordable Price Policy'
     }
   ],
   aboutCard: [
@@ -165,18 +157,3 @@ export const DATA = {
   mostLovedFoodImage: 'https://i.ibb.co/TMjP3zN/Doner.png',
   chef: 'https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 }
-/*
-<a href="https://ibb.co/1z9ssvw"><img src="https://i.ibb.co/nPD33g5/sprite.jpg" alt="sprite" border="0"></a>
-<a href="https://ibb.co/r3XgL0K"><img src="https://i.ibb.co/m0PmYTr/water.jpg" alt="water" border="0"></a>
-<a href="https://ibb.co/Lg0fLN8"><img src="https://i.ibb.co/Ks5HMKX/Doner-Meksiko.png" alt="Doner-Meksiko" border="0"></a>
-<a href="https://ibb.co/zmsNQ3W"><img src="https://i.ibb.co/0nqQm0p/black-tea.jpg" alt="black-tea" border="0"></a>
-<a href="https://ibb.co/6tfsLKd"><img src="https://i.ibb.co/rp1yNBW/coca-cola.jpg" alt="coca-cola" border="0"></a>
-<a href="https://ibb.co/5k9sBF2"><img src="https://i.ibb.co/1MnR86b/coca-cola-vanilla.png" alt="coca-cola-vanilla" border="0"></a>
-<a href="https://ibb.co/wzDDssk"><img src="https://i.ibb.co/BC88NNp/Doner-bbq.png" alt="Doner-bbq" border="0"></a>
-<a href="https://ibb.co/HtRC2k6"><img src="https://i.ibb.co/5rCk9fm/Doner-beef.png" alt="Doner-beef" border="0"></a>
-<a href="https://ibb.co/r5kS3hd"><img src="https://i.ibb.co/KV6kDgK/Doner-mushroom.png" alt="Doner-mushroom" border="0"></a>
-<a href="https://ibb.co/x3mTqdn"><img src="https://i.ibb.co/WsDJvjr/Doner-Tukey.png" alt="Doner-Tukey" border="0"></a>
-<a href="https://ibb.co/1bkgs3P"><img src="https://i.ibb.co/rvVjbgz/fanta.jpg" alt="fanta" border="0"></a>
-<a href="https://ibb.co/tZhY6z1"><img src="https://i.ibb.co/q0nm8C2/fusetea.jpg" alt="fusetea" border="0"></a>
-<a href="https://ibb.co/VQxBYWt"><img src="https://i.ibb.co/KLDyxjX/Mega-Doner.jpg" alt="Mega-Doner" border="0"></a>
-*/

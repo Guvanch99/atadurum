@@ -1,0 +1,30 @@
+@import 'src/styles/common.scss';
+
+.product {
+  @include flex(space-evenly);
+  &__image {
+    height: 35rem;
+    width: 30rem;
+    object-fit: contain;
+  }
+  &__info {
+    @include flex(space-evenly);
+    flex-direction: column;
+    height: 20rem;
+    font-family: 'Dancing Script', cursive;
+  }
+  &__name {
+    font-size: 5em;
+    font-size: 'Dancing Script';
+  }
+  &__price {
+    color: $MainColor;
+    font-size: 3em;
+  }
+  &__type {
+    font-size: 3em;
+  }
+  &__description {
+    font-size: 3em;
+  }
+}

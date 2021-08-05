@@ -4,9 +4,11 @@
   @include flex(center);
   &__list {
     padding-left: 1rem;
+    @include flex(center);
   }
   &__link {
     @include flex(center);
+    margin-left: 1rem;
   }
   &__icon {
     padding-left: 0.4rem;

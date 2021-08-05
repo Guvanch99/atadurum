@@ -29,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json-server": "json-server -p 9696 --watch src/db/db.json"
+    "json-server": "json-server -p 5000 --watch src/db/db.json"
   },
  
   "eslintConfig": {

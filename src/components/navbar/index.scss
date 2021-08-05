@@ -2,14 +2,17 @@
 
 .navbar {
   @include flex(space-between);
+  height: 8rem;
   &__container {
     @include flex(space-between);
     flex: 0.5;
   }
-  .logo {
+
+  &__logo {
+    width: 6rem;
     height: 6rem;
-    width: 7rem;
   }
+
   &__menu {
     @include flex(space-evenly);
     &_link {

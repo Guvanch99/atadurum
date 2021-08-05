@@ -3,7 +3,7 @@ import { Redirect, Route, Switch } from 'react-router-dom'
 
 import { Sidebar, Navbar, Footer } from '../components'
 
-import { Home, Menu, About, SingleProducts } from '../pages'
+import { Home, Menu, About, SingleProduct, Login, SingUp } from '../pages'
 
 import './index.scss'
 
@@ -14,18 +14,22 @@ const App = () => {
     () => setSidebarVisibility(prevState => !prevState),
     []
   )
+
+  const Bar = isSidebarVisible ? Navbar : Sidebar
+
   return (
     <div className="container">
-      {isSidebarVisible ? (
-        <Navbar sidebarVisibilteToggle={sidebarVisibilteToggle} />
-      ) : (
-        <Sidebar sidebarVisibilteToggle={sidebarVisibilteToggle} />
-      )}
+      <Bar sidebarVisibilteToggle={sidebarVisibilteToggle} />
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/menu" component={Menu} />
-        <Route exact path="/menu/:id" children={<SingleProducts />} />
+        <Route path="/menu/:id" children={<SingleProduct />} />
+
         <Route exact path="/about" component={About} />
+        <Route exact path="login" component={Login} />
+        <Route exact path="sing-up" component={SingUp} />
+
         <Redirect to="/" />
       </Switch>
       <Footer />

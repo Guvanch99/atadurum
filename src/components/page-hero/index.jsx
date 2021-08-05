@@ -8,7 +8,7 @@ const PageHero = ({ title, menu }) => (
       <Link className="section_link" to="/">
         Home
       </Link>
-      {menu && <Link to="/menu">Menu</Link>}/{title}
+      {menu && <Link to="/menu">Menu</Link>} / {title}
     </h1>
   </div>
 )

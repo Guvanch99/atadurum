@@ -1,0 +1,29 @@
+@import 'src/styles/common.scss';
+
+.accordion {
+  max-width: 30rem;
+  margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  font-family: 'Dancing Script', cursive;
+  flex-direction: column;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 27rem;
+
+    &_name {
+      font-size: 3em;
+      color: $MainColor;
+    }
+    &_plusminus {
+      font-size: 5em;
+      color: $MainColor;
+    }
+  }
+  &__content {
+    font-size: 2em;
+  }
+}

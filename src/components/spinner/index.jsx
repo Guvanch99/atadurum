@@ -1,4 +1,4 @@
 import './index.scss'
 
-const Spinner = () => <div>Loading</div>
+const Spinner = () => <div className="loading">Loading</div>
 export default Spinner

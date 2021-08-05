@@ -1,9 +1,9 @@
 import { LOADING, LOADED } from './type'
 
-export const Loading = () => {
+export const loading = () => {
   return { type: LOADING }
 }
 
-export const Loaded = () => {
+export const loaded = () => {
   return { type: LOADED }
 }

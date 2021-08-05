@@ -1,4 +1,7 @@
 export { default as Home } from './home'
 export { default as About } from './about'
 export { default as Menu } from './menu'
-export { default as SingleProducts } from './single-product'
+export { default as SingleProduct } from './single-product'
+export { default as Login } from './login'
+export { default as SingUp } from './sign-up'
+export { default as CheckOut } from './checkout'

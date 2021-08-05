@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
+
 import { ListView, GridView } from '..'
+
 import './index.scss'
 
 const ProductsList = ({ view }) => {

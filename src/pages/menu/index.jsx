@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchAllProducts } from '../../redux/menu/actionCreators'
-import { Loaded, Loading } from '../../redux/global/actionCreators'
+
 import {
   Sort,
   ProductsList,
@@ -21,11 +21,8 @@ const Menu = () => {
   const viewHandler = () => setView(!view)
 
   useEffect(() => {
-    dispatch(Loading())
     dispatch(fetchAllProducts())
-    dispatch(Loaded())
   }, [dispatch])
-
   return (
     <>
       {Load ? (

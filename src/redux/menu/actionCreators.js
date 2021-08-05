@@ -1,4 +1,5 @@
 import { GET_ALL_PRODUCTS, ON_CHANGE, FILTER_PRODUCTS } from './type'
+import { loaded, loading } from '../global/actionCreators'
 import { DB } from '../../core/axios'
 const getAllProducts = payload => {
   return {
@@ -17,5 +18,10 @@ export const filterProducts = () => {
     type: FILTER_PRODUCTS
   }
 }
-export const fetchAllProducts = () => dispatch =>
-  DB('/all-products').then(products => dispatch(getAllProducts(products.data)))
+export const fetchAllProducts = () => async dispatch => {
+  dispatch(loading())
+  await DB('/all-products').then(products =>
+    dispatch(getAllProducts(products.data))
+  )
+  dispatch(loaded())
+}
