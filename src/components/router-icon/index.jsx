@@ -5,7 +5,7 @@ import './index.scss'
 const RouterIcon = ({ sidebarVisibilteToggle }) => (
   <ul className="menu">
     <li className="menu__list">
-      <Link onClick={sidebarVisibilteToggle} className="menu_link" to="/card">
+      <Link onClick={sidebarVisibilteToggle} className="menu_link" to="/cart">
         Cart
         <i className="fas fa-cart-plus menu__icon" />
         <span className="order-count">2</span>

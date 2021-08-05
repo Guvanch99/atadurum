@@ -1,0 +1,45 @@
+@import 'src/styles/common.scss';
+
+.form {
+  @include flex(space-evenly);
+  flex-direction: column;
+  font-family: 'Dancing Script', cursive;
+  margin-top: 1rem;
+  &__label {
+    font-size: 3em;
+  }
+  &__group {
+    @include flex(center);
+    flex-direction: column;
+    margin: 1rem 0;
+
+    &_label {
+      font-size: 1.5em;
+    }
+    &_input {
+      margin: 0.4rem 0;
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6em;
+      line-height: 1.4rem;
+      border: none;
+      border-bottom: 1px solid $LighterBlackColor;
+      outline: none;
+      width: 15rem;
+      &:focus {
+        border-bottom: 1px solid $MainColor;
+      }
+    }
+    &_error {
+      font-size: 1.6em;
+      color: $LighterRedColor;
+    }
+  }
+  &__submit {
+    color: $WhiteColor;
+    background: $MainColor;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    padding: 0.2rem 2rem;
+    border: none;
+  }
+}
