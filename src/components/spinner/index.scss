@@ -3,41 +3,33 @@
   margin: 12rem 0;
   @include flex(center);
   &_img {
-    animation: spinner 3s ease 0s infinite normal none;
+    animation: spinner 3s infinite;
   }
 }
 
 @keyframes spinner {
-  0% {
-    box-shadow: 0.8em 0.4em 0 0;
-  }
-  100% {
-    left: 2em;
-    transform: translate(-50px, -50px);
-    background: $LighterBlackColor;
-  }
   25% {
     left: 2em;
-    transform: translate(50px);
+    transform: translate(5em);
     background: red;
     box-shadow: 0 1.6em 0 0 $LighterBlackColor;
   }
   50% {
     left: 2em;
-    transform: translate(50px, 50px);
+    transform: translate(5em, 5em);
     background: blue;
 
     box-shadow: -1rem 0 0 0 $LighterBlackColor;
   }
   75% {
     left: 2em;
-    transform: translate(-50px, 50px);
+    transform: translate(-5em, 5em);
     background: green;
     box-shadow: -0.1em -1em 0 0 $LighterBlackColor;
   }
-}
-
-/* Add the animation: property to whichever element you want to animate */
-#elementToAnimate {
-  animation: yourAnimation 3s ease 0s infinite normal none;
+  100% {
+    left: 2em;
+    transform: translate(-5em, -5em);
+    background: $LighterBlackColor;
+  }
 }

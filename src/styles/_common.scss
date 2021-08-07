@@ -22,6 +22,12 @@
   border-radius: 50%;
   padding-top: 0.2rem;
 }
+%goBackLink {
+  background: $MainColor;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10%;
+}
 ul {
   list-style: none;
 }

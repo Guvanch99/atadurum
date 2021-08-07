@@ -16,11 +16,33 @@ const initialState = {
 export const cartReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_TO_CART:
-      return { ...state, ...payload }
+      const {
+        amount,
+        singleProduct: { id, price, name, src }
+      } = payload
+
+      const temp = state.cart.find(i => i.id === id)
+      if (temp) {
+        return temp
+      } else {
+        const newProduct = {
+          id,
+          name,
+          price,
+          amount,
+          src,
+          type
+        }
+        return { ...state, cart: [...state.cart, newProduct] }
+      }
     case CLEAR_CART:
-      return { ...state, ...payload }
+      return { ...state, cart: [] }
     case REMOVE_PRODUCT:
-      return { ...state, ...payload }
+      const filteredProduct = state.cart.filter(
+        product => product.id !== payload.id
+      )
+
+      return { ...state, card: filteredProduct }
     case COUNT_CART_TOTALS:
       return { ...state, ...payload }
     case TOGGLE_CART_PRODUCT_AMOUNT:

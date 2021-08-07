@@ -28,7 +28,7 @@ const SingleProduct = () => {
           <Link className="single-product__link" to="/menu">
             GO Back
           </Link>
-          {singleProduct ? <Product {...singleProduct} /> : null}
+          {singleProduct ? <Product singleProduct={singleProduct} /> : null}
         </div>
       )}
     </>

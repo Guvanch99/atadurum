@@ -1,0 +1,12 @@
+@import 'src/styles/common.scss';
+.add-cart {
+  &__container {
+    @include flex(center);
+    flex-direction: column;
+  }
+  &__link {
+    width: 15rem;
+    @extend %goBackLink;
+    @include flex(center);
+  }
+}

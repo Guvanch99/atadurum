@@ -5,10 +5,10 @@ import './index.scss'
 import { CartItems } from '../../components'
 
 const Cart = () => {
-  const { total_items } = useSelector(state => state)
+  const { cart } = useSelector(state => state.cart)
   return (
     <div>
-      {total_items <= 0 ? (
+      {cart.length <= 0 ? (
         <Link to="/menu" className="cart__link">
           Add menu to basket
         </Link>

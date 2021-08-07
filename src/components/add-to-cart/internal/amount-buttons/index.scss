@@ -1,0 +1,17 @@
+@import 'src/styles/common.scss';
+
+.amount {
+  width: 15rem;
+  @include flex(space-evenly);
+  font-family: 'Dancing Script', cursive;
+
+  &_btn {
+    @extend %button;
+    font-family: 'Dancing Script', cursive;
+    color: $MainColor;
+    font-size: 6.4em;
+  }
+  &_counter {
+    font-size: 4.8em;
+  }
+}
