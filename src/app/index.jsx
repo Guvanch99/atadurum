@@ -29,20 +29,21 @@ const App = () => {
   return (
     <div className="container">
       <Bar sidebarVisibilteToggle={sidebarVisibilteToggle} />
-
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/menu" component={Menu} />
-        <Route path="/menu/:id" children={<SingleProduct />} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/sign-up" component={SignUp} />
-        <PrivateRoute exact path="/checkout">
-          <CheckOut />
-        </PrivateRoute>
-        <Redirect to="/" />
-      </Switch>
+      <main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/menu" component={Menu} />
+          <Route path="/menu/:id" children={<SingleProduct />} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/sign-up" component={SignUp} />
+          <PrivateRoute exact path="/checkout">
+            <CheckOut />
+          </PrivateRoute>
+          <Redirect to="/" />
+        </Switch>
+      </main>
       <Footer />
     </div>
   )

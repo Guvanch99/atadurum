@@ -1,0 +1,18 @@
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  margin: 3rem;
+  &__subtotal {
+    font-size: 3em;
+  }
+  &__shipping {
+    margin: 1rem 0;
+    font-size: 2em;
+  }
+  &__total {
+    font-size: 4em;
+    font-weight: bold;
+  }
+}

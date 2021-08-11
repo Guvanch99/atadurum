@@ -38,11 +38,11 @@ export const cartReducer = (state = initialState, { type, payload }) => {
     case CLEAR_CART:
       return { ...state, cart: [] }
     case REMOVE_PRODUCT:
+      console.log(payload)
       const filteredProduct = state.cart.filter(
-        product => product.id !== payload.id
+        product => product.id !== payload
       )
-
-      return { ...state, card: filteredProduct }
+      return { ...state, cart: filteredProduct }
     case COUNT_CART_TOTALS:
       return { ...state, ...payload }
     case TOGGLE_CART_PRODUCT_AMOUNT:

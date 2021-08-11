@@ -1,0 +1,28 @@
+@import 'src/styles/common.scss';
+.cart-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-family: 'Style Script', sans-serif;
+  &__clear {
+    @extend %button;
+    font-family: 'Style Script', sans-serif;
+    background-color: $LighterBlackColor;
+    color: $WhiteColor;
+    border-radius: 10%;
+  }
+}
+.table {
+  font-family: 'Style Script', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  &__header {
+    background: $LighterGrayColor;
+  }
+}
+.link-container {
+  margin: 2rem 3rem;
+  @include flex(space-between);
+}

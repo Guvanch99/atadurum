@@ -1,1 +1,24 @@
 @import 'src/styles/common.scss';
+
+.items-data {
+  text-align: center;
+  &:nth-child(even) {
+    background: $LighterGrayColor;
+  }
+  &__image {
+    width: 5rem;
+    height: 5rem;
+    margin-top: 0.6rem;
+  }
+  &__name {
+    display: block;
+  }
+  &__remover {
+    @extend %button;
+    font-size: 1rem;
+    background: $LighterRedColor;
+    padding: 0.5rem;
+    border-radius: 10%;
+    color: $WhiteColor;
+  }
+}
