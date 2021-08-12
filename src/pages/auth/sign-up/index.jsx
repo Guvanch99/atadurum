@@ -41,6 +41,9 @@ const SingUp = () => {
             name="user"
             type="text"
             placeholder="user"
+            required
+            min="4"
+            max="255"
           />
           <p className="form__group_error">Error</p>
         </div>
@@ -56,6 +59,9 @@ const SingUp = () => {
             name="email"
             type="email"
             placeholder="email"
+            required
+            min="10"
+            max="255"
           />
           <p className="form__group_error">Error</p>
         </div>
@@ -71,6 +77,9 @@ const SingUp = () => {
             value={password}
             name="password"
             placeholder="password"
+            required
+            max="50"
+            min="6"
           />
           <p className="form__group_error">Error</p>
         </div>
@@ -87,6 +96,9 @@ const SingUp = () => {
             name="passwordConfirm"
             type="password"
             placeholder="passowrd-confirm"
+            required
+            max="50"
+            min="6"
           />
           <p className="form__group_error">Error</p>
         </div>

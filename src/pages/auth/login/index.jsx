@@ -18,11 +18,12 @@ const Login = () => {
     setLogin({
       [name]: value
     })
+    console.log(login.user)
   }
   useEffect(() => {
     inputRef.current.focus()
   }, [])
-  const { user, password } = login
+
   return (
     <>
       <ArticleName name="Login" />
@@ -36,9 +37,12 @@ const Login = () => {
             ref={inputRef}
             autoComplete="off"
             onChange={loginHandler}
-            value={user}
+            value={login.user}
             type="text"
             placeholder="user"
+            required
+            max="100"
+            min="4"
           />
           <p className="form__group_error">Error</p>
         </div>
@@ -50,9 +54,12 @@ const Login = () => {
             className="form__group_input"
             autoComplete="off"
             onChange={loginHandler}
-            value={password}
+            value={login.password}
             type="password"
             placeholder="password"
+            required
+            max="50"
+            min="6"
           />
           <p className="form__group_error">Error</p>
         </div>

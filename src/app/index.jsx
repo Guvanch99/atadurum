@@ -11,7 +11,8 @@ import {
   Login,
   SignUp,
   Cart,
-  CheckOut
+  CheckOut,
+  Promotions
 } from '../pages'
 
 import './index.scss'
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/menu/:id" children={<SingleProduct />} />
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/promotions" component={Promotions} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/sign-up" component={SignUp} />
           <PrivateRoute exact path="/checkout">

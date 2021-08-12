@@ -1,7 +1,11 @@
-import React from 'react'
+import { OrderForm } from '../../components'
 
-const CheckOut = () => {
-  return <div></div>
-}
+import './index.scss'
+
+const CheckOut = () => (
+  <div className="container">
+    <OrderForm />
+  </div>
+)
 
 export default CheckOut

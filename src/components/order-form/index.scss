@@ -1,0 +1,47 @@
+@import 'src/styles/common.scss';
+.order-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: 'Dancing Script', cursive;
+
+  &__info {
+    font-size: 3em;
+    color: $MainColor;
+    text-align: center;
+  }
+  &__label {
+    font-size: 2em;
+    margin-right: 2rem;
+  }
+  &__sort {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+  }
+  &__group {
+    @include flex(space-between);
+    margin: 0.6rem 0;
+  }
+  &__textarea {
+    margin: 0.4rem 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
+    line-height: 1.4rem;
+    border: none;
+    border-bottom: 1px solid $LighterBlackColor;
+    outline: none;
+    width: 15rem;
+    &:focus {
+      border-bottom: 1px solid $MainColor;
+    }
+  }
+  &__button {
+    @extend %button;
+    font-family: 'Dancing Script', cursive;
+    background-color: $MainColor;
+    color: $WhiteColor;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+  }
+}

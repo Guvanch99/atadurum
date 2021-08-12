@@ -15,6 +15,11 @@ export const DATA = {
       id: 3,
       url: '/about',
       text: 'About'
+    },
+    {
+      id: 4,
+      url: '/promotions',
+      text: 'Promotions'
     }
   ],
   images: [
@@ -155,5 +160,6 @@ export const DATA = {
     'https://thumbs.dreamstime.com/b/food-delivery-man-motorcycle-isolated-white-background-helmet-yellow-moped-vector-illustration-214857732.jpg',
   logo: 'https://i.ibb.co/TvkqJHJ/logo.png',
   mostLovedFoodImage: 'https://i.ibb.co/TMjP3zN/Doner.png',
-  chef: 'https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+  chef: 'https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  promoImage: 'https://i.ibb.co/s5S4LQq/promo.png'
 }

@@ -9,8 +9,9 @@ const CartItems = ({ id, src, name, amount, price }) => {
   const removeProductHandler = id => {
     dispatch(removeProduct(id))
   }
+
   return (
-    <tr className="items-data">
+    <tr key={name} className="items-data">
       <td>
         <img className="items-data__image" alt={name} src={src} />
       </td>

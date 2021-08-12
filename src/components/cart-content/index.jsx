@@ -28,7 +28,7 @@ const CartContent = ({ cart }) => {
         </thead>
         <tbody className="table__body">
           {cart.map(item => (
-            <CartItems {...item} />
+            <CartItems key={item.id} {...item} />
           ))}
         </tbody>
       </table>

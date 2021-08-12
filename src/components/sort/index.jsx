@@ -16,9 +16,7 @@ const Sort = ({ view, viewHandler }) => {
   const { sort, sortCategory } = useSelector(state => state.menu)
 
   const updateSort = e => {
-    const { value } = e.target
-
-    const { name } = e.target
+    const { value, name } = e.target
     const payload = {
       name,
       value
@@ -27,7 +25,6 @@ const Sort = ({ view, viewHandler }) => {
     dispatch(onChangeHandler(payload))
   }
   useEffect(() => {
-    console.log('running')
     dispatch(filterProducts())
   }, [sort, sortCategory, dispatch])
 
