@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { Spinner } from '..'
+import { PromoCodeGift, Spinner } from '..'
 import { getPresent } from '../../redux/promotions/actionCreators'
 
 import './index.scss'
@@ -26,6 +26,8 @@ class PromoCode extends Component {
 
   render() {
     const { entered, promocode, error } = this.state
+    const { Load, present } = this.props
+    console.log(Load)
     return (
       <div className="promocode">
         <form className="promocode-form" onSubmit={this.promocodeSubmit}>
@@ -41,14 +43,7 @@ class PromoCode extends Component {
             {entered ? 'Disabled' : 'Submit'}
           </button>
         </form>
-        {this.props.Load ? (
-          <Spinner />
-        ) : (
-          <div className="promocode-gift">
-            <h1 className="promocde-gift__text">Hurrey your Gift</h1>
-            <img alt="present" className="promocode-gift__image" />
-          </div>
-        )}
+        {Load && !present ? <Spinner /> : <PromoCodeGift present={present} />}
       </div>
     )
   }
@@ -59,9 +54,11 @@ function mapDispatchToProps(dispatch) {
     getFreeMeal: id => dispatch(getPresent(id))
   }
 }
-
 function mapStateToProps(state) {
-  const { present, Load } = state
-  return { present, Load }
+  const {
+    global: { Load },
+    promotions: { present }
+  } = state
+  return { Load, present }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PromoCode)

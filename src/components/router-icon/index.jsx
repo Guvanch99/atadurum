@@ -5,6 +5,7 @@ import './index.scss'
 
 const RouterIcon = ({ sidebarVisibilteToggle }) => {
   const { total_items } = useSelector(state => state.cart)
+
   return (
     <ul className="menu">
       <li className="menu__list">

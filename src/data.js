@@ -138,23 +138,6 @@ export const DATA = {
       maintext: 'Affordable Price Policy'
     }
   ],
-  aboutCard: [
-    {
-      id: 1,
-      icon: 'fas fa-seedling',
-      text: 'QUALITY PRODUCTS'
-    },
-    {
-      id: 2,
-      icon: 'fas fa-shuttle-van',
-      text: 'QUICK SERVICE'
-    },
-    {
-      id: 3,
-      icon: 'far fa-heart',
-      text: 'ATA TASTE'
-    }
-  ],
 
   mottoImage:
     'https://thumbs.dreamstime.com/b/food-delivery-man-motorcycle-isolated-white-background-helmet-yellow-moped-vector-illustration-214857732.jpg',

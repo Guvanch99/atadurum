@@ -29,24 +29,4 @@
       font-family: 'Dancing Script', cursive;
     }
   }
-  &__gift {
-    @include flex(center);
-    flex-direction: column;
-  }
-  &__buttons {
-    margin-top: 2rem;
-  }
-  &__accept {
-    @extend %button;
-    font-family: 'Dancing Script', cursive;
-    background-color: $GreenSuccessColor;
-    color: $WhiteColor;
-  }
-  &__cancel {
-    margin-left: 1rem;
-    @extend %button;
-    font-family: 'Dancing Script', cursive;
-    background-color: $LighterRedColor;
-    color: $WhiteColor;
-  }
 }

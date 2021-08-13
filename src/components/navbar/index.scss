@@ -22,6 +22,7 @@
   &__hamburger {
     @extend %button;
     color: $MainColor;
+    display: none;
   }
 }
 .navbar_menu:first-child {

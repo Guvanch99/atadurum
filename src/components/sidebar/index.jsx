@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
-import RouterIcon from '../router-icon'
+
+import { RouterIcon, ToggleButton } from '../'
 
 import { DATA } from '../../data'
 
@@ -30,6 +31,7 @@ const Sidebar = ({ sidebarVisibilteToggle }) => {
         ))}
       </ul>
       <RouterIcon sidebarVisibilteToggle={sidebarVisibilteToggle} />
+      <ToggleButton />
       <button onClick={sidebarVisibilteToggle} className="sidebar__times">
         <i className="fas fa-times"></i>
       </button>

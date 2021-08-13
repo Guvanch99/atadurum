@@ -7,7 +7,15 @@ const initialState = {
 export const promotionsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case GET_PRESENT:
-      return { ...state, present: payload }
+      const { id, name, src } = payload
+      const gift = {
+        id,
+        name,
+        src,
+        amount: 1,
+        price: 0
+      }
+      return { ...state, present: gift }
 
     default:
       return state

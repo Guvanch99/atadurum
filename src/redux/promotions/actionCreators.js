@@ -12,7 +12,6 @@ const getGift = payload => {
 export const getPresent = id => async dispatch => {
   dispatch(loading())
   await DB(`/all-products?id=${id}`).then(({ data }) => {
-    console.log('redux', data)
     dispatch(getGift(data[0]))
   })
   dispatch(loaded())

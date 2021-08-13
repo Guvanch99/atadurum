@@ -1,8 +1,9 @@
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 import { CartItems, Payment } from '..'
-import { ClearCart } from '../../redux/cart/actionCreators'
+import { clearCart, countTotal } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
@@ -10,9 +11,11 @@ const CartContent = ({ cart }) => {
   const dispath = useDispatch()
 
   const clearCartHandler = () => {
-    dispath(ClearCart())
+    dispath(clearCart())
   }
-
+  /*useEffect(() => {
+    dispath(countTotal())
+  }, [cart, dispath])*/
   return (
     <div className="cart-content">
       <table className="table">

@@ -23,7 +23,15 @@ export const cartReducer = (state = initialState, { type, payload }) => {
 
       const temp = state.cart.find(i => i.id === id)
       if (temp) {
-        return temp
+        let temp = state.cart.map(product => {
+          if (product.id === id) {
+            const newAmount = amount + product.amount
+            return { ...product, amount: newAmount }
+          } else {
+            return product
+          }
+        })
+        return { ...state, cart: temp }
       } else {
         const newProduct = {
           id,
@@ -44,7 +52,8 @@ export const cartReducer = (state = initialState, { type, payload }) => {
       )
       return { ...state, cart: filteredProduct }
     case COUNT_CART_TOTALS:
-      return { ...state, ...payload }
+      /*  let total = state.cart.reduce((total, i) => {}, 0)*/
+      return { ...state }
     case TOGGLE_CART_PRODUCT_AMOUNT:
       return { ...state, ...payload }
     default:
