@@ -26,8 +26,8 @@ class PromoCode extends Component {
 
   render() {
     const { entered, promocode, error } = this.state
-    const { Load, present } = this.props
-    console.log(Load)
+    const { present } = this.props
+
     return (
       <div className="promocode">
         <form className="promocode-form" onSubmit={this.promocodeSubmit}>
@@ -43,7 +43,7 @@ class PromoCode extends Component {
             {entered ? 'Disabled' : 'Submit'}
           </button>
         </form>
-        {Load && !present ? <Spinner /> : <PromoCodeGift present={present} />}
+        {!present ? <Spinner /> : <PromoCodeGift present={present} />}
       </div>
     )
   }
@@ -56,9 +56,8 @@ function mapDispatchToProps(dispatch) {
 }
 function mapStateToProps(state) {
   const {
-    global: { Load },
     promotions: { present }
   } = state
-  return { Load, present }
+  return { present }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PromoCode)

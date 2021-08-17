@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
 
-import { CartItems, Payment } from '..'
-import { clearCart, countTotal } from '../../redux/cart/actionCreators'
+import { CartTable, Payment, PageLink } from '..'
+import { clearCart } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
-const CartContent = ({ cart }) => {
+const CartContent = () => {
   const dispath = useDispatch()
 
   const clearCartHandler = () => {
@@ -18,28 +16,10 @@ const CartContent = ({ cart }) => {
   }, [cart, dispath])*/
   return (
     <div className="cart-content">
-      <table className="table">
-        <thead className="table__header">
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Price (rub)</th>
-            <th>Subtotal</th>
-            <th>Remove</th>
-          </tr>
-        </thead>
-        <tbody className="table__body">
-          {cart.map(item => (
-            <CartItems key={item.id} {...item} />
-          ))}
-        </tbody>
-      </table>
+      <CartTable />
       <hr />
       <div className="link-container">
-        <Link className="cart__link" to="/menu">
-          Continue shopping
-        </Link>
+        <PageLink direction="menu" name="Continue shopping" />
         <button onClick={clearCartHandler} className="cart-content__clear">
           Clear
         </button>

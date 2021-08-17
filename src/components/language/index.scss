@@ -1,0 +1,14 @@
+@import 'src/styles/common.scss';
+
+.language {
+  width: 2rem;
+  @include flex(space-between, center);
+  &__icon {
+    font-size: 1.6rem;
+    color: $mainColor;
+  }
+  &__select {
+    border: none;
+    outline: none;
+  }
+}

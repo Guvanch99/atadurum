@@ -2,11 +2,11 @@ import './index.scss'
 
 const AmountButtons = ({ amount, increase, descrease }) => (
   <div className="amount">
-    <button className="amount_btn" onClick={descrease}>
+    <button className="amount__sign" onClick={descrease}>
       -
     </button>
-    <h2 className="amount_counter">{amount}</h2>
-    <button className="amount_btn" onClick={increase}>
+    <h2 className="amount__counter">{amount}</h2>
+    <button className="amount__sign" onClick={increase}>
       +
     </button>
   </div>

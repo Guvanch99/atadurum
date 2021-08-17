@@ -1,6 +1,6 @@
 @import 'src/styles/common.scss';
 
 .container {
-  display: flex;
+  @include flex(normal, normal);
   flex-direction: column;
 }

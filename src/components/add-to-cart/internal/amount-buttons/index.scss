@@ -2,16 +2,16 @@
 
 .amount {
   width: 15rem;
-  @include flex(space-evenly);
+  @include flex(space-evenly, center);
   font-family: 'Dancing Script', cursive;
 
-  &_btn {
+  &__sign {
     @extend %button;
     font-family: 'Dancing Script', cursive;
-    color: $MainColor;
+    color: $mainColor;
     font-size: 6.4em;
   }
-  &_counter {
+  &__counter {
     font-size: 4.8em;
   }
 }

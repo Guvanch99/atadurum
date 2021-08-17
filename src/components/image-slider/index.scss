@@ -4,7 +4,8 @@
   height: 30rem;
   position: relative;
   padding-bottom: 2rem;
-  @include flex(center);
+  margin: 1rem 2rem;
+  @include flex(center, center);
   .image {
     width: 80rem;
     height: 30rem;

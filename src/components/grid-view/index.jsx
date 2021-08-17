@@ -8,8 +8,8 @@ const GridView = ({ products }) => (
       <div key={id} className="grid__container">
         <img className="grid__image" src={src} alt={name} />
         <div className="grid__info">
-          <h1 className="info_name">{name}</h1>
-          <h3 className="info_price">Price:{price}rub</h3>
+          <h1 className="food__name">{name}</h1>
+          <h3 className="food__price">Price:{price}rub</h3>
         </div>
         <Link className="product__buy_link" to={`/menu/${id}`}>
           <i className="fas fa-shopping-bag product__buy_icon" />

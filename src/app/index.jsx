@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
+import classNames from 'classnames'
 
 import { Sidebar, Navbar, Footer, PrivateRoute } from '../components'
 
@@ -16,9 +17,11 @@ import {
 } from '../pages'
 
 import './index.scss'
+import { useTheme } from '../context/theme/theme-state'
 
 const App = () => {
   const [isSidebarVisible, setSidebarVisibility] = useState(true)
+  const { themeDark } = useTheme()
 
   const sidebarVisibilteToggle = useCallback(
     () => setSidebarVisibility(prevState => !prevState),
@@ -27,8 +30,9 @@ const App = () => {
 
   const Bar = isSidebarVisible ? Navbar : Sidebar
 
+  document.body.style.background = themeDark ? '#1d3c45' : 'white'
   return (
-    <div className="container">
+    <div className={classNames('container', { 'is-darkGreen': themeDark })}>
       <Bar sidebarVisibilteToggle={sidebarVisibilteToggle} />
       <main>
         <Switch>

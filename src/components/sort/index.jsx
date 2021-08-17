@@ -15,8 +15,8 @@ const Sort = ({ view, viewHandler }) => {
   const dispatch = useDispatch()
   const { sort, sortCategory } = useSelector(state => state.menu)
 
-  const updateSort = e => {
-    const { value, name } = e.target
+  const updateSort = ({ target }) => {
+    const { value, name } = target
     const payload = {
       name,
       value
@@ -31,15 +31,9 @@ const Sort = ({ view, viewHandler }) => {
   return (
     <div className="sort-container">
       <div className="sort-container__views">
-        {view ? (
-          <button className="views__button" onClick={viewHandler}>
-            <i className="fas fa-th views__icon" />
-          </button>
-        ) : (
-          <button className="views__button" onClick={viewHandler}>
-            <i className="fas fa-list views__icon" />
-          </button>
-        )}
+        <button className="views__button" onClick={viewHandler}>
+          <i className={`${view ? 'fas fa-th' : 'fas fa-list'} views__icon`} />
+        </button>
       </div>
       <div className="sort-container__buttons">
         {buttonsSort.map((text, index) => (

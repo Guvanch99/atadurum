@@ -1,8 +1,14 @@
 import { Component } from 'react'
+import { connect } from 'react-redux'
+
+import { addGift } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
 class PromoCodeGift extends Component {
+  componentDidMount() {
+    this.props.addGift(this.props.present)
+  }
   render() {
     const { name, src, type, description } = this.props.present
     return (
@@ -15,5 +21,9 @@ class PromoCodeGift extends Component {
     )
   }
 }
-
-export default PromoCodeGift
+function mapDispatchToProps(dispatch) {
+  return {
+    addGift: gift => dispatch(addGift(gift))
+  }
+}
+export default connect(null, mapDispatchToProps)(PromoCodeGift)

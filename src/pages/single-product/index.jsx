@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-import { Spinner, Product } from '../../components'
+import { Spinner, Product, PageHero } from '../../components'
 import { fetchSingleProduct } from '../../redux/single-product/actionCreator'
 
 import './index.scss'
@@ -25,9 +25,7 @@ const SingleProduct = () => {
         <Spinner />
       ) : (
         <div className="single-product">
-          <Link className="single-product__link" to="/menu">
-            GO Back
-          </Link>
+          <PageHero menu title="Single-Product" />
           {singleProduct ? <Product singleProduct={singleProduct} /> : null}
         </div>
       )}

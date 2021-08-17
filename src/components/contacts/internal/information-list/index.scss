@@ -1,9 +1,9 @@
 @import 'src/styles/common.scss';
 
 .card {
-  @include flex(center);
+  @include flex(center, center);
   flex-direction: column;
-  color: $WhiteColor;
+  color: $whiteColor;
   padding: 2rem 0;
 
   .header {
@@ -11,16 +11,14 @@
     font-family: 'Style Script', cursive;
   }
   .information {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    @include flex(center, flex-start);
     flex-direction: column;
     &__list {
-      @include flex(center);
+      @include flex(center, center);
       margin: 1rem 0;
     }
     &__icon {
-      color: $MainColor;
+      color: $mainColor;
       font-size: 1.8em;
     }
     &__text {

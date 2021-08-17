@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import { AddToCart } from '..'
 
 import './index.scss'
@@ -20,4 +22,4 @@ const Product = ({ singleProduct }) => {
   )
 }
 
-export default Product
+export default memo(Product)

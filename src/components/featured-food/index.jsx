@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { DATA } from '../../data'
@@ -25,8 +26,10 @@ const FeaturedFood = () => {
               <img className="featured-product__image" src={src} alt={name} />
               <div className="featured-product__container">
                 <h1 className="featured-product__name">{name}</h1>
-                <p className="featured-product__description">{description}</p>
-                <p className="featured-product__price">Price :{price}</p>
+                <p className="featured-product__description">
+                  {description.slice(0, 50)}
+                </p>
+                <p className="featured-product__price">Price :{price}rub</p>
               </div>
             </li>
           ))}
@@ -36,4 +39,4 @@ const FeaturedFood = () => {
   )
 }
 
-export default FeaturedFood
+export default memo(FeaturedFood)

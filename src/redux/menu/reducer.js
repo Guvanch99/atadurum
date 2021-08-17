@@ -30,8 +30,8 @@ export const menuReducer = (state = initialState, { type, payload }) => {
       if (sort === 'name-z') {
         temp = temp.sort((a, b) => b.name.localeCompare(a.name))
       }
-      if (sortCategory === 'Doner') {
-        temp = temp.filter(t => t.type === 'doner')
+      if (sortCategory === 'Durum') {
+        temp = temp.filter(t => t.type === 'durum')
       }
       if (sortCategory === 'Beverage') {
         temp = temp.filter(t => t.type === 'beverage')

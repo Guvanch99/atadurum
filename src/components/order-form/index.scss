@@ -1,14 +1,12 @@
 @import 'src/styles/common.scss';
 .order-form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(space-between, center);
   flex-direction: column;
   font-family: 'Dancing Script', cursive;
 
   &__info {
     font-size: 3em;
-    color: $MainColor;
+    color: $mainColor;
     text-align: center;
   }
   &__label {
@@ -20,7 +18,7 @@
     font-size: 2em;
   }
   &__group {
-    @include flex(space-between);
+    @include flex(space-between, center);
     margin: 0.6rem 0;
   }
   &__textarea {
@@ -29,18 +27,18 @@
     font-size: 1.6em;
     line-height: 1.4rem;
     border: none;
-    border-bottom: 1px solid $LighterBlackColor;
+    border-bottom: 1px solid $lighterBlackColor;
     outline: none;
     width: 15rem;
     &:focus {
-      border-bottom: 1px solid $MainColor;
+      border-bottom: 1px solid $mainColor;
     }
   }
   &__button {
     @extend %button;
     font-family: 'Dancing Script', cursive;
-    background-color: $MainColor;
-    color: $WhiteColor;
+    background-color: $mainColor;
+    color: $whiteColor;
     border-radius: 10%;
     margin-bottom: 1rem;
   }

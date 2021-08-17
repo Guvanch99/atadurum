@@ -2,7 +2,8 @@ import {
   ADD_TO_CART,
   CLEAR_CART,
   COUNT_CART_TOTALS,
-  REMOVE_PRODUCT
+  REMOVE_PRODUCT,
+  ADD_TO_GIFT
 } from './type'
 
 export const addToCart = payload => {
@@ -25,5 +26,11 @@ export const clearCart = () => {
 export const countTotal = () => {
   return {
     type: COUNT_CART_TOTALS
+  }
+}
+export const addGift = payload => {
+  return {
+    type: ADD_TO_GIFT,
+    payload
   }
 }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-import { RouterIcon, ToggleButton } from '..'
+import { RouterIcon, ToggleButton, Language } from '..'
 import { DATA } from '../../data'
 
 import './index.scss'
@@ -28,6 +28,7 @@ const Navbar = ({ sidebarVisibilteToggle }) => {
         </ul>
       </div>
       <RouterIcon />
+      <Language />
       <ToggleButton />
       <button onClick={sidebarVisibilteToggle} className="navbar__hamburger">
         <i className="fas fa-bars" />

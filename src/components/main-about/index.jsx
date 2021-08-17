@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import { DATA } from '../../data'
 
 import './index.scss'
@@ -17,4 +19,4 @@ const MainAbout = () => (
   </div>
 )
 
-export default MainAbout
+export default memo(MainAbout)

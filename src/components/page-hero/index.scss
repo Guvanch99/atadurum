@@ -2,21 +2,28 @@
 
 .section {
   min-height: 8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $MainColor;
-  &_text {
+  @include flex(center, center);
+  background: $mainColor;
+  font-family: 'Roboto', sans-serif;
+  &__text {
     font-family: 'Roboto', sans-serif;
     font-size: 2em;
-    color: $SecondaryColor;
+    color: $secondaryColor;
   }
-  &_link {
+  &__link {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
-    color: $WhiteColor;
+    color: $whiteColor;
     &:hover {
-      color: #fabb24;
+      color: $lighterYellowColor;
+    }
+  }
+  &__middle-page {
+    font-family: 'Roboto', sans-serif;
+    color: $whiteColor;
+    font-size: 1em;
+    &:hover {
+      color: $lighterYellowColor;
     }
   }
 }

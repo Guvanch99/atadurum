@@ -1,13 +1,13 @@
 @import 'src/styles/common.scss';
 
 .menu {
-  @include flex(center);
+  @include flex(center, center);
   &__list {
     padding-left: 1rem;
-    @include flex(center);
+    @include flex(center, center);
   }
   &__link {
-    @include flex(center);
+    @include flex(center, center);
     margin-left: 1rem;
   }
   &__icon {
@@ -18,6 +18,6 @@
   .order-count {
     position: absolute;
     font-size: 0.7em;
-    color: #cf1717;
+    color: $lighterRedColor;
   }
 }

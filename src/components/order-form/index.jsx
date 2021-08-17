@@ -1,4 +1,5 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, memo } from 'react'
+
 import './index.scss'
 
 const OrderForm = () => {
@@ -93,4 +94,4 @@ const OrderForm = () => {
   )
 }
 
-export default OrderForm
+export default memo(OrderForm)

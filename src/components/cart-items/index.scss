@@ -3,7 +3,7 @@
 .items-data {
   text-align: center;
   &:nth-child(even) {
-    background: $LighterGrayColor;
+    background: $lighterYellowColor;
   }
   &__image {
     width: 5rem;
@@ -16,9 +16,9 @@
   &__remover {
     @extend %button;
     font-size: 1rem;
-    background: $LighterRedColor;
+    background: $lighterRedColor;
     padding: 0.5rem;
     border-radius: 10%;
-    color: $WhiteColor;
+    color: $whiteColor;
   }
 }

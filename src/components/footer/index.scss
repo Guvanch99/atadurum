@@ -1,13 +1,13 @@
 @import 'src/styles/common.scss';
 
 .footer {
-  background-color: $SecondaryColor;
+  background-color: $secondaryColor;
   height: 5rem;
   margin-top: 0.1rem;
 
   &__text {
     padding: 2.5rem;
     text-align: center;
-    color: $WhiteColor;
+    color: $whiteColor;
   }
 }

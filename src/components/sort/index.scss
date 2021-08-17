@@ -1,7 +1,7 @@
 @import 'src/styles/common.scss';
 
 .sort-container {
-  @include flex(space-between);
+  @include flex(space-between, center);
   margin-top: 1rem;
   &__views {
     display: inline-block;
@@ -15,11 +15,11 @@
     .views__icon {
       font-size: 2rem;
       border: none;
-      color: $MainColor;
+      color: $mainColor;
     }
   }
   &__buttons {
-    @include flex(space-between);
+    @include flex(space-between, center);
     width: 40rem;
     .sort__button {
       background: transparent;

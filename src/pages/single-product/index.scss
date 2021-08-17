@@ -2,8 +2,8 @@
 .single-product {
   margin: 2rem 0;
   &__link {
-    background: $MainColor;
-    color: #fff;
+    background: $mainColor;
+    color: $whiteColor;
     padding: 0.5rem 1rem;
     border-radius: 10%;
   }

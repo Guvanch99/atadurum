@@ -14,8 +14,8 @@
 %sliderIcon {
   top: 40%;
   font-size: 3rem;
-  color: $WhiteColor;
-  background-color: $SecondaryColor;
+  color: $whiteColor;
+  background-color: $secondaryColor;
   z-index: 1;
   cursor: pointer;
   width: 3.5rem;
@@ -24,12 +24,7 @@
   border-radius: 50%;
   padding-top: 0.2rem;
 }
-%goBackLink {
-  background: $MainColor;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 10%;
-}
+
 ul {
   list-style: none;
 }
@@ -37,12 +32,31 @@ a {
   text-decoration: none;
   font-family: 'Dancing Script', cursive;
   font-size: 2em;
-  color: $SecondaryColor;
+  color: $secondaryColor;
   &:hover {
-    border-bottom: 1px solid $MainColor;
+    border-bottom: 1px solid $mainColor;
   }
 }
 .container {
   max-width: 80rem;
   margin: 0 auto;
+}
+.is-darkGreen {
+  background: $darkGreen;
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  button,
+  select,
+  i,
+  label,
+  .views__icon {
+    color: $whiteColor;
+  }
+  select {
+    background: $darkGreen;
+  }
 }

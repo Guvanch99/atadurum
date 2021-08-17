@@ -1,7 +1,4 @@
 @import 'src/styles/common.scss';
 .cart {
-  @include flex(center);
-  &__link {
-    @extend %goBackLink;
-  }
+  @include flex(center, center);
 }

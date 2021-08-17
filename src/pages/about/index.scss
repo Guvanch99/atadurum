@@ -2,5 +2,5 @@
 
 .card-container {
   margin-top: 5rem;
-  display: flex;
+  @include flex(normal, normal);
 }

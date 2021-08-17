@@ -4,8 +4,17 @@ import { removeProduct } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
-const CartItems = ({ id, src, name, amount, price }) => {
+const CartItems = ({
+  id,
+  src,
+  name,
+  amount,
+  price,
+  total_amount,
+  total_items
+}) => {
   const dispatch = useDispatch()
+
   const removeProductHandler = id => {
     dispatch(removeProduct(id))
   }
@@ -25,14 +34,14 @@ const CartItems = ({ id, src, name, amount, price }) => {
         <p className="items-data__price">{price}</p>
       </td>
       <td>
-        <h3 className="items-data__id">0</h3>
+        <h3 className="items-data__id">{total_amount}</h3>
       </td>
       <td>
         <button
           className="items-data__remover"
           onClick={() => removeProductHandler(id)}
         >
-          X
+          <i className="fas fa-times" />
         </button>
       </td>
     </tr>

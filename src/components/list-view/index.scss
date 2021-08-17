@@ -1,45 +1,22 @@
 @import 'src/styles/common.scss';
 
 .list {
-  display: flex;
-  align-items: flex-start;
-
+  @include flex(normal, flex-start);
   flex-direction: column;
+  margin: 2rem 0;
   &__container {
-    @include flex(center);
+    @include flex(space-evenly, center);
   }
   &__image {
     width: 25rem;
     height: 25rem;
+    background: $whiteColor;
+    margin: 0.5rem 2rem 0.5rem 0;
   }
   &__info {
+    @include flex(space-evenly, flex-start);
+    flex-direction: column;
     height: 19rem;
     padding-left: 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    flex-direction: column;
   }
-}
-.info {
-  &_name {
-    font-size: 3.2em;
-    font-family: 'Style Script', sans-serif;
-  }
-  &_price {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2em;
-    color: $MainColor;
-    font-weight: bold;
-  }
-  &_description {
-    font-size: 1.6em;
-    font-family: 'Roboto', sans-serif;
-  }
-}
-.product__buy_button {
-  background: $MainColor;
-  color: $WhiteColor;
-  padding: 0.3rem 3rem;
-  border-radius: 13%;
 }

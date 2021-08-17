@@ -1,7 +1,11 @@
+import { memo } from 'react'
+
 import { ArticleName } from '..'
 import InformationList from './internal/information-list'
 import { DATA } from '../../data'
+
 import './index.scss'
+
 const { contacts, socialMedia, workingSchedule } = DATA
 const Contacts = () => (
   <>
@@ -20,4 +24,4 @@ const Contacts = () => (
   </>
 )
 
-export default Contacts
+export default memo(Contacts)

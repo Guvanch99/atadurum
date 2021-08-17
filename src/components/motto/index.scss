@@ -1,8 +1,9 @@
 @import 'src/styles/common.scss';
 
 .motto {
-  @include flex(space-evenly);
+  @include flex(space-evenly, center);
   &__image {
+    margin-top: 1rem;
     width: 40rem;
     height: 30rem;
   }
@@ -13,7 +14,7 @@
   }
   &__text {
     position: absolute;
-    color: $WhiteColor;
+    color: $whiteColor;
     right: 18rem;
     &_h2 {
       font-family: 'Style Script', cursive;

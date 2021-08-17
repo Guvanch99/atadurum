@@ -84,7 +84,7 @@
           "src":"https://i.ibb.co/KLDyxjX/Mega-Doner.jpg",
           "description":"Double pleasure: more meat, freshly baked pita bread, golden potatoes, crispy pickles and a combination of two sauces.",
           "price":9,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":5,
@@ -92,7 +92,7 @@
           "src":"https://i.ibb.co/WsDJvjr/Doner-Tukey.png",
           "description":"Fragrant grilled chicken meat with fresh vegetables and a signature sauce, wrapped in thin yeast-free pita bread.",
           "price":5,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":6,
@@ -100,7 +100,7 @@
           "src":"https://i.ibb.co/WsDJvjr/Doner-Tukey.png",
           "description":"Lush omelet of eggs with herbs in combination with aromatic grilled chicken, pepper, corn, tomato slices, seasoned with a special sauce and wrapped in thin pita bread.",
           "price":5.5,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":7,
@@ -108,15 +108,15 @@
           "src":"https://i.ibb.co/KV6kDgK/Doner-mushroom.png",
           "description":"Lavash, chicken meat, mushroom sauce, cheese, Chinese cabbage, fresh cucumber, onion, pickled mushrooms.",
           "price":5.5,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":8,
-          "name":"Durum BBQ",
+          "name":"Durum BBQ And Grilled",
           "src":"https://i.ibb.co/BC88NNp/Doner-bbq.png",
           "description":"Lavash, bacon, beef, chicken meat, pickled cucumber, onion, Chinese cabbage, BBQ sauce, tomatoes",
           "price":6.5,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":9,
@@ -124,7 +124,7 @@
           "src":"https://i.ibb.co/Ks5HMKX/Doner-Meksiko.png",
           "description":"Lavash, chicken meat, tomatoes, Chili sauce, fresh peppers, onions, red cabbage, Firmenny sauce, canned beans",
           "price":6.5,
-          "type":"doner"
+          "type":"durum"
        },
        {
           "id":10,

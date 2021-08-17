@@ -2,23 +2,19 @@
 
 .main-about {
   margin: 1rem 0 4rem 0;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  @include flex(space-around, center);
 
   &__image {
     height: 10rem;
     width: 10rem;
   }
   &__item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    @include flex(space-evenly, center);
     flex-direction: column;
     font-family: 'Style Script', sans-serif;
 
     &_title {
-      color: $MainColor;
+      color: $mainColor;
       margin-top: 2rem;
       font-size: 2rem;
       font-family: 'Style Script', sans-serif;

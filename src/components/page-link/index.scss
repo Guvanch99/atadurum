@@ -1,0 +1,10 @@
+@import 'src/styles/common.scss';
+.page-link {
+  background: $mainColor;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10%;
+  width: 10rem;
+  background: $mainColor;
+  text-align: center;
+}

@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { CartContent } from '../../components'
+import { CartContent, PageLink } from '../../components'
 
 import './index.scss'
 
@@ -11,11 +10,9 @@ const Cart = () => {
   return (
     <div className="cart">
       {cart.length <= 0 ? (
-        <Link to="/menu" className="cart__link">
-          Add meal to basket
-        </Link>
+        <PageLink direction="menu" name="Add meal to basket" />
       ) : (
-        <CartContent cart={cart} />
+        <CartContent />
       )}
     </div>
   )

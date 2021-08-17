@@ -14,5 +14,6 @@ export const getPresent = id => async dispatch => {
   await DB(`/all-products?id=${id}`).then(({ data }) => {
     dispatch(getGift(data[0]))
   })
+
   dispatch(loaded())
 }

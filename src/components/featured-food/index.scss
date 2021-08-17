@@ -2,17 +2,14 @@
 
 .featured-product {
   margin: 1rem;
-  display: flex;
-  justify-content: space-around;
+  @include flex(space-around, center);
   padding-bottom: 1rem;
 
   &__article {
     text-align: center;
   }
   &__menu {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
+    @include flex(space-between, center);
     flex-direction: column;
     background: rgba(239, 223, 7, 0.6);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -24,17 +21,18 @@
   }
   &__list {
     padding-left: 1rem;
-    @include flex(center);
+    @include flex(center, center);
+    flex-direction: column;
   }
   &__image {
     width: 6rem;
     height: 6rem;
     border-radius: 50%;
+    background-color: $whiteColor;
   }
   &__container {
     padding-left: 1rem;
-    display: flex;
-    align-items: flex-start;
+    @include flex(normal, flex-start);
     flex-direction: column;
     font-family: 'Dancing Script', cursive;
   }

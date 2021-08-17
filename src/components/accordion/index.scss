@@ -1,26 +1,23 @@
 @import 'src/styles/common.scss';
 
 .accordion {
+  @include flex(normal, center);
+  flex-direction: column;
   max-width: 30rem;
   margin: 3rem auto;
-  display: flex;
-  align-items: center;
   font-family: 'Dancing Script', cursive;
-  flex-direction: column;
 
   &__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     width: 27rem;
 
     &_name {
       font-size: 3em;
-      color: $MainColor;
+      color: $mainColor;
     }
     &_plusminus {
       font-size: 5em;
-      color: $MainColor;
+      color: $mainColor;
     }
   }
   &__content {

@@ -1,7 +1,7 @@
 @import 'src/styles/common.scss';
 .spinner {
   margin: 12rem 0;
-  @include flex(center);
+  @include flex(center, center);
   &_img {
     animation: spinner 3s infinite;
   }
@@ -11,25 +11,25 @@
   25% {
     left: 2em;
     transform: translate(5em);
-    background: red;
-    box-shadow: 0 1.6em 0 0 $LighterBlackColor;
+    background: $lighterRedColor;
+    box-shadow: 0 1.6em 0 0 $lighterBlackColor;
   }
   50% {
     left: 2em;
     transform: translate(5em, 5em);
-    background: blue;
+    background: $mainColor;
 
-    box-shadow: -1rem 0 0 0 $LighterBlackColor;
+    box-shadow: -1rem 0 0 0 $lighterBlackColor;
   }
   75% {
     left: 2em;
     transform: translate(-5em, 5em);
-    background: green;
-    box-shadow: -0.1em -1em 0 0 $LighterBlackColor;
+    background: $greenSuccessColor;
+    box-shadow: -0.1em -1em 0 0 $lighterBlackColor;
   }
   100% {
     left: 2em;
     transform: translate(-5em, -5em);
-    background: $LighterBlackColor;
+    background: $lighterBlackColor;
   }
 }

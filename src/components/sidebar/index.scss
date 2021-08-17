@@ -1,9 +1,9 @@
 @import 'src/styles/common.scss';
 
 .sidebar {
+  @include flex(space-evenly, center);
   position: relative;
   padding-top: 5rem;
-  @include flex(center);
   flex-direction: column;
   z-index: 55;
   height: 100vh;
@@ -12,6 +12,8 @@
 
   &__menu {
     padding: 3rem 0;
+    margin-left: 2rem;
+
     &_list {
       padding-top: 1rem;
     }
@@ -24,6 +26,6 @@
     @extend %button;
     top: 10%;
     right: 5%;
-    color: $LighterRedColor;
+    color: $lighterRedColor;
   }
 }

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Link } from 'react-router-dom'
 
-import { RouterIcon, ToggleButton } from '../'
+import { RouterIcon, ToggleButton, Language } from '../'
 
 import { DATA } from '../../data'
 
@@ -31,9 +31,10 @@ const Sidebar = ({ sidebarVisibilteToggle }) => {
         ))}
       </ul>
       <RouterIcon sidebarVisibilteToggle={sidebarVisibilteToggle} />
+      <Language />
       <ToggleButton />
       <button onClick={sidebarVisibilteToggle} className="sidebar__times">
-        <i className="fas fa-times"></i>
+        <i className="fas fa-times" />
       </button>
     </div>
   )

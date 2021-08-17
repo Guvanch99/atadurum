@@ -1,14 +1,14 @@
 @import 'src/styles/common.scss';
 .cart-content {
-  display: flex;
+  @include flex(normal, normal);
   flex-direction: column;
   flex: 1;
   font-family: 'Style Script', sans-serif;
   &__clear {
     @extend %button;
     font-family: 'Style Script', sans-serif;
-    background-color: $LighterBlackColor;
-    color: $WhiteColor;
+    background-color: $lighterBlackColor;
+    color: $whiteColor;
     border-radius: 10%;
   }
 }
@@ -19,10 +19,10 @@
   border-collapse: collapse;
   margin-bottom: 2rem;
   &__header {
-    background: $LighterGrayColor;
+    background: $lighterGrayColor;
   }
 }
 .link-container {
   margin: 2rem 3rem;
-  @include flex(space-between);
+  @include flex(space-between, center);
 }

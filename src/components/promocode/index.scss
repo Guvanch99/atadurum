@@ -1,12 +1,12 @@
 @import 'src/styles/common.scss';
 
 .promocode {
-  @include flex(space-evenly);
+  @include flex(space-evenly, center);
   font-family: 'Dancing Script', cursive;
   margin: 1rem 0;
 
   &-form {
-    @include flex(center);
+    @include flex(center, center);
 
     &__label {
       font-size: 4em;
@@ -17,15 +17,15 @@
       margin: 0 1rem;
       font-family: 'Dancing Script', cursive;
       font-size: 2em;
-      border-bottom: 1px solid $LighterGrayColor;
+      border-bottom: 1px solid $lighterGrayColor;
       &:focus {
-        border-bottom: 1px solid $LighterBlackColor;
+        border-bottom: 1px solid $lighterBlackColor;
       }
     }
     &__submit {
       @extend %button;
-      background-color: $LighterBlackColor;
-      color: $WhiteColor;
+      background-color: $lighterBlackColor;
+      color: $whiteColor;
       font-family: 'Dancing Script', cursive;
     }
   }

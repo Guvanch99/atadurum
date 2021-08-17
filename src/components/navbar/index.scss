@@ -1,28 +1,28 @@
 @import 'src/styles/common.scss';
 
 .navbar {
-  @include flex(space-between);
+  @include flex(space-between, center);
   height: 8rem;
   &__container {
-    @include flex(space-between);
+    @include flex(space-between, center);
     flex: 0.5;
   }
 
   &__logo {
     width: 6rem;
     height: 6rem;
+    margin-left: 2rem;
   }
 
   &__menu {
-    @include flex(space-evenly);
+    @include flex(space-evenly, center);
     &_link {
       padding-left: 1rem;
     }
   }
   &__hamburger {
     @extend %button;
-    color: $MainColor;
-    display: none;
+    color: $mainColor;
   }
 }
 .navbar_menu:first-child {

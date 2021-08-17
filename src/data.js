@@ -76,7 +76,7 @@ export const DATA = {
       text: 'telegram'
     }
   ],
-  buttonsSort: ['All', 'Combo', 'Doner', 'Beverage'],
+  buttonsSort: ['All', 'Combo', 'Durum', 'Beverage'],
   workingSchedule: [
     {
       id: 1,

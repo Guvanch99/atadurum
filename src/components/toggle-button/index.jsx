@@ -1,25 +1,21 @@
-import { useState } from 'react'
+import { useTheme } from '../../context/theme/theme-state'
 
 import './index.scss'
 
 const ToggleButton = () => {
-  const [isOn, setIsOn] = useState(false)
-
+  const { themeDark, changeThemeDark } = useTheme()
+  //Todo rename classname toggle
   return (
     <>
       <input
-        checked={isOn}
-        onChange={() => setIsOn(!isOn)}
-        className="input__checkbox"
-        id={`react-switch-new`}
+        checked={themeDark}
+        onChange={changeThemeDark}
+        className="toggle-button"
         type="checkbox"
+        id="react-switch-new"
       />
-      <label
-        style={{ background: isOn && '#fff' }}
-        className="input__checkbox_label"
-        htmlFor={`react-switch-new`}
-      >
-        <span className={`input__checkbox_button`} />
+      <label className="toggle-button-background" htmlFor="react-switch-new">
+        <span className="toggle-button-circle" />
       </label>
     </>
   )

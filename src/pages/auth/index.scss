@@ -1,7 +1,7 @@
 @import 'src/styles/common.scss';
 
 .form {
-  @include flex(space-evenly);
+  @include flex(space-evenly, center);
   flex-direction: column;
   font-family: 'Dancing Script', cursive;
   margin-top: 1rem;
@@ -9,7 +9,7 @@
     font-size: 3em;
   }
   &__group {
-    @include flex(center);
+    @include flex(center, center);
     flex-direction: column;
     margin: 1rem 0;
 
@@ -22,29 +22,29 @@
       font-size: 1.6em;
       line-height: 1.4rem;
       border: none;
-      border-bottom: 1px solid $LighterBlackColor;
+      border-bottom: 1px solid $lighterBlackColor;
       outline: none;
       width: 15rem;
       &:focus {
-        border-bottom: 1px solid $MainColor;
+        border-bottom: 1px solid $mainColor;
       }
     }
     &_error {
       font-size: 1.6em;
-      color: $LighterRedColor;
+      color: $lighterRedColor;
     }
   }
   &__submit {
-    color: $WhiteColor;
-    background: $MainColor;
+    color: $whiteColor;
+    background: $mainColor;
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
     padding: 0.2rem 2rem;
     border: none;
   }
   &__login {
-    color: $WhiteColor;
-    background: $MainColor;
+    color: $whiteColor;
+    background: $mainColor;
     font-family: 'Dancing Script', cursive;
     font-size: 2em;
     padding: 0.2rem 2rem;

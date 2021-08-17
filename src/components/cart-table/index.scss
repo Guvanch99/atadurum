@@ -1,0 +1,12 @@
+@import 'src/styles/common.scss';
+
+.table {
+  font-family: 'Style Script', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  &__header {
+    background: $lighterGrayColor;
+  }
+}
