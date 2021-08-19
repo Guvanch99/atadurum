@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import {
   PageHero,
   Contacts,
@@ -32,4 +31,4 @@ const About = () => {
   )
 }
 
-export default memo(About)
+export default About

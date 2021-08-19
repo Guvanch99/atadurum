@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, memo } from 'react'
 
 import { DATA } from '../../data'
 
@@ -8,20 +8,20 @@ const { images } = DATA
 
 const ImageSlider = () => {
   const [current, setCurrent] = useState(0)
-  const length = images.length
+  const imageLength = images.length
 
   const nextImage = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
+    setCurrent(current === imageLength - 1 ? 0 : current + 1)
   }
   const prevImage = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
+    setCurrent(current === 0 ? imageLength - 1 : current - 1)
   }
   return (
     <div className="slider">
       {images.map(({ url, text }, index) => {
         return (
           index === current && (
-            <img key={index} className="image" src={url} alt={text} />
+            <img key={index} className="slider__image" src={url} alt={text} />
           )
         )
       })}
@@ -31,4 +31,4 @@ const ImageSlider = () => {
   )
 }
 
-export default ImageSlider
+export default memo(ImageSlider)

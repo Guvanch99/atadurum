@@ -12,16 +12,7 @@
     border-radius: 10%;
   }
 }
-.table {
-  font-family: 'Style Script', sans-serif;
-  font-size: 2em;
-  text-align: center;
-  border-collapse: collapse;
-  margin-bottom: 2rem;
-  &__header {
-    background: $lighterGrayColor;
-  }
-}
+
 .link-container {
   margin: 2rem 3rem;
   @include flex(space-between, center);

@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { PromoCodeGift, Spinner } from '..'
-import { getPresent } from '../../redux/promotions/actionCreators'
+import { getPresent } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
@@ -26,7 +26,7 @@ class PromoCode extends Component {
 
   render() {
     const { entered, promocode, error } = this.state
-    const { present } = this.props
+    const { gift } = this.props
 
     return (
       <div className="promocode">
@@ -43,7 +43,7 @@ class PromoCode extends Component {
             {entered ? 'Disabled' : 'Submit'}
           </button>
         </form>
-        {!present ? <Spinner /> : <PromoCodeGift present={present} />}
+        {!gift ? <Spinner /> : <PromoCodeGift present={gift} />}
       </div>
     )
   }
@@ -55,9 +55,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 function mapStateToProps(state) {
-  const {
-    promotions: { present }
-  } = state
-  return { present }
+  const { gift } = state
+  return { gift }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PromoCode)

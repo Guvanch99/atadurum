@@ -1,4 +1,4 @@
-import { useTheme } from '../../context/theme/theme-state'
+import { useTheme } from '../../hooks'
 
 import './index.scss'
 
@@ -12,9 +12,9 @@ const ToggleButton = () => {
         onChange={changeThemeDark}
         className="toggle-button"
         type="checkbox"
-        id="react-switch-new"
+        id="toggle"
       />
-      <label className="toggle-button-background" htmlFor="react-switch-new">
+      <label className="toggle-button-background" htmlFor="toggle">
         <span className="toggle-button-circle" />
       </label>
     </>

@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import classNames from 'classnames'
 
@@ -17,23 +17,26 @@ import {
 } from '../pages'
 
 import './index.scss'
-import { useTheme } from '../context/theme/theme-state'
+import { useTheme } from '../hooks'
 
 const App = () => {
   const [isSidebarVisible, setSidebarVisibility] = useState(true)
   const { themeDark } = useTheme()
 
-  const sidebarVisibilteToggle = useCallback(
+  const sidebarVisibilityToggle = useCallback(
     () => setSidebarVisibility(prevState => !prevState),
     []
   )
 
+  useEffect(() => {
+    document.body.style.background = themeDark ? '#1d3c45' : 'white'
+  }, [themeDark])
+
   const Bar = isSidebarVisible ? Navbar : Sidebar
 
-  document.body.style.background = themeDark ? '#1d3c45' : 'white'
   return (
     <div className={classNames('container', { 'is-darkGreen': themeDark })}>
-      <Bar sidebarVisibilteToggle={sidebarVisibilteToggle} />
+      <Bar sidebarVisibilityToggle={sidebarVisibilityToggle} />
       <main>
         <Switch>
           <Route exact path="/" component={Home} />

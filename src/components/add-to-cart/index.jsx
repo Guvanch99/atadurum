@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { addToCart, countTotal } from '../../redux/cart/actionCreators'
-import AmountButtons from './internal/amount-buttons'
+import { addToCart } from '../../redux/cart/actionCreators'
+import { AmountButtons } from '..'
 import PageLink from '../page-link'
 
 import './index.scss'
@@ -13,21 +13,17 @@ const AddToCart = ({ singleProduct }) => {
   const increase = () => {
     setAmount(prev => {
       let temp = ++prev
-      if (temp > 50) temp = 50
       return temp
     })
   }
-  const descrease = () => {
+  const decrease = () => {
     setAmount(prev => {
       let temp = --prev
       if (temp < 1) temp = 1
       return temp
     })
   }
-  useEffect(() => {
-    console.log('fired')
-    dispatch(countTotal())
-  }, [dispatch, amount])
+
   const addToCartProduct = () => {
     const payload = {
       amount,
@@ -37,11 +33,7 @@ const AddToCart = ({ singleProduct }) => {
   }
   return (
     <div className="add-cart__container">
-      <AmountButtons
-        descrease={descrease}
-        increase={increase}
-        amount={amount}
-      />
+      <AmountButtons decrease={decrease} increase={increase} amount={amount} />
       <PageLink
         direction="cart"
         name="To Cart"

@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import shawarma from '../../assets/shawarma.png'
 
 import './index.scss'
@@ -7,4 +9,4 @@ const Spinner = () => (
     <img className="spinner_img" src={shawarma} alt="shawarma" />
   </div>
 )
-export default Spinner
+export default memo(Spinner)

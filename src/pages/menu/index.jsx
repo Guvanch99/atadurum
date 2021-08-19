@@ -17,15 +17,16 @@ const Menu = () => {
   const [view, setView] = useState(true)
   const dispatch = useDispatch()
 
-  const { Load } = useSelector(state => state.global)
+  const { allProducts } = useSelector(state => state.menu)
   const viewHandler = () => setView(!view)
 
   useEffect(() => {
     dispatch(fetchAllProducts())
   }, [dispatch])
+
   return (
     <>
-      {Load ? (
+      {!allProducts ? (
         <Spinner />
       ) : (
         <div>

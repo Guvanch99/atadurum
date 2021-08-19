@@ -1,32 +1,26 @@
 import { useSelector } from 'react-redux'
 
 import { CartItems } from '..'
+import { DATA } from '../../data'
 
 import './index.scss'
 
+const { tableNames } = DATA
 const CartTable = () => {
-  const { cart, total_amount, total_items } = useSelector(state => state.cart)
+  const { cart } = useSelector(state => state.cart)
 
   return (
     <table className="table">
       <thead className="table__header">
         <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Amount</th>
-          <th>Price (rub)</th>
-          <th>Subtotal</th>
-          <th>Remove</th>
+          {tableNames.map((name, index) => (
+            <th key={index}>{name}</th>
+          ))}
         </tr>
       </thead>
       <tbody>
         {cart.map(item => (
-          <CartItems
-            key={item.id}
-            {...item}
-            total_amount={total_amount}
-            total_items={total_items}
-          />
+          <CartItems key={item.id} {...item} />
         ))}
       </tbody>
     </table>

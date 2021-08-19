@@ -15,3 +15,16 @@
     font-size: 4.8em;
   }
 }
+.amount-for-table {
+  @include flex(space-around, center);
+  font-family: 'Dancing Script', cursive;
+  &__sign {
+    @extend %button;
+    padding: 0;
+    font-size: 1.6em;
+    font-family: 'Dancing Script', cursive;
+  }
+  &__counter {
+    font-size: 1.6em;
+  }
+}

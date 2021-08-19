@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { PageLink } from '..'
 
 import './index.scss'
@@ -22,4 +23,4 @@ const ListView = ({ products }) => (
   </div>
 )
 
-export default ListView
+export default memo(ListView)

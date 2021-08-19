@@ -6,6 +6,7 @@ const OrderForm = () => {
   const inputRef = useRef()
   const orderSubmitHandler = e => {
     e.preventDefault()
+    localStorage.removeItem('cart')
   }
   useEffect(() => {
     inputRef.current.focus()

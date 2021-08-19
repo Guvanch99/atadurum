@@ -5,19 +5,21 @@
   &__list {
     padding-left: 1rem;
     @include flex(center, center);
+    &-link {
+      @include flex(center, center);
+      margin-left: 1rem;
+    }
+    &-icon {
+      padding-left: 0.4rem;
+      font-size: 0.8em;
+    }
   }
-  &__link {
-    @include flex(center, center);
-    margin-left: 1rem;
-  }
-  &__icon {
-    padding-left: 0.4rem;
-    font-size: 0.8em;
-    position: relative;
-  }
+
   .order-count {
     position: absolute;
-    font-size: 0.7em;
+    top: 6%;
+    right: 52.5%;
+    font-size: 1.6em;
     color: $lighterRedColor;
   }
 }

@@ -15,8 +15,8 @@ const Motto = () => (
       <img className="motto__image" src={mottoImage} alt="Motto" />
       <MottoImg className="motto__svg" />
       <div className="motto__text">
-        <h2 className="motto__text_h2">Delivery is more than 30 min </h2>
-        <h1 className="motto__text_h1">Take it free !!!</h1>
+        <h2 className="motto__text-main">Delivery is more than 30 min </h2>
+        <h1 className="motto__text-secondary">Take it free !!!</h1>
       </div>
     </div>
   </>

@@ -6,22 +6,23 @@
   color: $whiteColor;
   padding: 2rem 0;
 
-  .header {
+  &__header {
     margin: 1rem 0;
     font-family: 'Style Script', cursive;
   }
-  .information {
+
+  &__information {
     @include flex(center, flex-start);
     flex-direction: column;
-    &__list {
+    &-list {
       @include flex(center, center);
       margin: 1rem 0;
     }
-    &__icon {
+    &-icon {
       color: $mainColor;
       font-size: 1.8em;
     }
-    &__text {
+    &-text {
       font-family: 'Roboto', sans-serif;
       padding-left: 1rem;
     }

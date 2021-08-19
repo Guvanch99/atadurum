@@ -1,7 +1,7 @@
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 
 import ThemeContext from './theme-context'
-
+//todo theme
 const ThemeState = ({ children }) => {
   const [themeDark, setThemeDark] = useState(false)
   const changeThemeDark = () => setThemeDark(!themeDark)
@@ -13,5 +13,3 @@ const ThemeState = ({ children }) => {
   )
 }
 export default ThemeState
-
-export const useTheme = () => useContext(ThemeContext)

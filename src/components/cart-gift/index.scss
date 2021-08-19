@@ -1,0 +1,37 @@
+@import 'src/styles/common.scss';
+
+.cart-gift {
+  @include flex(space-around, center);
+  margin: 2rem;
+  &__label {
+    font-size: 2rem;
+  }
+  &__container {
+    @include flex(center, flex-start);
+    flex-direction: column;
+  }
+  &__image {
+    width: 5rem;
+    height: 5rem;
+    background-color: $whiteColor;
+  }
+  &__name {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+    &_color {
+      color: $mainColor;
+    }
+  }
+  &__amount {
+    font-size: 1.4rem;
+    &_color {
+      color: $lighterRedColor;
+    }
+  }
+  &__type {
+    font-size: 1.4rem;
+    &_color {
+      color: $greenSuccessColor;
+    }
+  }
+}

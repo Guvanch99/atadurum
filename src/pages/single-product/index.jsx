@@ -9,10 +9,7 @@ import './index.scss'
 
 const SingleProduct = () => {
   const dispatch = useDispatch()
-  const {
-    global: { Load },
-    singleProduct: { singleProduct }
-  } = useSelector(state => state)
+  const { singleProduct } = useSelector(state => state.singleProduct)
   const { id } = useParams()
 
   useEffect(() => {
@@ -21,12 +18,12 @@ const SingleProduct = () => {
 
   return (
     <>
-      {Load ? (
+      {!singleProduct ? (
         <Spinner />
       ) : (
         <div className="single-product">
           <PageHero menu title="Single-Product" />
-          {singleProduct ? <Product singleProduct={singleProduct} /> : null}
+          <Product singleProduct={singleProduct} />
         </div>
       )}
     </>

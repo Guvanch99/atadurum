@@ -1,39 +1,38 @@
 import { memo } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import { RouterIcon, ToggleButton, Language } from '../'
-
+import { MenuAuth, ToggleButton, Language } from '../'
 import { DATA } from '../../data'
 
 import './index.scss'
 
 const { links, logo } = DATA
 
-const Sidebar = ({ sidebarVisibilteToggle }) => {
+const Sidebar = ({ sidebarVisibilityToggle }) => {
   return (
     <div className="sidebar">
-      <Link>
+      <NavLink to="/">
         <div>
           <img className="logo" src={logo} alt="durum" />
         </div>
-      </Link>
+      </NavLink>
       <ul className="sidebar__menu">
         {links.map(({ id, url, text }) => (
           <li className="sidebar__menu_list" key={id}>
-            <Link
-              onClick={sidebarVisibilteToggle}
+            <NavLink
+              onClick={sidebarVisibilityToggle}
               className="sidebar__menu_link"
               to={url}
             >
               {text}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
-      <RouterIcon sidebarVisibilteToggle={sidebarVisibilteToggle} />
+      <MenuAuth sidebarVisibilteToggle={sidebarVisibilityToggle} />
       <Language />
       <ToggleButton />
-      <button onClick={sidebarVisibilteToggle} className="sidebar__times">
+      <button onClick={sidebarVisibilityToggle} className="sidebar__times">
         <i className="fas fa-times" />
       </button>
     </div>

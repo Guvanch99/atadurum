@@ -1,7 +1,7 @@
 import { memo } from 'react'
 
-import { ArticleName } from '..'
 import InformationList from './internal/information-list'
+import { ArticleName } from '..'
 import { DATA } from '../../data'
 
 import './index.scss'

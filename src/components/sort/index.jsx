@@ -9,7 +9,7 @@ import { DATA } from '../../data'
 
 import './index.scss'
 
-const { buttonsSort } = DATA
+const { buttonsSort, sortOptions } = DATA
 
 const Sort = ({ view, viewHandler }) => {
   const dispatch = useDispatch()
@@ -58,13 +58,11 @@ const Sort = ({ view, viewHandler }) => {
           value={sort}
           name="sort"
         >
-          <option value="" disabled>
-            Not selected
-          </option>
-          <option value="price-lowest">price (lowest)</option>
-          <option value="price-highest">price (highest)</option>
-          <option value="name-a">Alphabet (a-z)</option>
-          <option value="name-z">Alphabet (z-a)</option>
+          {sortOptions.map(({ value, name, disabled }, index) => (
+            <option value={value} disabled={disabled}>
+              {name}
+            </option>
+          ))}
         </select>
       </form>
     </div>

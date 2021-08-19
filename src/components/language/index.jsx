@@ -16,7 +16,7 @@ const Language = () => {
         value={languages}
         onChange={e => setLanguages(e.target.value)}
       >
-        <option value="en">&#127482;en</option>
+        <option value="en">en</option>
         <option value="ru">ru</option>
       </select>
     </div>

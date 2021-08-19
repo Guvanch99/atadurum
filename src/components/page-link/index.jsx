@@ -1,8 +1,10 @@
+import { memo } from 'react'
+
 import { NavLink } from 'react-router-dom'
 
 import './index.scss'
 
-const PageLink = ({ direction, name, customStyle = '', eventHandler }) => (
+const PageLink = ({ direction, name, eventHandler }) => (
   <NavLink
     onClick={eventHandler ? eventHandler : null}
     className="page-link"
@@ -12,4 +14,4 @@ const PageLink = ({ direction, name, customStyle = '', eventHandler }) => (
   </NavLink>
 )
 
-export default PageLink
+export default memo(PageLink)

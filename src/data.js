@@ -22,6 +22,8 @@ export const DATA = {
       text: 'Promotions'
     }
   ],
+  tableNames: ['Img', 'Name', 'Amount', 'Price', 'Subtotal', 'Remove'],
+
   images: [
     {
       url: 'https://images.pexels.com/photos/3772524/pexels-photo-3772524.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -138,7 +140,49 @@ export const DATA = {
       maintext: 'Affordable Price Policy'
     }
   ],
-
+  menuAuth: [
+    {
+      id: 1,
+      url: '/cart',
+      name: 'Cart',
+      icon: 'fas fa-cart-plus'
+    },
+    {
+      id: 2,
+      url: '/login',
+      name: 'Login',
+      icon: 'fas fa-user'
+    },
+    {
+      id: 3,
+      url: '/sign-up',
+      name: 'Sign Up',
+      icon: 'fas fa-user-plus'
+    }
+  ],
+  sortOptions: [
+    {
+      value: '',
+      name: 'Not selected',
+      disabled: true
+    },
+    {
+      value: 'price-lowest',
+      name: 'price (lowest)'
+    },
+    {
+      value: 'price-highest',
+      name: 'price (highest)'
+    },
+    {
+      value: 'name-a',
+      name: 'Alphabet (a-z)'
+    },
+    {
+      value: 'name-z',
+      name: 'Alphabet (z-a)'
+    }
+  ],
   mottoImage:
     'https://thumbs.dreamstime.com/b/food-delivery-man-motorcycle-isolated-white-background-helmet-yellow-moped-vector-illustration-214857732.jpg',
   logo: 'https://i.ibb.co/TvkqJHJ/logo.png',
