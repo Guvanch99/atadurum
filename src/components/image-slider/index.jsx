@@ -16,6 +16,7 @@ const ImageSlider = () => {
   const prevImage = () => {
     setCurrent(current === 0 ? imageLength - 1 : current - 1)
   }
+
   return (
     <div className="slider">
       {images.map(({ url, text }, index) => {

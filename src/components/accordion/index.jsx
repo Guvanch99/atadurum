@@ -1,19 +1,24 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import './index.scss'
 
-const Accordion = ({ maintext, secondarytext }) => {
+const Accordion = ({ label, description }) => {
   const [isActive, setIsActive] = useState(false)
   let signs = isActive ? '-' : '+'
   return (
     <div className="accordion">
       <div className="accordion__title" onClick={() => setIsActive(!isActive)}>
-        <div className="accordion__title_name">{maintext}</div>
-        <div className="accordion__title_plusminus">{signs}</div>
+        <div className="accordion__label">{label}</div>
+        <div className="accordion__sign">{signs}</div>
       </div>
-      {isActive && <p className="accordion__content">{secondarytext}</p>}
+      {isActive && <p className="accordion__description">{description}</p>}
     </div>
   )
+}
+Accordion.propTypes = {
+  label: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 }
 
 export default Accordion

@@ -1,21 +1,36 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
+
+import { ROUTER_MENU } from '../../constants'
 
 import './index.scss'
 
-const GridView = ({ products }) => (
-  <div className="grid">
-    {products.map(({ id, name, src, price }) => (
-      <div key={id} className="grid__container">
-        <img className="grid__image" src={src} alt={name} />
-        <div className="grid__info">
-          <h1 className="food__name">{name}</h1>
-          <h3 className="food__price">Price:{price}rub</h3>
+const GridView = ({ products }) => {
+  const { t } = useTranslation('translation')
+
+  return (
+    <div className="grid">
+      {products.map(({ id, name, src, price }) => (
+        <div key={id} className="grid__container">
+          <img className="grid__image" src={src} alt={name} />
+          <div className="grid__info">
+            <h1 className="food__name">{t(name)}</h1>
+            <h3 className="food__price">
+              {t('productPrice')}
+              {t(price)}
+              {t('productPriceCurrency')}
+            </h3>
+          </div>
+          <NavLink className="product__buy_link" to={`${ROUTER_MENU}/${id}`}>
+            <i className="fas fa-shopping-bag product__buy_icon" />
+          </NavLink>
         </div>
-        <Link className="product__buy_link" to={`/menu/${id}`}>
-          <i className="fas fa-shopping-bag product__buy_icon" />
-        </Link>
-      </div>
-    ))}
-  </div>
-)
+      ))}
+    </div>
+  )
+}
+GridView.propTypes = {
+  products: PropTypes.array.isRequired
+}
 export default GridView

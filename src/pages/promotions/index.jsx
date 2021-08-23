@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import { PromoCode, PromoDay } from '../../components'
 
 export class Promotions extends Component {

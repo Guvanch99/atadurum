@@ -3,7 +3,6 @@
 .main-about {
   margin: 1rem 0 4rem 0;
   @include flex(space-around, center);
-
   &__image {
     height: 10rem;
     width: 10rem;
@@ -11,13 +10,12 @@
   &__item {
     @include flex(space-evenly, center);
     flex-direction: column;
-    font-family: 'Style Script', sans-serif;
-
-    &_title {
-      color: $mainColor;
-      margin-top: 2rem;
-      font-size: 2rem;
-      font-family: 'Style Script', sans-serif;
-    }
+    font-family: 'Style Script', 'Marck Script', sans-serif;
+  }
+  &__title {
+    color: $mainColor;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-family: 'Style Script', 'Marck Script', sans-serif;
   }
 }

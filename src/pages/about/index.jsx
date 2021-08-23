@@ -1,31 +1,35 @@
+import { useTranslation } from 'react-i18next'
+
 import {
   PageHero,
   Contacts,
   ArticleName,
   Accordion,
-  MainAbout
+  AboutMain
 } from '../../components'
 import { DATA } from '../../data'
 
 import './index.scss'
 
-const { aboutOurValueText } = DATA
+const { ourValueKeys } = DATA
 const About = () => {
+  const { t } = useTranslation('translation')
   return (
     <div className="about-container">
-      <PageHero title="About" />
-      <ArticleName name="Our Value" />
+      <PageHero title={t('pageHero.about')} />
+      <ArticleName name={t('articleNames.ourValue')} />
       <div className="accordian-container">
-        {aboutOurValueText.map(({ id, maintext, secondarytext }) => (
+        {ourValueKeys.map(key => (
           <Accordion
-            key={id}
-            maintext={maintext}
-            secondarytext={secondarytext}
+            key={key}
+            label={t(`aboutPage.ourValue.${key}.label`)}
+            description={t(`aboutPage.ourValue.${key}.description`)}
           />
         ))}
       </div>
-      <ArticleName name="Why We" />
-      <MainAbout />
+
+      <ArticleName name={t('articleNames.whyWe')} />
+      <AboutMain />
       <Contacts />
     </div>
   )

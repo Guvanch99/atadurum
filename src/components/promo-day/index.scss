@@ -2,16 +2,17 @@
 .date {
   margin-top: 1rem;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', sans-serif;
   font-size: 10em;
   color: $mainColor;
 }
 .promoday {
   @include flex(center, normal);
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', sans-serif;
   &__text {
     font-size: 4em;
   }
+
   &__time {
     margin: 1rem 0;
     font-size: 2em;

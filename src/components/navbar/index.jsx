@@ -1,40 +1,54 @@
 import { memo } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 
-import { MenuAuth, ToggleButton, Language } from '..'
+import { MenuAuthCart, ToggleButton, Language } from '..'
 import { DATA } from '../../data'
 
 import './index.scss'
+import { ROUTER_HOME } from '../../constants'
 
-const { links, logo } = DATA
+const { logo, links } = DATA
 
-const Navbar = ({ sidebarVisibilityToggle }) => {
+const Navbar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
+  const { t } = useTranslation('translation')
+
+  let navLogo = (
+    <NavLink className="logo" to={ROUTER_HOME}>
+      <div>
+        <img className="navbar__logo" src={logo} alt="durum" />
+      </div>
+    </NavLink>
+  )
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
-        <NavLink to={'/'}>
-          <div>
-            <img className="navbar__logo" src={logo} alt="durum" />
-          </div>
-        </NavLink>
+        {navLogo}
         <ul className="navbar__menu">
-          {links.map(({ id, url, text }) => (
-            <li className="navbar__menu_list" key={id}>
+          {links.map(({ url, keyName }, index) => (
+            <li className="navbar__menu_list" key={index}>
               <NavLink className="navbar__menu_link" to={url}>
-                {text}
+                {t(`links.${keyName}.name`)}
               </NavLink>
             </li>
           ))}
         </ul>
       </div>
-      <MenuAuth />
-      <Language />
+      <MenuAuthCart />
+      <Language lang={lang} changeLanguageHandler={changeLanguageHandler} />
       <ToggleButton />
       <button onClick={sidebarVisibilityToggle} className="navbar__hamburger">
         <i className="fas fa-bars" />
       </button>
     </nav>
   )
+}
+Navbar.propTypes = {
+  sidebarVisibilityToggle: PropTypes.func.isRequired,
+  lang: PropTypes.string,
+  changeLanguageHandler: PropTypes.func
 }
 
 export default memo(Navbar)

@@ -2,7 +2,7 @@
 .order-form {
   @include flex(space-between, center);
   flex-direction: column;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', cursive;
 
   &__info {
     font-size: 3em;
@@ -14,7 +14,7 @@
     margin-right: 2rem;
   }
   &__sort {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
     font-size: 2em;
   }
   &__group {
@@ -23,7 +23,7 @@
   }
   &__textarea {
     margin: 0.4rem 0;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
     font-size: 1.6em;
     line-height: 1.4rem;
     border: none;
@@ -36,7 +36,7 @@
   }
   &__button {
     @extend %button;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
     background-color: $mainColor;
     color: $whiteColor;
     border-radius: 10%;

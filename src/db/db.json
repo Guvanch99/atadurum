@@ -29,23 +29,23 @@
     "featured-products":[
        {
           "id":1,
-          "name":"combo menu-1",
+          "name":"featuredProducts.1.name",
           "src":"https://i.ibb.co/vhs7GF2/kombo-cow.jpg",
-          "description":"Durum with beef + Free+0.5 Coca-cola",
+          "description":"featuredProducts.1.description",
           "price":10
        },
        {
           "id":2,
-          "name":"combo menu-2",
+          "name":"featuredProducts.2.name",
           "src":"https://i.ibb.co/WxdDstk/kombo-chicken.jpg",
-          "description":"Durum with chicken + Free+0.5 Coca-cola",
+          "description":"featuredProducts.2.description",
           "price":8
        },
        {
           "id":3,
-          "name":"Durum chicken",
+          "name":"featuredProducts.3.name",
           "src":"https://i.ibb.co/WsDJvjr/Doner-Tukey.png",
-          "description":"Fragrant grilled chicken meat with fresh vegetables and a signature sauce, wrapped in thin yeast-free pita bread.",
+          "description":"featuredProducts.3.description",
           "price":5
        }
     ],
@@ -53,9 +53,9 @@
     "all-products":[
        {
           "id":1,
-          "name":"combo menu-1",
+          "name":"products.1.name",
           "src":"https://i.ibb.co/vhs7GF2/kombo-cow.jpg",
-          "description":"Durum with beef + Free+0.5 Coca-cola",
+          "description": "products.1.description",
           "price":10,
           "type":"combo"
           
@@ -63,132 +63,132 @@
        },
        {
           "id":2,
-          "name":"combo menu-2",
+          "name":"products.2.name",
           "src":"https://i.ibb.co/WxdDstk/kombo-chicken.jpg",
-          "description":"Durum with chicken + Free+ 0.5 Coca-Cola",
+          "description": "products.2.description",
           "price":8,
           "type":"combo"
        },
        {
           "id":3,
-          "name":"combo menu-3",
+          "name":"products.3.name",
           "src":"https://i.ibb.co/S0Vq0y8/combo-mix.jpg",
-          "description":"Durum with chicken and beef +Free+ 0.4 Coca-Cola",
+          "description": "products.3.description",
           "price":11,
           "type":"combo"
        },
        {
      
           "id":4,
-          "name":"Mega Durum Chicken",
+          "name":"products.4.name",
           "src":"https://i.ibb.co/KLDyxjX/Mega-Doner.jpg",
-          "description":"Double pleasure: more meat, freshly baked pita bread, golden potatoes, crispy pickles and a combination of two sauces.",
+          "description": "products.4.description",
           "price":9,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":5,
-          "name":"Durum Chicken",
+          "name":"products.5.name",
           "src":"https://i.ibb.co/WsDJvjr/Doner-Tukey.png",
-          "description":"Fragrant grilled chicken meat with fresh vegetables and a signature sauce, wrapped in thin yeast-free pita bread.",
+          "description": "products.5.description",
           "price":5,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":6,
-          "name":"Durum Turkey",
+          "name":"products.6.name",
           "src":"https://i.ibb.co/WsDJvjr/Doner-Tukey.png",
-          "description":"Lush omelet of eggs with herbs in combination with aromatic grilled chicken, pepper, corn, tomato slices, seasoned with a special sauce and wrapped in thin pita bread.",
+          "description": "products.6.description",
           "price":5.5,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":7,
-          "name":"Durum Mushroom",
+          "name":"products.7.name",
           "src":"https://i.ibb.co/KV6kDgK/Doner-mushroom.png",
-          "description":"Lavash, chicken meat, mushroom sauce, cheese, Chinese cabbage, fresh cucumber, onion, pickled mushrooms.",
+          "description": "products.7.description",
           "price":5.5,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":8,
-          "name":"Durum BBQ And Grilled",
+          "name":"products.8.name",
           "src":"https://i.ibb.co/BC88NNp/Doner-bbq.png",
-          "description":"Lavash, bacon, beef, chicken meat, pickled cucumber, onion, Chinese cabbage, BBQ sauce, tomatoes",
+          "description": "products.8.description",
           "price":6.5,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":9,
-          "name":"Durum Meksiko",
+          "name":"products.9.name",
           "src":"https://i.ibb.co/Ks5HMKX/Doner-Meksiko.png",
-          "description":"Lavash, chicken meat, tomatoes, Chili sauce, fresh peppers, onions, red cabbage, Firmenny sauce, canned beans",
+          "description": "products.9.description",
           "price":6.5,
-          "type":"durum"
+          "type": "durum"
        },
        {
           "id":10,
-          "name":"Coca-Cola",
+          "name":"products.10.name",
           "src":"https://i.ibb.co/rp1yNBW/coca-cola.jpg",
-          "description":"Classic Coca-Cola",
+          "description": "products.10.description",
           "price":2,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":11,
-          "name":"Vanilla Coca-Cola",
+          "name":"products.11.name",
           "src":"https://i.ibb.co/1MnR86b/coca-cola-vanilla.png",
-          "description":"Vanilla Coca-Cola",
+          "description": "products.11.description",
           "price":2,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":12,
-          "name":"Fanta",
+          "name":"products.12.name",
           "src":"https://i.ibb.co/rvVjbgz/fanta.jpg",
-          "description":"Classic Fanta ",
+          "description": "products.12.description",
           "price":2,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":13,
-          "name":"Sprite",
+          "name":"products.13.name",
           "src":"https://i.ibb.co/nPD33g5/sprite.jpg",
-          "description":"Sprite carbonated soft drink with lime, lemon and bright mint aromah ",
+          "description": "products.13.description",
           "price":2,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":14,
-          "name":"Fuse tea",
+          "name":"products.14.name",
           "src":"https://i.ibb.co/q0nm8C2/fusetea.jpg",
-          "description":"Fusetea with forest berries and hibiscus. ",
+          "description": "products.14.description",
           "price":1.5,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":15,
-          "name":"Fuse tea",
+          "name":"products.15.name",
           "src":"https://i.ibb.co/q0nm8C2/fusetea.jpg",
-          "description":"Fusetea with forest berries and hibiscus. ",
+          "description": "products.15.description",
           "price":2,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":16,
-          "name":"water",
+          "name":"products.16.name",
           "src":"https://i.ibb.co/m0PmYTr/water.jpg",
-          "description":"Not corbanated water",
+          "description": "products.16.description",
           "price":1,
-          "type":"beverage"
+          "type": "beverage"
        },
        {
           "id":17,
-          "name":"tea",
+          "name":"products.17.name",
           "src":"https://i.ibb.co/0nqQm0p/black-tea.jpg",
-          "description":"Black tea 0.3L ",
+          "description": "products.17.description",
           "price":0.5,
-          "type":"beverage"
+          "type": "beverage"
        }
     ]
  }

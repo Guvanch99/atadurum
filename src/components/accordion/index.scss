@@ -5,22 +5,21 @@
   flex-direction: column;
   max-width: 30rem;
   margin: 3rem auto;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', cursive;
 
   &__title {
     @include flex(space-between, center);
     width: 27rem;
-
-    &_name {
-      font-size: 3em;
-      color: $mainColor;
-    }
-    &_plusminus {
-      font-size: 5em;
-      color: $mainColor;
-    }
   }
-  &__content {
+  &__description {
     font-size: 2em;
+  }
+  &__label {
+    font-size: 3em;
+    color: $mainColor;
+  }
+  &__sign {
+    font-size: 5em;
+    color: $mainColor;
   }
 }

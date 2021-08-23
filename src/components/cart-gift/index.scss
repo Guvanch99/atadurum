@@ -11,27 +11,21 @@
     flex-direction: column;
   }
   &__image {
-    width: 5rem;
-    height: 5rem;
+    width: 15rem;
+    height: 15rem;
     background-color: $whiteColor;
   }
   &__name {
     font-size: 1.6rem;
     margin: 0.5rem 0;
-    &_color {
+    &-color {
       color: $mainColor;
     }
   }
   &__amount {
     font-size: 1.4rem;
-    &_color {
+    &-color {
       color: $lighterRedColor;
-    }
-  }
-  &__type {
-    font-size: 1.4rem;
-    &_color {
-      color: $greenSuccessColor;
     }
   }
 }

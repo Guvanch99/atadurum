@@ -3,10 +3,10 @@
   @include flex(normal, normal);
   flex-direction: column;
   flex: 1;
-  font-family: 'Style Script', sans-serif;
+  font-family: 'Style Script', 'Marck Script', sans-serif;
   &__clear {
     @extend %button;
-    font-family: 'Style Script', sans-serif;
+    font-family: 'Style Script', 'Marck Script', sans-serif;
     background-color: $lighterBlackColor;
     color: $whiteColor;
     border-radius: 10%;

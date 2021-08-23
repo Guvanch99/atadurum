@@ -1,5 +1,7 @@
-import { useEffect } from 'react'
+import { useEffect, memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 
 import {
   onChangeHandler,
@@ -9,7 +11,7 @@ import { DATA } from '../../data'
 
 import './index.scss'
 
-const { buttonsSort, sortOptions } = DATA
+const { sortOptions, buttonKeys } = DATA
 
 const Sort = ({ view, viewHandler }) => {
   const dispatch = useDispatch()
@@ -27,6 +29,7 @@ const Sort = ({ view, viewHandler }) => {
   useEffect(() => {
     dispatch(filterProducts())
   }, [sort, sortCategory, dispatch])
+  const { t } = useTranslation('translation')
 
   return (
     <div className="sort-container">
@@ -36,21 +39,23 @@ const Sort = ({ view, viewHandler }) => {
         </button>
       </div>
       <div className="sort-container__buttons">
-        {buttonsSort.map((text, index) => (
-          <button
-            onClick={updateSort}
-            key={index}
-            name="sortCategory"
-            className="sort__button"
-            value={text}
-          >
-            {text}
-          </button>
-        ))}
+        {buttonKeys.map(key => {
+          return (
+            <button
+              onClick={updateSort}
+              key={key}
+              name="sortCategory"
+              className="sort__button"
+              value={key}
+            >
+              {t(`sort.buttonNames.${key}`)}
+            </button>
+          )
+        })}
       </div>
       <form className="sort-container__select">
         <label className="sort__text" htmlFor="sort">
-          sort by
+          {t('sort.sortLabel')}
         </label>
         <select
           onChange={updateSort}
@@ -58,9 +63,13 @@ const Sort = ({ view, viewHandler }) => {
           value={sort}
           name="sort"
         >
-          {sortOptions.map(({ value, name, disabled }, index) => (
-            <option value={value} disabled={disabled}>
-              {name}
+          {sortOptions.map(({ value, keyName }, index) => (
+            <option
+              key={index}
+              value={value}
+              disabled={index === 0 ? true : false}
+            >
+              {t(`sort.sortOptions.${keyName}.name`)}
             </option>
           ))}
         </select>
@@ -68,5 +77,8 @@ const Sort = ({ view, viewHandler }) => {
     </div>
   )
 }
-
-export default Sort
+Sort.propTypes = {
+  view: PropTypes.bool.isRequired,
+  viewHandler: PropTypes.func.isRequired
+}
+export default memo(Sort)

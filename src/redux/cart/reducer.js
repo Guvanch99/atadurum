@@ -11,7 +11,8 @@ import {
 const initialState = {
   cart: [],
   gift: null,
-  totalAmount: 0
+  totalAmount: 0,
+  totalItems: 0
 }
 
 export const cartReducer = (state = initialState, { type, payload }) => {
@@ -63,16 +64,25 @@ export const cartReducer = (state = initialState, { type, payload }) => {
       return { ...state, cart: filteredProduct }
 
     case COUNT_CART_TOTALS:
-      let totalAmount = state.cart.reduce(
-        (total, i) => (total += i.amount * i.price),
-        0
+      let { totalAmount, totalItem } = state.cart.reduce(
+        (total, cart) => {
+          const { amount, price } = cart
+          total.totalItem += amount
+          total.totalAmount += price * amount
+          return total
+        },
+        {
+          totalItem: 0,
+          totalAmount: 0
+        }
       )
-      return { ...state, totalAmount }
+      let totalItems = state.gift !== null ? totalItem + 1 : totalItem
+      return { ...state, totalAmount, totalItems }
 
     case TOGGLE_CART_PRODUCT_AMOUNT:
-      const { productId, dec, inc } = payload
+      const { inc, dec } = payload
       const tempCart = state.cart.map(item => {
-        if (item.id === productId) {
+        if (item.id === payload.id) {
           if (inc) {
             let newAmount = item.amount + 1
 
@@ -90,6 +100,7 @@ export const cartReducer = (state = initialState, { type, payload }) => {
             return { ...item, amount: newAmount, subTotal: newSubTotal }
           }
         }
+        return item
       })
       return { ...state, cart: tempCart }
     case GET_PRESENT:

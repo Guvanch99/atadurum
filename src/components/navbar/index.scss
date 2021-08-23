@@ -7,7 +7,6 @@
     @include flex(space-between, center);
     flex: 0.5;
   }
-
   &__logo {
     width: 6rem;
     height: 6rem;
@@ -27,4 +26,10 @@
 }
 .navbar_menu:first-child {
   padding-left: 3rem;
+}
+.logo {
+  border: none;
+  &:hover {
+    border: none;
+  }
 }

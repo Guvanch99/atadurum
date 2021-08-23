@@ -2,7 +2,6 @@
 
 .contacts {
   @include flex(space-evenly, center);
-
   background-color: $lighterBlackColor;
   max-height: 18rem;
 }

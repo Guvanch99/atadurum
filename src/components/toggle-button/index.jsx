@@ -1,10 +1,10 @@
+import { memo } from 'react'
 import { useTheme } from '../../hooks'
 
 import './index.scss'
 
 const ToggleButton = () => {
   const { themeDark, changeThemeDark } = useTheme()
-  //Todo rename classname toggle
   return (
     <>
       <input
@@ -21,4 +21,4 @@ const ToggleButton = () => {
   )
 }
 
-export default ToggleButton
+export default memo(ToggleButton)

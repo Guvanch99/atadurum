@@ -1,0 +1,12 @@
+@import 'src/styles/common.scss';
+
+.quote {
+  margin: 2rem 0 4rem 0;
+  &__value {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 4em;
+    font-family: 'Dancing Script', 'Marck Script', sans-serif;
+    color: $mainColor;
+  }
+}

@@ -32,9 +32,9 @@
   }
   &__container {
     padding-left: 1rem;
-    @include flex(normal, flex-start);
+    @include flex(normal, center);
     flex-direction: column;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
   }
   &__name {
     margin-bottom: 0.2rem;
@@ -44,6 +44,7 @@
     font-size: 1.2rem;
   }
   &__price {
+    margin: 1rem 0;
     font-size: 1rem;
   }
 }

@@ -17,12 +17,12 @@
 }
 .amount-for-table {
   @include flex(space-around, center);
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', cursive;
   &__sign {
     @extend %button;
     padding: 0;
     font-size: 1.6em;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
   }
   &__counter {
     font-size: 1.6em;

@@ -30,7 +30,7 @@ ul {
 }
 a {
   text-decoration: none;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script';
   font-size: 2em;
   color: $secondaryColor;
   &:hover {
@@ -58,5 +58,10 @@ a {
   }
   select {
     background: $darkGreen;
+  }
+}
+.is-sidebarVisible {
+  body {
+    overflow: hidden;
   }
 }

@@ -1,10 +1,10 @@
-import { useState } from 'react'
-
+import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 import './index.scss'
 
-const Language = () => {
-  const [languages, setLanguages] = useState('en')
-  console.log(languages)
+const Language = ({ lang, changeLanguageHandler }) => {
+  const { t } = useTranslation('translation')
+
   return (
     <div className="language">
       <label htmlFor="language">
@@ -13,14 +13,19 @@ const Language = () => {
       <select
         className="language__select"
         name="language"
-        value={languages}
-        onChange={e => setLanguages(e.target.value)}
+        as="select"
+        value={lang}
+        onChange={e => changeLanguageHandler(e)}
       >
-        <option value="en">en</option>
-        <option value="ru">ru</option>
+        <option value="en">{t('lang.en')}</option>
+        <option value="ru">{t('lang.ru')}</option>
       </select>
     </div>
   )
 }
 
+Language.propTypes = {
+  lang: PropTypes.string.isRequired,
+  changeLanguageHandler: PropTypes.func.isRequired
+}
 export default Language

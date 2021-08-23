@@ -11,19 +11,17 @@
     @include flex(space-evenly, center);
     flex-direction: column;
     height: 15rem;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
   }
   &__name {
     font-size: 5em;
-    font-size: 'Dancing Script';
+    font-size: 'Dancing Script', 'Marck Script', cursive;
   }
   &__price {
     color: $mainColor;
     font-size: 3em;
   }
-  &__type {
-    font-size: 3em;
-  }
+
   &__description {
     font-size: 3em;
   }

@@ -1,19 +1,21 @@
 import { memo } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './index.scss'
 
-const InformationList = ({ info, headerName }) => (
-  <div className="card">
-    <h1 className="card__header">{headerName}</h1>
-    <ul className="card__information">
-      {info.map(({ id, icon, text }) => (
-        <li className="card__information-list" key={id}>
-          <i className={`${icon} card__information-icon`} />
-          <h2 className="card__information-text">{text}</h2>
+const InformationList = ({ info }) => {
+  const { t } = useTranslation('translation')
+
+  return (
+    <ul className="information">
+      {info.map(({ icon, text }, index) => (
+        <li className="information__list" key={index}>
+          <i className={`${icon} information__icon`} />
+          <h2 className="information__text">{t(text)}</h2>
         </li>
       ))}
     </ul>
-  </div>
-)
+  )
+}
 
 export default memo(InformationList)

@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import { fetchAllProducts } from '../../redux/menu/actionCreators'
-
 import {
   Sort,
   ProductsList,
@@ -11,14 +11,13 @@ import {
   ArticleName
 } from '../../components'
 
-import './index.scss'
-
 const Menu = () => {
+  const { t } = useTranslation('translation')
   const [view, setView] = useState(true)
   const dispatch = useDispatch()
 
   const { allProducts } = useSelector(state => state.menu)
-  const viewHandler = () => setView(!view)
+  const viewHandler = useCallback(() => setView(!view), [view])
 
   useEffect(() => {
     dispatch(fetchAllProducts())
@@ -30,8 +29,8 @@ const Menu = () => {
         <Spinner />
       ) : (
         <div>
-          <PageHero title="Menu" />
-          <ArticleName name="Menu" />
+          <PageHero title={t('pageHero.menu')} />
+          <ArticleName name={t('articleNames.menu')} />
           <div>
             <Sort view={view} viewHandler={viewHandler} />
             <ProductsList view={view} />

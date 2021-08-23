@@ -2,7 +2,7 @@
 
 .promocode {
   @include flex(space-evenly, center);
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', 'Marck Script', sans-serif;
   margin: 1rem 0;
 
   &-form {
@@ -15,7 +15,7 @@
       border: none;
       outline: none;
       margin: 0 1rem;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Dancing Script', 'Marck Script', sans-serif;
       font-size: 2em;
       border-bottom: 1px solid $lighterGrayColor;
       &:focus {
@@ -26,7 +26,7 @@
       @extend %button;
       background-color: $lighterBlackColor;
       color: $whiteColor;
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Dancing Script', 'Marck Script', sans-serif;
     }
   }
 }

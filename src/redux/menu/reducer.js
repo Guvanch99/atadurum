@@ -18,6 +18,7 @@ export const menuReducer = (state = initialState, { type, payload }) => {
     case FILTER_PRODUCTS:
       const { sort, sortCategory, allProducts } = state
       let temp = [...allProducts]
+      console.log(temp)
       if (sort === 'price-lowest') {
         temp = temp.sort((a, b) => a.price - b.price)
       }
@@ -39,7 +40,7 @@ export const menuReducer = (state = initialState, { type, payload }) => {
       if (sortCategory === 'Combo') {
         temp = temp.filter(t => t.type === 'combo')
       }
-
+      console.log(temp)
       return { ...state, filteredProducts: temp }
     default:
       return state

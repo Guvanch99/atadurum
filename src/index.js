@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { store } from './redux/store/store'
 import App from './app'
 import { ThemeState } from './context/'
+import './core/i18n'
 
 ReactDOM.render(
   <Router>

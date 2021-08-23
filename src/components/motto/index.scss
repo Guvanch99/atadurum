@@ -17,12 +17,12 @@
     color: $whiteColor;
     right: 18rem;
     &-main {
-      font-family: 'Style Script', cursive;
+      font-family: 'Style Script', 'Marck Script', cursive;
       padding-bottom: 2rem;
       font-size: 1.6rem;
     }
-    &_secondary {
-      font-family: 'Dancing Script', cursive;
+    &-secondary {
+      font-family: 'Dancing Script', 'Marck Script', cursive;
       font-size: 2rem;
     }
   }
