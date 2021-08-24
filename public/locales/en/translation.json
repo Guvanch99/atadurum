@@ -54,7 +54,8 @@
      "home":"Home",
      "menu":"Menu",
      "about":"About",
-     "singleProduct":"Single-Product"
+     "singleProduct":"Single-Product",
+     "promotions":"promotions"
   },
   "motto":{
      "mottoMain":"Delivery is more than 30 min",
