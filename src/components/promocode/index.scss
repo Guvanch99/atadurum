@@ -3,13 +3,26 @@
 .promocode {
   @include flex(space-evenly, center);
   font-family: 'Dancing Script', 'Marck Script', sans-serif;
-  margin: 1rem 0;
-
+  margin: 1rem 1rem;
+  @include netbook {
+    & {
+      flex-direction: column;
+    }
+  }
   &-form {
     @include flex(center, center);
-
     &__label {
       font-size: 4em;
+      @include netbook {
+        & {
+          font-size: 3em;
+        }
+      }
+      @include tablet {
+        & {
+          font-size: 2em;
+        }
+      }
     }
     &__input {
       border: none;
@@ -27,6 +40,11 @@
       background-color: $lighterBlackColor;
       color: $whiteColor;
       font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      @include tablet {
+        & {
+          font-size: 1.8em;
+        }
+      }
     }
   }
 }

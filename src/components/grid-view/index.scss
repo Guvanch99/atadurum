@@ -5,10 +5,19 @@
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  &__container {
-    display: flex;
-    flex-direction: column;
 
+  &__image {
+    @include netbook {
+      & {
+        width: 15rem;
+        height: 15rem;
+        margin: 0 auto;
+      }
+    }
+  }
+  &__container {
+    @include flex(normal, normal);
+    flex-direction: column;
     position: relative;
     &:hover .grid__image {
       opacity: 0.5;

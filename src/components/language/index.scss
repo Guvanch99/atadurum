@@ -2,13 +2,30 @@
 
 .language {
   width: 2rem;
+  margin: 0 0.5rem;
   @include flex(space-between, center);
+  font-family: 'Dancing Script', 'Marck Script', cursive;
   &__icon {
-    font-size: 1.6rem;
+    font-size: 3.2em;
     color: $mainColor;
+    @include tablet {
+      & {
+        font-size: 2em;
+      }
+    }
   }
   &__select {
     border: none;
     outline: none;
+    font-family: 'Dancing Script', 'Marck Script', cursive;
+    font-size: 2em;
+    @include tablet {
+      & {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+  &__option {
+    font-family: 'Dancing Script', 'Marck Script', cursive;
   }
 }

@@ -1,0 +1,25 @@
+@import 'src/styles/common.scss';
+
+.input-form {
+  @include flex(center, center);
+  flex-direction: column;
+  margin: 1rem 0;
+
+  &__label {
+    font-size: 1.5em;
+    margin-bottom: 0.4rem;
+  }
+  &__input {
+    margin: 0.4rem 0;
+    font-family: 'Dancing Script', 'Marck Script', sans-serif;
+    font-size: 1.6em;
+    line-height: 1.4rem;
+    border: none;
+    border-bottom: 1px solid $lighterBlackColor;
+    outline: none;
+    width: 15rem;
+    &:focus {
+      border-bottom: 1px solid $mainColor;
+    }
+  }
+}

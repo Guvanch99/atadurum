@@ -15,7 +15,7 @@ const Motto = () => {
       <ArticleName name={t('articleNames.motto')} />
       <div className="motto">
         <img className="motto__image" src={mottoImage} alt="Motto" />
-        <MottoImg className="motto__svg" />
+
         <div className="motto__text">
           <h2 className="motto__text-main">{t('motto.mottoMain')} </h2>
           <h1 className="motto__text-secondary">{t('motto.mottoSecondary')}</h1>

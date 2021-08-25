@@ -1,69 +1,108 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useMemo } from 'react'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
-import { ArticleName } from '../../../components'
+import { ArticleName, Input } from '../../../components'
+import { emptyFieldsWithErrors, isButtonDisabled } from '../../../utils'
 
 import '../index.scss'
 
 const Login = () => {
-  const inputRef = useRef()
-  const [login, setLogin] = useState({
-    user: '',
+  const [userLogin, setUserLogin] = useState({
+    userName: '',
     password: ''
   })
-  const submitHandler = e => {
-    e.preventDefault()
-  }
-  const loginHandler = e => {
-    const { name, value } = e.target
-    setLogin({
-      [name]: value
-    })
-    console.log(login.user)
-  }
-  useEffect(() => {
-    inputRef.current.focus()
-  }, [])
+  const [errors, setErrors] = useState({
+    userName: '',
+    password: ''
+  })
 
+  const { t } = useTranslation('translation')
+  const dispatch = useDispatch()
+  const history = useHistory()
+
+  let { userName, password } = userLogin
+
+  const handleChange = event => {
+    const { value, name } = event.target
+    setErrors({ ...errors, [name]: '' })
+    setUserLogin({ ...userLogin, [name]: value })
+  }
+
+  emptyFieldsWithErrors(userLogin)
+
+  const login = event => {
+    event.preventDefault()
+    const { userNames, password } = userLogin
+
+    const emptyFieldsWithErrors = emptyFieldsWithErrors(userLogin)
+
+    const areFildsWithErrorsEmpty = !!Object.keys(emptyFieldsWithErrors).length
+
+    /*  if (areFildsWithErrorsEmpty) {
+      setErrors({ ...errors, ...emptyFieldsWithErrors })
+    } else {
+      dispatch(signIn(email, password, history))
+    }*/
+  }
+
+  const loginData = useMemo(
+    () => [
+      {
+        name: 'userName',
+        value: userName,
+        label: 'login.labelUser',
+        error: errors.userName,
+        type: 'text',
+        minLength: 4,
+        maxLength: 50
+      },
+      {
+        name: 'password',
+        value: password,
+        label: 'login.password',
+        error: errors.password,
+        type: 'password',
+        minLength: 6,
+        maxLength: 100
+      }
+    ],
+    [userName, password, errors.userName, errors.password]
+  )
   return (
     <>
       <ArticleName name="Login" />
-      <form className="form" onSubmit={submitHandler}>
-        <div className="form__group">
-          <label className="form__group_label" htmlFor="user">
-            User
-          </label>
-          <input
-            className="form__group_input"
-            ref={inputRef}
-            autoComplete="off"
-            onChange={loginHandler}
-            value={login.user}
-            type="text"
-            placeholder="user"
-            required
-            max="100"
-            min="4"
-          />
-          <p className="form__group_error">Error</p>
-        </div>
-        <div className="form__group">
-          <label className="form__group_label" htmlFor="password">
-            Password
-          </label>
-          <input
-            className="form__group_input"
-            autoComplete="off"
-            onChange={loginHandler}
-            value={login.password}
-            type="password"
-            placeholder="password"
-            required
-            max="50"
-            min="6"
-          />
-          <p className="form__group_error">Error</p>
-        </div>
-        <button className="form__login">Login</button>
+      <form className="form">
+        {loginData.map(
+          (
+            { name, value, label, error, type, minLength, maxLength },
+            index
+          ) => (
+            <Input
+              key={index}
+              name={name}
+              value={value}
+              label={t(label)}
+              error={error}
+              type={type}
+              onChange={handleChange}
+              required={true}
+              minLength={minLength}
+              maxLength={maxLength}
+            />
+          )
+        )}
+        <button
+          type="submit"
+          onClick={login}
+          className={classNames('form__button', {
+            disabled: isButtonDisabled()
+          })}
+        >
+          {t('login.button')}
+        </button>
       </form>
     </>
   )

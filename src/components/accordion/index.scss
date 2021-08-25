@@ -13,10 +13,20 @@
   }
   &__description {
     font-size: 2em;
+    @include tablet {
+      & {
+        font-size: 1em;
+      }
+    }
   }
   &__label {
     font-size: 3em;
     color: $mainColor;
+    @include tablet {
+      & {
+        font-size: 2em;
+      }
+    }
   }
   &__sign {
     font-size: 5em;

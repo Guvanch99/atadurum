@@ -1,12 +1,13 @@
 @import 'src/styles/common.scss';
 
 .slider {
+  @include flex(center, center);
   height: 30rem;
-  position: relative;
   padding-bottom: 2rem;
   margin: 1rem 2rem;
-  @include flex(center, center);
+
   &__image {
+    position: relative;
     width: 80rem;
     height: 30rem;
     border-radius: 2%;
@@ -14,15 +15,29 @@
     &:hover {
       transform: scale(1.05);
     }
+    @include tablet {
+      width: 50rem;
+      height: 20rem;
+    }
   }
 }
-.left-arrow {
-  @extend %sliderIcon;
-  left: 14rem;
+.arrow {
   position: absolute;
-}
-.right-arrow {
   @extend %sliderIcon;
-  right: 14rem;
-  position: absolute;
+  &-rigth {
+    right: 12rem;
+    @include tablet {
+      & {
+        right: 2rem;
+      }
+    }
+  }
+  &-left {
+    left: 12rem;
+    @include tablet {
+      & {
+        left: 2rem;
+      }
+    }
+  }
 }

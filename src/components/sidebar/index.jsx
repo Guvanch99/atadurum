@@ -37,7 +37,7 @@ const Sidebar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
           </li>
         ))}
       </ul>
-      <MenuAuthCart sidebarVisibilteToggle={sidebarVisibilityToggle} />
+      <MenuAuthCart sidebarVisibilityToggle={sidebarVisibilityToggle} />
       <Language lang={lang} changeLanguageHandler={changeLanguageHandler} />
       <ToggleButton />
       <button onClick={sidebarVisibilityToggle} className="sidebar__times">

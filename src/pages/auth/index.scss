@@ -5,9 +5,7 @@
   flex-direction: column;
   font-family: 'Dancing Script', cursive;
   margin-top: 1rem;
-  &__label {
-    font-size: 3em;
-  }
+
   &__group {
     @include flex(center, center);
     flex-direction: column;
@@ -29,26 +27,18 @@
         border-bottom: 1px solid $mainColor;
       }
     }
-    &_error {
-      font-size: 1.6em;
-      color: $lighterRedColor;
+  }
+  &__button {
+    color: $whiteColor;
+    background: $mainColor;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    padding: 0.2rem 2rem;
+    border: none;
+    cursor: pointer;
+    &:disabled {
+      color: $whiteColor;
+      background-color: $lighterRedColor;
     }
-  }
-  &__submit {
-    color: $whiteColor;
-    background: $mainColor;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    padding: 0.2rem 2rem;
-    border: none;
-  }
-  &__login {
-    color: $whiteColor;
-    background: $mainColor;
-    font-family: 'Dancing Script', cursive;
-    font-size: 2em;
-    padding: 0.2rem 2rem;
-    border: none;
-    margin-bottom: 10rem;
   }
 }

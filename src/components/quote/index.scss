@@ -8,5 +8,12 @@
     font-size: 4em;
     font-family: 'Dancing Script', 'Marck Script', sans-serif;
     color: $mainColor;
+    @include netbook {
+      & {
+        font-size: 2em;
+        text-align: center;
+        margin: 0 2rem;
+      }
+    }
   }
 }

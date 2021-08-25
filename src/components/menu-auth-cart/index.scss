@@ -2,12 +2,23 @@
 
 .menu {
   @include flex(center, center);
+  flex-wrap: wrap;
   &__list {
     padding-left: 1rem;
     @include flex(center, center);
     &-link {
       @include flex(center, center);
       margin-left: 1rem;
+      @include netbook {
+        & {
+          margin-left: 0.6rem;
+        }
+      }
+      @include tablet {
+        & {
+          font-size: 1.6em;
+        }
+      }
     }
     &-icon {
       padding-left: 0.4rem;

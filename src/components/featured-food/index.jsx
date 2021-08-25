@@ -34,6 +34,7 @@ const FeaturedFood = () => {
                 </p>
                 <p className="featured-product__price">
                   {t('productPrice', { price })}
+                  {t('productPriceCurrency')}
                 </p>
               </div>
             </li>

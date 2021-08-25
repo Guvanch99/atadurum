@@ -17,7 +17,7 @@ const Product = ({ singleProduct }) => {
           <h1 className="product__name">{t(name)}</h1>
           <h3 className="product__price">
             {t('productPrice')}
-            {t(price)}
+            {price}
             {t('productPriceCurrency')}
           </h3>
 

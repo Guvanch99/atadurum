@@ -26,8 +26,8 @@ const ImageSlider = () => {
           )
         )
       })}
-      <i onClick={prevImage} className="fas fa-arrow-left left-arrow" />
-      <i onClick={nextImage} className="fas fa-arrow-right right-arrow" />
+      <i onClick={prevImage} className="fas fa-arrow-left arrow-left arrow" />
+      <i onClick={nextImage} className="fas fa-arrow-right arrow-rigth arrow" />
     </div>
   )
 }

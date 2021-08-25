@@ -32,20 +32,22 @@ const Sort = ({ view, viewHandler }) => {
   const { t } = useTranslation('translation')
 
   return (
-    <div className="sort-container">
-      <div className="sort-container__views">
-        <button className="views__button" onClick={viewHandler}>
-          <i className={`${view ? 'fas fa-th' : 'fas fa-list'} views__icon`} />
+    <div className="sort">
+      <div className="sort__views">
+        <button className="sort__views-button" onClick={viewHandler}>
+          <i
+            className={`${view ? 'fas fa-th' : 'fas fa-list'} sort__views-icon`}
+          />
         </button>
       </div>
-      <div className="sort-container__buttons">
+      <div className="sort-buttons">
         {buttonKeys.map(key => {
           return (
             <button
               onClick={updateSort}
               key={key}
               name="sortCategory"
-              className="sort__button"
+              className="sort-buttons__option"
               value={key}
             >
               {t(`sort.buttonNames.${key}`)}
@@ -53,18 +55,19 @@ const Sort = ({ view, viewHandler }) => {
           )
         })}
       </div>
-      <form className="sort-container__select">
-        <label className="sort__text" htmlFor="sort">
+      <form className="sort-form">
+        <label className="sort-form__label" htmlFor="sort">
           {t('sort.sortLabel')}
         </label>
         <select
           onChange={updateSort}
-          className="sort__input"
+          className="sort-form__select"
           value={sort}
           name="sort"
         >
           {sortOptions.map(({ value, keyName }, index) => (
             <option
+              className="sort-form__option"
               key={index}
               value={value}
               disabled={index === 0 ? true : false}

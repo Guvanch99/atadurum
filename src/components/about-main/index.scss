@@ -3,6 +3,7 @@
 .main-about {
   margin: 1rem 0 4rem 0;
   @include flex(space-around, center);
+  flex-wrap: wrap;
   &__image {
     height: 10rem;
     width: 10rem;
@@ -17,5 +18,6 @@
     margin-top: 2rem;
     font-size: 2rem;
     font-family: 'Style Script', 'Marck Script', sans-serif;
+    text-align: center;
   }
 }

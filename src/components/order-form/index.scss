@@ -1,45 +1,38 @@
 @import 'src/styles/common.scss';
-.order-form {
-  @include flex(space-between, center);
-  flex-direction: column;
-  font-family: 'Dancing Script', 'Marck Script', cursive;
 
-  &__info {
-    font-size: 3em;
-    color: $mainColor;
-    text-align: center;
-  }
-  &__label {
-    font-size: 2em;
-    margin-right: 2rem;
-  }
-  &__sort {
-    font-family: 'Dancing Script', 'Marck Script', cursive;
-    font-size: 2em;
-  }
-  &__group {
-    @include flex(space-between, center);
-    margin: 0.6rem 0;
-  }
-  &__textarea {
-    margin: 0.4rem 0;
-    font-family: 'Dancing Script', 'Marck Script', cursive;
-    font-size: 1.6em;
-    line-height: 1.4rem;
-    border: none;
-    border-bottom: 1px solid $lighterBlackColor;
-    outline: none;
-    width: 15rem;
-    &:focus {
-      border-bottom: 1px solid $mainColor;
+.order-form {
+  margin: 5rem 1rem 0 1rem;
+  @include flex(space-around, flex-start);
+  flex-wrap: wrap;
+  font-family: 'Dancing Script', 'Marck Script', cursive;
+  &__footer-container {
+    @include tablet {
+      & {
+        margin: 0 5rem;
+      }
     }
   }
+  &__info {
+    color: $mainColor;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  &__label {
+    font-size: 1.6em;
+  }
+  &__group {
+    @include flex(space-between, flex-end);
+  }
+  input[type='checkbox'] {
+    margin-top: 1.6rem;
+  }
   &__button {
-    @extend %button;
+    align-self: center;
+    flex-grow: 0.3;
+    border-radius: 12%;
+    background-color: $greenSuccessColor;
     font-family: 'Dancing Script', 'Marck Script', cursive;
-    background-color: $mainColor;
+    font-size: 4em;
     color: $whiteColor;
-    border-radius: 10%;
-    margin-bottom: 1rem;
   }
 }

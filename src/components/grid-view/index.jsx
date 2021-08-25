@@ -18,7 +18,7 @@ const GridView = ({ products }) => {
             <h1 className="food__name">{t(name)}</h1>
             <h3 className="food__price">
               {t('productPrice')}
-              {t(price)}
+              {price}
               {t('productPriceCurrency')}
             </h3>
           </div>

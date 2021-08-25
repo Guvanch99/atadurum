@@ -8,7 +8,7 @@ const Language = ({ lang, changeLanguageHandler }) => {
   return (
     <div className="language">
       <label htmlFor="language">
-        <i className="fas fa-globe language language__icon " />
+        <i className="fas fa-globe language__icon " />
       </label>
       <select
         className="language__select"
@@ -17,8 +17,12 @@ const Language = ({ lang, changeLanguageHandler }) => {
         value={lang}
         onChange={e => changeLanguageHandler(e)}
       >
-        <option value="en">{t('lang.en')}</option>
-        <option value="ru">{t('lang.ru')}</option>
+        <option className="language__option" value="en">
+          {t('lang.en')}
+        </option>
+        <option className="language__option" value="ru">
+          {t('lang.ru')}
+        </option>
       </select>
     </div>
   )

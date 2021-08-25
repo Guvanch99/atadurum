@@ -1,8 +1,13 @@
 @import 'src/styles/common.scss';
 .article-name {
   font-family: 'Dancing Script', 'Marck Script', cursive;
-  font-size: 2rem;
+  font-size: 3.2em;
   border-bottom: 1px solid $mainColor;
   text-align: center;
   margin-top: 1rem;
+  @include netbook {
+    & {
+      font-size: 2em;
+    }
+  }
 }

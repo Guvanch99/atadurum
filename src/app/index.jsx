@@ -11,7 +11,7 @@ import {
   About,
   SingleProduct,
   Login,
-  SignUp,
+  Register,
   Cart,
   CheckOut,
   Promotions
@@ -28,7 +28,7 @@ import {
   ROUTER_CHECKOUT
 } from '../constants'
 import { useTheme } from '../hooks'
-import { getFromLocaleStorage } from '../services/helpers'
+import { getFromLocaleStorage } from '../utils'
 import {
   countTotal,
   getMenuFromLocaleStorage
@@ -49,6 +49,7 @@ const App = () => {
     () => setSidebarVisibility(prevState => !prevState),
     []
   )
+
   const changeLanguageHandler = useCallback(
     e => {
       setLang(e.target.value)
@@ -94,7 +95,7 @@ const App = () => {
           <Route exact path={ROUTER_CART} component={Cart} />
           <Route exact path={ROUTER_PROMOTIONS} component={Promotions} />
           <Route exact path={ROUTER_LOGIN} component={Login} />
-          <Route exact path={ROUTER_SIGN_UP} component={SignUp} />
+          <Route exact path={ROUTER_SIGN_UP} component={Register} />
           <PrivateRoute exact path={ROUTER_CHECKOUT}>
             <CheckOut />
           </PrivateRoute>

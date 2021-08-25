@@ -2,26 +2,46 @@
 
 .navbar {
   @include flex(space-between, center);
+
   height: 8rem;
-  &__container {
+
+  &__header-container {
     @include flex(space-between, center);
     flex: 0.5;
   }
+
   &__logo {
     width: 6rem;
     height: 6rem;
     margin-left: 2rem;
+    @include tablet {
+      & {
+        display: none;
+      }
+    }
   }
-
   &__menu {
     @include flex(space-evenly, center);
     &_link {
       padding-left: 1rem;
     }
+    @include netbook {
+      & {
+        display: none;
+      }
+    }
   }
   &__hamburger {
     @extend %button;
     color: $mainColor;
+    display: none;
+
+    @include netbook {
+      & {
+        display: block;
+        margin-right: 1rem;
+      }
+    }
   }
 }
 .navbar_menu:first-child {

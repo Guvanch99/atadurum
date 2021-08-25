@@ -1,49 +1,67 @@
 @import 'src/styles/common.scss';
 
-.sort-container {
+.sort {
   @include flex(space-between, center);
+  @include tablet {
+    & {
+      flex-direction: column;
+    }
+  }
   margin-top: 1rem;
   &__views {
     display: inline-block;
     width: 2rem;
     height: 2rem;
-    .views__button {
+    &-button {
       border: none;
       background: transparent;
       cursor: pointer;
+      margin-left: 2rem;
+      @include tablet {
+        & {
+          margin: 0;
+        }
+      }
     }
-    .views__icon {
+    &-icon {
       font-size: 2rem;
       border: none;
       color: $mainColor;
     }
   }
-  &__buttons {
+  &-buttons {
     @include flex(space-between, center);
-    width: 40rem;
-    .sort__button {
+    max-width: 40rem;
+    margin: 0 1rem;
+
+    &__option {
       background: transparent;
       border: none;
       cursor: pointer;
-      padding: 0.5rem 2rem;
+      padding: 0.5rem 1rem;
       font-size: 2em;
       font-family: 'Dancing Script', 'Marck Script', sans-serif;
     }
   }
-  &__select {
-    .sort {
-      &__text {
-        text-transform: capitalize;
-        font-size: 2em;
-        font-family: 'Dancing Script', 'Marck Script', sans-serif;
+  &-form {
+    &__label {
+      text-transform: capitalize;
+      font-size: 2em;
+      font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      @include netbook {
+        font-size: 1.6em;
       }
-      &__input {
-        border-color: transparent;
-        font-family: 'Dancing Script', 'Marck Script', sans-serif;
-        font-size: 1rem;
-        text-transform: capitalize;
-        padding: 0.25rem 0.5rem;
-      }
+    }
+    &__select {
+      display: inline;
+      border-color: transparent;
+      font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      font-size: 1rem;
+      text-transform: capitalize;
+      padding: 0.25rem 0.5rem;
+    }
+    &__option {
+      font-family: 'Dancing Script', 'Marck Script', sans-serif;
     }
   }
 }

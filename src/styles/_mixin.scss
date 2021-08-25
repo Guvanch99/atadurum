@@ -3,3 +3,18 @@
   justify-content: $justify;
   align-items: $align;
 }
+@mixin netbook {
+  @media screen and (max-width: 61em) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and(max-width:48em) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and(max-width:30em) {
+    @content;
+  }
+}
