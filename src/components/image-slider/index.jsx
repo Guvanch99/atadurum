@@ -22,7 +22,13 @@ const ImageSlider = () => {
       {images.map(({ url, text }, index) => {
         return (
           index === current && (
-            <img key={index} className="slider__image" src={url} alt={text} />
+            <img
+              loading="lazy"
+              key={index}
+              className="slider__image"
+              src={url}
+              alt={text}
+            />
           )
         )
       })}

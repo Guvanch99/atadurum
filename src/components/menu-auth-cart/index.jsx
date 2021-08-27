@@ -25,10 +25,10 @@ const MenuAuthCart = ({ sidebarVisibilityToggle }) => {
           >
             {t(`menuAuthCart.${keyName}.name`)}
             <i className={`fas ${iconName} menu__list-icon`} />
+            {index === 0 && <span className="order-count">{totalItems}</span>}
           </NavLink>
         </li>
       ))}
-      <span className="order-count">{totalItems}</span>
     </ul>
   )
 }

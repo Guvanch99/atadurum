@@ -1,48 +1,9 @@
 {
   "users": [
-    {
-      "id": "ff3190b8-d0b5-4a2d-a40f-6eb7cb91bd0f",
-      "userName": "Guwanc",
-      "email": "awediyew@gmail.com",
-      "password": "Gubanch99",
-      "passwordConfirm": "Guvanch99"
-    },
-    {
-      "id": "64071e09-666a-4507-a1e5-15e36fe55674",
-      "userName": "hdsadas",
-      "email": "sadsa",
-      "password": "ZGFzZGFz"
-    },
-    {
-      "id": "28fdaa72-024f-4d1b-bee5-a207ffb57920",
-      "userName": "fdsfsdf",
-      "email": "dasdasdasdsfsf",
-      "password": "ZnNkZnNkZmRz"
-    },
-    {
-      "id": "ff72b4d0-282f-4ee8-9a1d-29cae7173ee9",
-      "userName": "dasdsa",
-      "email": "dasdsad",
-      "password": "c2Fkc2Fk"
-    },
-    {
-      "id": "7f52b4d2-35d6-4222-b839-16e68cd5c92f",
-      "userName": "dsadas",
-      "email": "sdsadas",
-      "password": "ZHNhZGFzZA=="
-    },
-    {
-      "id": "79f247e2-3c1d-4c60-bcd1-0f2d3750ca9a",
-      "userName": "dsadas",
-      "email": "2131",
-      "password": "ZGFzZGFz"
-    },
-    {
-      "id": "2e119e7c-b2d5-4802-b868-db4f18b9882d",
-      "userName": "dsadasd",
-      "email": "dasdas432423",
-      "password": "ZGFzZHNhZGFzZGFz"
-    }
+
+  ],
+  "orders":[
+
   ],
   "gallery": [
     {

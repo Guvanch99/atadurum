@@ -2,9 +2,11 @@
 
 .items-data {
   text-align: center;
+
   &:nth-child(even) {
     background: $lighterYellowColor;
   }
+
   &__image {
     width: 5rem;
     height: 5rem;

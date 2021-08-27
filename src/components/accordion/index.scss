@@ -9,7 +9,7 @@
 
   &__title {
     @include flex(space-between, center);
-    width: 27rem;
+    max-width: 27rem;
   }
   &__description {
     font-size: 2em;
@@ -27,9 +27,19 @@
         font-size: 2em;
       }
     }
+    @include mobile {
+      & {
+        font-size: 1.6em;
+      }
+    }
   }
   &__sign {
     font-size: 5em;
     color: $mainColor;
+    @include mobile {
+      & {
+        font-size: 3em;
+      }
+    }
   }
 }

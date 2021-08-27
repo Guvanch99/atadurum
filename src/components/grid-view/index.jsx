@@ -13,7 +13,7 @@ const GridView = ({ products }) => {
     <div className="grid">
       {products.map(({ id, name, src, price }) => (
         <div key={id} className="grid__container">
-          <img className="grid__image" src={src} alt={name} />
+          <img loading="lazy" className="grid__image" src={src} alt={name} />
           <div className="grid__info">
             <h1 className="food__name">{t(name)}</h1>
             <h3 className="food__price">

@@ -2,6 +2,9 @@
 
 .toggle {
   margin: -0.5rem 1rem 0 4rem;
+  @include mobile {
+    margin: -0.5rem 0 0 2.6rem;
+  }
   &__button {
     height: 0;
     width: 0;

@@ -3,17 +3,8 @@ import PropTypes from 'prop-types'
 
 import './index.scss'
 
-const Input = ({
-  name,
-  value,
-  label,
-  error,
-  type,
-  onChange,
-  required,
-  minLength,
-  maxLength
-}) => {
+const Input = ({ name, value, label, error, type, onChange, required }) => {
+  console.log('error', error)
   const inputRef = useRef()
   useEffect(() => {
     if (name === 'userName') {
@@ -36,8 +27,6 @@ const Input = ({
         autoComplete="off"
         placeholder={label}
         required={required}
-        minLength={minLength}
-        maxLength={maxLength}
       />
     </div>
   )
@@ -51,9 +40,7 @@ Input.propTypes = {
   error: PropTypes.string,
   type: PropTypes.string.isRequired,
   focus: PropTypes.bool,
-  required: PropTypes.bool.isRequired,
-  minLength: PropTypes.number,
-  maxLength: PropTypes.number.isRequired
+  required: PropTypes.bool.isRequired
 }
 
 export default Input

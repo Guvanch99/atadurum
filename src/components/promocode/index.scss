@@ -9,8 +9,15 @@
       flex-direction: column;
     }
   }
+
   &-form {
     @include flex(center, center);
+    @include mobile {
+      & {
+        margin-bottom: 1rem;
+        flex-direction: column;
+      }
+    }
     &__label {
       font-size: 4em;
       @include netbook {
@@ -33,6 +40,12 @@
       border-bottom: 1px solid $lighterGrayColor;
       &:focus {
         border-bottom: 1px solid $lighterBlackColor;
+      }
+
+      @include mobile {
+        & {
+          margin: 1rem 0;
+        }
       }
     }
     &__submit {

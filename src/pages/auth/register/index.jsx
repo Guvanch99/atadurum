@@ -1,13 +1,14 @@
 import { useState, useMemo } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
-import { isButtonDisabled, emptyFieldsWithErrors } from '../../../utils'
-import { ArticleName, Input } from '../../../components'
+import { isButtonDisabled } from '../../../utils'
+import { ArticleName, Input, PageLink } from '../../../components'
 import { createUser } from '../../../redux/auth/actionCreator'
+import { ROUTER_LOGIN } from '../../../constants'
 
 import '../index.scss'
 
@@ -15,29 +16,26 @@ const Register = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const { t } = useTranslation('translation')
-
+  const { userExist } = useSelector(state => state.auth)
   const [userCredentials, setUserCredentials] = useState({
     id: uuidv4(),
     userName: '',
     email: '',
-    password: '',
-    passwordConfirm: ''
+    password: ''
   })
   const [errors, setErrors] = useState({
-    userName: '',
-    email: '',
-    password: '',
-    passwordConfirm: ''
+    userNameError: '',
+    emailError: '',
+    passwordError: ''
   })
   const { userName, email, password } = userCredentials
   isButtonDisabled(
     userName,
     email,
     password,
-    errors.firstName,
-    errors.secondName,
-    errors.email,
-    errors.password
+    errors.userNameError,
+    errors.emailError,
+    errors.passwordError
   )
   const CredencialData = useMemo(
     () => [
@@ -45,86 +43,112 @@ const Register = () => {
         name: 'userName',
         value: userName,
         label: 'registration.labelUser',
-        error: errors.userName,
-        type: 'text',
-        minLength: 4,
-        maxLength: 50
+        error: errors.userNameError,
+        type: 'text'
       },
       {
         name: 'email',
         value: email,
         label: 'registration.email',
-        error: errors.email,
-        type: 'email',
-        minLength: 15,
-        maxLength: 100
+        error: errors.emailError,
+        type: 'email'
       },
       {
         name: 'password',
         value: password,
         label: 'registration.password',
-        error: errors.password,
-        type: 'password',
-        minLength: 6,
-        maxLength: 100
+        error: errors.passwordError,
+        type: 'password'
       }
     ],
-    [userName, email, password, errors.userName, errors.email, errors.password]
+    [
+      userName,
+      email,
+      password,
+      errors.userNameError,
+      errors.emailError,
+      errors.passwordError
+    ]
   )
+  const validate = () => {
+    const { userName, email, password } = userCredentials
+    const { userNameError, emailError, passwordError } = errors
+    console.log(userNameError, emailError, passwordError)
+    if (!userName || userName.length <= 4) {
+      setErrors({
+        ...errors,
+        userNameError: 'userNameError'
+      })
+    }
+
+    const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/
+    if (!email || reg.test(email) === false) {
+      setErrors({ ...errors, emailError: 'emailError' })
+    }
+
+    if (!password || password.length < 6) {
+      setErrors({
+        ...errors,
+        passwordError: 'passwordError'
+      })
+    }
+
+    if (emailError || userNameError || passwordError) {
+      console.log('errrrrr', emailError, userName, passwordError)
+
+      setErrors({ userNameError, emailError, passwordError })
+      return false
+    }
+
+    return true
+  }
+
   const handleChange = e => {
     const { name, value } = e.target
     setErrors({ ...errors, [name]: '' })
     setUserCredentials({ ...userCredentials, [name]: value })
   }
-  emptyFieldsWithErrors(userCredentials)
 
   const register = e => {
     e.preventDefault()
-    const { id, userName, email, password } = userCredentials
-    const getemptyFieldsWithErrors = emptyFieldsWithErrors(userCredentials)
-    const areFildsWithErrorsEmpty = !!Object.keys(getemptyFieldsWithErrors)
-      .length
 
-    if (areFildsWithErrorsEmpty) {
-      setErrors({ ...errors, ...emptyFieldsWithErrors })
-    } else {
+    const validation = validate()
+    console.log('v', validation)
+    if (!validation) {
       const updatedUser = {
-        id,
-        userName,
-        email,
+        ...userCredentials,
         password: window.btoa(password)
       }
-      dispatch(createUser(updatedUser))
-      history.goBack()
+      dispatch(createUser(updatedUser, history))
+    } else {
     }
   }
   return (
     <>
-      <ArticleName name="SingUp" />
+      <ArticleName name={t('articleNames.signUp')} />
+      {userExist && (
+        <div>
+          <h1 className="user__error">{t('registered')}</h1>
+          <PageLink to={ROUTER_LOGIN}>{t('pageLink.login')}</PageLink>
+        </div>
+      )}
       <form className="form">
-        {CredencialData.map(
-          (
-            { name, value, label, error, type, minLength, maxLength },
-            index
-          ) => (
-            <Input
-              key={index}
-              name={name}
-              value={value}
-              label={t(label)}
-              error={error}
-              type={type}
-              onChange={handleChange}
-              required={true}
-              minLength={minLength}
-              maxLength={maxLength}
-            />
-          )
-        )}
+        {CredencialData.map(({ name, value, label, error, type }, index) => (
+          <Input
+            key={index}
+            name={name}
+            value={value}
+            label={t(label)}
+            error={t(error)}
+            type={type}
+            onChange={handleChange}
+            required={true}
+          />
+        ))}
         <button
           type="submit"
           onClick={register}
-          className={classNames('form__button ', 'button', {
+          className={classNames('form__button ', {
             disabled: isButtonDisabled()
           })}
         >

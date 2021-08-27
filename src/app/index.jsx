@@ -65,6 +65,12 @@ const App = () => {
   }, [themeDark])
 
   useEffect(() => {
+    document.body.style = !isSidebarVisible
+      ? 'overflow:hidden'
+      : 'overflow-x:hidden'
+  }, [isSidebarVisible])
+
+  useEffect(() => {
     const cart = getFromLocaleStorage('cart')
     const gift = getFromLocaleStorage('gift')
     dispatch(getMenuFromLocaleStorage({ cart, gift }))
@@ -74,11 +80,13 @@ const App = () => {
     localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(countTotal())
   }, [cart, dispatch])
+
   const Bar = isSidebarVisible ? Navbar : Sidebar
   return (
     <div
       className={classNames('container', {
-        'is-darkGreen': themeDark
+        'is-darkGreen': themeDark,
+        'is-sidebar': !isSidebarVisible
       })}
     >
       <Bar

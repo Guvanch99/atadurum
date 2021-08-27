@@ -3,6 +3,7 @@
 .promocode-gift {
   @include flex(center, center);
   flex-direction: column;
+
   &__text {
     font-size: 2em;
   }

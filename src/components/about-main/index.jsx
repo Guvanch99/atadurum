@@ -11,7 +11,7 @@ const AboutMain = () => {
 
   return (
     <div className="main-about">
-      <img className="main-about__image" src={logo} alt="chef" />
+      <img loading="lazy" className="main-about__image" src={logo} alt="chef" />
       <div className="main-about__item">
         {whyWeKeys.map(key => (
           <h1 key={key} className="main-about__title">

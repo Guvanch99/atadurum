@@ -40,6 +40,11 @@
     @include flex(center, center);
     flex-direction: column;
     margin-right: 1rem;
+    @include mobile {
+      & {
+        margin-left: 2rem;
+      }
+    }
   }
   &__time {
     margin: 1rem 0;

@@ -18,20 +18,16 @@ export const isButtonDisabled = (
   userName,
   userEmail,
   userPassword,
-  userPasswordConfirm,
   userErrorUserName,
   userErrorEmail,
-  userErrorPassword,
-  userErrorPasswordConfirm
+  userErrorPassword
 ) =>
   !userName ||
   !userEmail ||
   !userPassword ||
-  !userPasswordConfirm ||
   userErrorUserName ||
   userErrorEmail ||
-  userErrorPassword ||
-  userErrorPasswordConfirm
+  userErrorPassword
 
 export const emptyFieldsWithErrors = userEnteredData => {
   let emptyFields = {}

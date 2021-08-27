@@ -1,5 +1,12 @@
 @import 'src/styles/common.scss';
 
+.sign-up__error {
+  font-size: 2em;
+  color: $lighterRedColor;
+  font-family: 'Dancing Script', 'Marck Script', sans-serif;
+  text-align: center;
+  margin-top: 1rem;
+}
 .form {
   @include flex(space-evenly, center);
   flex-direction: column;

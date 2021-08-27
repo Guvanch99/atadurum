@@ -24,6 +24,14 @@
 .arrow {
   position: absolute;
   @extend %sliderIcon;
+  @include mobile {
+    & {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.6rem;
+      top: 60%;
+    }
+  }
   &-rigth {
     right: 12rem;
     @include tablet {

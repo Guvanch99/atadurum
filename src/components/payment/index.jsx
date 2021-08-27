@@ -1,14 +1,17 @@
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
-import { ROUTER_CHECKOUT } from '../../constants'
+import { ROUTER_CHECKOUT, ROUTER_SIGN_UP } from '../../constants'
 import { PageLink } from '..'
 
 import './index.scss'
 
 const Payment = () => {
   const { t } = useTranslation('translation')
-  const { totalAmount } = useSelector(state => state.cart)
+  const {
+    cart: { totalAmount },
+    auth: { user }
+  } = useSelector(state => state)
   const shippingFee = 2.5
   let total = totalAmount + shippingFee
 
@@ -21,7 +24,14 @@ const Payment = () => {
       <hr />
       <h1 className="payment__total"> {t('payment.orderTotal', { total })}</h1>
 
-      <PageLink name={t('pageLink.goToCheckout')} direction={ROUTER_CHECKOUT} />
+      {true ? (
+        <PageLink
+          name={t('pageLink.goToCheckout')}
+          direction={ROUTER_CHECKOUT}
+        />
+      ) : (
+        <PageLink name={t('pageLink.signUp')} direction={ROUTER_SIGN_UP} />
+      )}
     </div>
   )
 }

@@ -16,8 +16,13 @@
   &__title {
     color: $mainColor;
     margin-top: 2rem;
-    font-size: 2rem;
+    font-size: 3.2em;
     font-family: 'Style Script', 'Marck Script', sans-serif;
     text-align: center;
+    @include mobile {
+      & {
+        font-size: 2em;
+      }
+    }
   }
 }

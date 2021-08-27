@@ -17,7 +17,7 @@ const Sidebar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
   const sideBarLogo = (
     <NavLink to={ROUTER_HOME}>
       <div>
-        <img className="logo" src={logo} alt="durum" />
+        <img loading="lazy" className="logo" src={logo} alt="durum" />
       </div>
     </NavLink>
   )
@@ -26,10 +26,10 @@ const Sidebar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
       <ul className="sidebar__menu">
         {sideBarLogo}
         {links.map(({ url, keyName }, index) => (
-          <li className="sidebar__menu_list" key={index}>
+          <li className="sidebar__menu-list" key={index}>
             <NavLink
               onClick={sidebarVisibilityToggle}
-              className="sidebar__menu_link"
+              className="sidebar__menu-link"
               to={url}
             >
               {t(`links.${keyName}.name`)}

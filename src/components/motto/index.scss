@@ -13,6 +13,12 @@
         height: 25rem;
       }
     }
+    @include mobile {
+      & {
+        width: 20rem;
+        height: 20rem;
+      }
+    }
   }
 
   &__text {

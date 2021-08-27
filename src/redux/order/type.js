@@ -1,0 +1,3 @@
+export const ORDER = 'ORDER'
+
+export const CLEAR_LOCAL_STORAGE = 'CLEAR_LOCAL_STORAGE'
