@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
+
 import { ListView, GridView } from '..'
 
 import './index.scss'
@@ -12,7 +13,8 @@ const ProductsList = ({ view }) => {
   return <ViewBar products={allProducts} />
 }
 
+export default ProductsList
+
 ProductsList.propTypes = {
   view: PropTypes.bool.isRequired
 }
-export default ProductsList

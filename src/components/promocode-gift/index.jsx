@@ -18,10 +18,12 @@ class PromoCodeGift extends Component {
     )
   }
 }
+
+export default withTranslation()(PromoCodeGift)
+
 PromoCodeGift.propTypes = {
   present: PropTypes.object.isRequired,
   src: PropTypes.string,
   name: PropTypes.string,
   description: PropTypes.string
 }
-export default withTranslation()(PromoCodeGift)

@@ -6,41 +6,41 @@
   margin: 2rem 0;
 
   @include tablet {
-    & {
-      align-items: center;
-      justify-content: center;
-    }
+    align-items: center;
+    margin: 0;
   }
+
   &__container {
     @include flex(space-evenly, center);
 
     @include tablet {
-      & {
-        @include flex(center, center);
-        flex-direction: column;
-      }
+      flex-direction: column;
     }
   }
+
   &__image {
-    width: 25rem;
-    height: 25rem;
+    width: 15rem;
+    height: 15rem;
     background: $whiteColor;
     margin: 0.5rem 2rem 0.5rem 0;
+
     @include tablet {
-      & {
-        margin: 0;
-      }
+      margin: 0 auto;
     }
   }
+
   &__info {
     @include flex(space-evenly, flex-start);
     flex-direction: column;
     height: 19rem;
     padding-left: 2rem;
+
     @include tablet {
-      & {
-        align-items: center;
-        justify-content: space-evenly;
+      align-items: center;
+      justify-content: space-around;
+      padding-left: 0;
+      .food__description {
+        display: none;
       }
     }
   }

@@ -3,7 +3,7 @@
 .modal {
   @include flex(space-around, center);
   flex-direction: column;
-  font-family: 'Style Script', 'Marck Script', sans-serif;
+  @include fontFamily($fontStyleScript);
   width: 30rem;
   height: 20rem;
   background-color: $lighterGrayColor;
@@ -13,9 +13,10 @@
     font-size: 5em;
     color: $greenSuccessColor;
   }
+
   &__button {
     @extend %button;
-    font-family: 'Style Script', 'Marck Script', cursive;
+    @include fontFamily($fontStyleScript);
     color: $whiteColor;
     background-color: $lighterRedColor;
   }

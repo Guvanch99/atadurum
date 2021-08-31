@@ -1,9 +1,15 @@
-import { SET_USER, USER_LOGOUT, USER_EXIST } from './type'
+import {
+  SET_USER,
+  LOGOUT,
+  USER_EXIST,
+  USER_NOT_FOUND,
+  LOGIN_USER
+} from './type'
 
 const initialState = {
   user: null,
   userExist: false,
-  userNotExist: false
+  userNotFound: false
 }
 
 export const authReducer = (state = initialState, { type, payload }) => {
@@ -12,8 +18,12 @@ export const authReducer = (state = initialState, { type, payload }) => {
       return { ...state, user: payload }
     case USER_EXIST:
       return { ...state, userExist: true }
-
-    case USER_LOGOUT:
+    case USER_NOT_FOUND:
+      return { ...state, userNotFound: true }
+    case LOGIN_USER: {
+      return { ...state, user: payload }
+    }
+    case LOGOUT:
       return { ...state, user: null }
     default:
       return state

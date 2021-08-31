@@ -14,7 +14,6 @@ const CartContent = () => {
 
   const clearCartHandler = () => {
     dispath(clearCart())
-    localStorage.clear('cart')
   }
 
   return (
@@ -23,13 +22,16 @@ const CartContent = () => {
       <hr />
       {gift ? <CartGift gift={gift} /> : null}
 
-      <div className="link-container">
+      <div className="cart-content__links">
         <PageLink
           direction={ROUTER_MENU}
           name={t('pageLink.continueShopping')}
         />
 
-        <button onClick={clearCartHandler} className="cart-content__clear">
+        <button
+          onClick={clearCartHandler}
+          className="cart-content__buttonClear"
+        >
           {t('clear')}
         </button>
       </div>

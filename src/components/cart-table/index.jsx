@@ -13,7 +13,9 @@ const CartTable = () => {
   const { cart } = useSelector(state => state.cart)
 
   let tableHeadRows = tableNameKeys.map(key => (
-    <th key={key}>{t(`cartTable.${key}`)}</th>
+    <th key={key}>
+      <h4 style={{ margin: '0 0.4rem' }}>{t(`cartTable.${key}`)}</h4>
+    </th>
   ))
 
   let tableBody = cart.map(item => <CartItems key={item.id} {...item} />)

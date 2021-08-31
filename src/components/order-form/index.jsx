@@ -1,19 +1,32 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch } from 'react-redux'
-import { useHistory } from 'react-router'
-import classNames from 'classnames'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { Input, Modal } from '..'
+import { DB } from '../../core/axios'
+import { clearOrder } from '../../redux/cart/actionCreators'
 
 import './index.scss'
 
 const OrderForm = () => {
-  const dispatch = useDispatch()
-  const history = useHistory()
   const { t } = useTranslation('translation')
+  const {
+    auth: { user },
+    cart: { cart, gift }
+  } = useSelector(state => state)
 
-  const [userOrder, setUserOrder] = useState({
+  const dispatch = useDispatch()
+  const [userInfo, setUserInfo] = useState({
+    userName: user.userName,
+    email: user.email,
+    phone: '',
+    street: '',
+    house: '',
+    entrance: '',
+    storey: '',
+    payment: 'cash'
+  })
+  const [errors, setErrors] = useState({
     userName: '',
     email: '',
     phone: '',
@@ -21,37 +34,48 @@ const OrderForm = () => {
     house: '',
     entrance: '',
     storey: '',
-    payment: 'cash',
-    paymentActive: true
-  })
-  const [errors, setErrors] = useState({
-    userNameError: '',
-    emailError: '',
-    phoneError: '',
-    streetError: '',
-    houseError: '',
-    entranceError: '',
-    storeyError: '',
     payment: 'cash'
   })
   const [isModalVisible, setIsModalVisible] = useState(false)
 
-  const {
-    userName,
-    email,
-    phone,
-    street,
-    house,
-    entrance,
-    storey,
-    paymentActive
-  } = userOrder
-  const orderSubmit = e => {
-    e.preventDefault()
-    setIsModalVisible(true)
+  const { userName, email, phone, street, house, entrance, storey } = userInfo
 
-    localStorage.removeItem('cart')
+  const isButtonDisabled =
+    !userName ||
+    !email ||
+    !phone ||
+    !street ||
+    !house ||
+    !entrance ||
+    !storey ||
+    errors.userName ||
+    errors.email ||
+    errors.phone ||
+    errors.street ||
+    errors.house ||
+    errors.entrance ||
+    errors.storey
+  const phoneValidation = () => {
+    !Number.isInteger(Number.parseInt(phone)) &&
+      setErrors({ ...errors, phone: 'orderForm.orderErrors.phone' })
   }
+  const streetValidation = () => {
+    street.length < 3 &&
+      setErrors({ ...errors, street: 'orderForm.orderErrors.street' })
+  }
+  const houseValidation = () => {
+    !Number.isInteger(Number.parseInt(house)) &&
+      setErrors({ ...errors, house: 'orderForm.orderErrors.house' })
+  }
+  const entranceValidation = () => {
+    !Number.isInteger(Number.parseInt(entrance)) &&
+      setErrors({ ...errors, entrance: 'orderForm.orderErrors.entrance' })
+  }
+  const storeyValidation = () => {
+    !Number.isInteger(Number.parseInt(storey)) &&
+      setErrors({ ...errors, storey: 'orderForm.orderErrors.storey' })
+  }
+  /* eslint-disable */
   const orderData = useMemo(
     () => ({
       mainInfo: [
@@ -59,28 +83,25 @@ const OrderForm = () => {
           name: 'userName',
           value: userName,
           label: 'orderForm.mainInfo.user',
-          error: errors.userNameError,
+          error: errors.userName,
           type: 'text',
-          minLength: 4,
-          maxLength: 50
+          disabled: true
         },
         {
           name: 'email',
           value: email,
           label: 'orderForm.mainInfo.email',
-          error: errors.emailError,
+          error: errors.email,
           type: 'email',
-          minLength: 15,
-          maxLength: 100
+          disabled: true
         },
         {
           name: 'phone',
           value: phone,
           label: 'orderForm.mainInfo.phone',
-          error: errors.phoneError,
-          type: 'phone',
-          minLength: 13,
-          maxLength: 13
+          error: errors.phone,
+          type: 'text',
+          functionError: phoneValidation
         }
       ],
       address: [
@@ -88,45 +109,44 @@ const OrderForm = () => {
           name: 'street',
           value: street,
           label: 'orderForm.addressInfo.street',
-          error: errors.streetError,
+          error: errors.street,
           type: 'text',
-          minLength: 3,
-          maxLength: 100
+          functionError: streetValidation
         },
         {
           name: 'house',
           value: house,
           label: 'orderForm.addressInfo.house',
-          error: errors.houseError,
+          error: errors.house,
           type: 'text',
-          maxLength: 50
+          functionError: houseValidation
         },
         {
           name: 'entrance',
           value: entrance,
           label: 'orderForm.addressInfo.entrance',
-          error: errors.entranceError,
+          error: errors.entrance,
           type: 'text',
-          maxLength: 50
+          functionError: entranceValidation
         },
         {
           name: 'storey',
           value: storey,
           label: 'orderForm.addressInfo.storey',
-          error: errors.storeyError,
+          error: errors.storey,
           type: 'text',
-          maxLength: 50
+          functionError: storeyValidation
         }
       ],
       payment: [
         {
           label: 'orderForm.paymentInfo.paymentCash',
-          name: 'cash',
+          name: 'payment',
           value: 'cash'
         },
         {
           label: 'orderForm.paymentInfo.paymentCard',
-          name: 'card',
+          name: 'payment',
           value: 'card'
         }
       ]
@@ -150,47 +170,38 @@ const OrderForm = () => {
   )
   const handleChange = e => {
     const { name, value } = e.target
-    setUserOrder({ ...userOrder, [name]: value })
+    errors[name] && setErrors({ ...errors, [name]: '' })
+    setUserInfo({ ...userInfo, [name]: value })
   }
-  const validate = () => {
-    const { phone, street, house, entrance, storey } = userOrder
-    const { phoneError, storeyError, streetError, entranceError, houseError } =
-      errors
-
-    if (!phone || phone.length < 13) {
-      setErrors({ ...errors, phoneError: 'orderForm.orderErrors.phone' })
-    }
-    if (!storey) {
-      setErrors({ ...errors, storeyError: 'orderForm.orderErrors.storey' })
-    }
-    if (!street) {
-      setErrors({ ...errors, streetError: 'orderForm.orderErrors.street' })
-    }
-    if (!entrance) {
-      setErrors({ ...errors, entranceError: 'orderForm.orderErrors.entrance' })
-    }
-    if (!house) {
-      setErrors({ ...errors, houseError: 'orderForm.orderErrors.house' })
-    }
-    if (
-      phoneError ||
-      storeyError ||
-      streetError ||
-      entranceError ||
-      houseError
-    ) {
-      setErrors({
-        phoneError,
-        storeyError,
-        streetError,
-        entranceError,
-        houseError
-      })
-      return false
-    }
-
-    return true
+  const order = async orderData => {
+    await DB.post('/orders', orderData)
   }
+  const orderMenu = e => {
+    e.preventDefault()
+    var m = new Date()
+    var dateString =
+      m.getUTCFullYear() +
+      '/' +
+      (m.getUTCMonth() + 1) +
+      '/' +
+      m.getUTCDate() +
+      ' ' +
+      m.getUTCHours() +
+      ':' +
+      m.getUTCMinutes() +
+      ':' +
+      m.getUTCSeconds()
+    const userBought = {
+      time: dateString,
+      cart,
+      gift,
+      ...userInfo
+    }
+    order(userBought)
+    dispatch(clearOrder())
+    setIsModalVisible(true)
+  }
+
   return (
     <>
       {isModalVisible ? (
@@ -203,7 +214,7 @@ const OrderForm = () => {
             <h1 className="order-form__info">{t('orderForm.main')}</h1>
             {orderData.mainInfo.map(
               (
-                { name, value, label, error, type, maxLength, minLength },
+                { name, value, label, error, type, functionError, disabled },
                 index
               ) => (
                 <Input
@@ -215,8 +226,8 @@ const OrderForm = () => {
                   type={type}
                   required={true}
                   onChange={handleChange}
-                  maxLength={maxLength}
-                  minLength={minLength}
+                  handleBlur={functionError}
+                  disabled={disabled}
                 />
               )
             )}
@@ -224,15 +235,17 @@ const OrderForm = () => {
           <div className="order-form__body-container">
             <h1 className="order-form__info">{t('orderForm.address')}</h1>
             {orderData.address.map(
-              ({ name, value, label, error, type }, index) => (
+              ({ name, value, label, error, type, functionError }, index) => (
                 <Input
                   key={index}
                   name={name}
                   value={value}
                   label={t(label)}
-                  error={error}
+                  error={t(error)}
+                  required={true}
                   type={type}
                   onChange={handleChange}
+                  handleBlur={functionError}
                 />
               )
             )}
@@ -245,23 +258,24 @@ const OrderForm = () => {
                 <label className="order-form__label">{t(label)}</label>
                 <input
                   onChange={e =>
-                    setUserOrder({
-                      ...userOrder,
+                    setUserInfo({
+                      ...userInfo,
                       payment: e.target.value
                     })
                   }
                   value={value}
                   type="radio"
                   name={name}
-                  id={name}
+                  id={value}
+                  defaultChecked={index === 0 && true}
                 />
               </div>
             ))}
           </div>
           <button
-            type="submit"
-            onClick={orderSubmit}
-            className="order-form__button"
+            onClick={orderMenu}
+            className="order__button"
+            disabled={isButtonDisabled}
           >
             {t('orderForm.orderButton')}
           </button>

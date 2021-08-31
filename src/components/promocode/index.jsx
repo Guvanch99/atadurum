@@ -11,7 +11,6 @@ import './index.scss'
 class PromoCode extends Component {
   state = {
     promocode: '',
-    entered: false,
     error: false,
     randomQuote: ''
   }
@@ -19,11 +18,11 @@ class PromoCode extends Component {
   promocodeSubmit = e => {
     e.preventDefault()
     if (this.state.promocode.toUpperCase() === 'HALYAVA') {
-      let id = Math.floor(Math.random() * 17)
+      let id = Math.floor(Math.random() * 16)
       this.props.getFreeMeal(id)
-      this.setState({ entered: true, promocode: '' })
+      this.setState({ promocode: '' })
     } else {
-      this.setState({ error: true })
+      this.setState({ error: true, promocode: '' })
     }
   }
   async componentDidMount() {
@@ -34,8 +33,8 @@ class PromoCode extends Component {
   }
 
   render() {
-    const { entered, promocode, error, randomQuote } = this.state
-    const { gift, t } = this.props
+    const { promocode, error, randomQuote } = this.state
+    const { promocodeUsed, gift, t } = this.props
     return (
       <>
         {!randomQuote ? <Spinner /> : <Quote randomQuote={randomQuote} />}
@@ -55,11 +54,12 @@ class PromoCode extends Component {
                   : t('promoCode.placeholderDefault')
               }
             />
+
             <button
-              disabled={entered || gift}
+              disabled={promocodeUsed || gift}
               className="promocode-form__submit"
             >
-              {entered || gift
+              {promocodeUsed || gift
                 ? t('promoCode.buttonDisabled')
                 : t('promoCode.buttonSubmit')}
             </button>
@@ -78,8 +78,8 @@ function mapDispatchToProps(dispatch) {
   }
 }
 function mapStateToProps(state) {
-  const gift = state.cart.gift
-  return { gift }
+  const { gift, promocodeUsed } = state.cart
+  return { gift, promocodeUsed }
 }
 
 export default withTranslation()(

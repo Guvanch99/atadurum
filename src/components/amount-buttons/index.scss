@@ -3,28 +3,48 @@
 .amount {
   width: 15rem;
   @include flex(space-evenly, center);
-  font-family: 'Dancing Script', cursive;
+  @include fontFamily($fontDancingScript);
 
   &__sign {
     @extend %button;
-    font-family: 'Dancing Script', cursive;
+    @include fontFamily($fontDancingScript);
     color: $mainColor;
     font-size: 6.4em;
+
+    @include mobile {
+      font-size: 4em;
+    }
   }
+
   &__counter {
     font-size: 4.8em;
+
+    @include mobile {
+      font-size: 3em;
+    }
   }
 }
+
 .amount-for-table {
   @include flex(space-around, center);
-  font-family: 'Dancing Script', 'Marck Script', cursive;
+  @include fontFamily($fontDancingScript);
+
   &__sign {
     @extend %button;
     padding: 0;
     font-size: 1.6em;
-    font-family: 'Dancing Script', 'Marck Script', cursive;
+    @include fontFamily($fontDancingScript);
+
+    @include mobile {
+      font-size: 1.2em;
+    }
   }
+
   &__counter {
     font-size: 1.6em;
+
+    @include mobile {
+      font-size: 1.2em;
+    }
   }
 }

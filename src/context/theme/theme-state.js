@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import ThemeContext from './theme-context'
-//todo theme
+
 const ThemeState = ({ children }) => {
   const [themeDark, setThemeDark] = useState(false)
   const changeThemeDark = () => setThemeDark(!themeDark)
+  console.log('th', themeDark)
+  useEffect(() => {
+    localStorage.getItem('theme') &&
+      setThemeDark(JSON.parse(localStorage.getItem('theme')))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('theme', JSON.stringify(themeDark))
+  }, [themeDark])
 
   return (
     <ThemeContext.Provider value={{ themeDark, changeThemeDark }}>

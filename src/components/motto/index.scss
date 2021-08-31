@@ -3,21 +3,20 @@
 .motto {
   @include flex(space-evenly, center);
   flex-wrap: wrap;
+
   &__image {
     margin-top: 1rem;
     width: 40rem;
     height: 30rem;
+
     @include tablet {
-      & {
-        width: 30rem;
-        height: 25rem;
-      }
+      width: 30rem;
+      height: 25rem;
     }
+
     @include mobile {
-      & {
-        width: 20rem;
-        height: 20rem;
-      }
+      width: 20rem;
+      height: 20rem;
     }
   }
 
@@ -27,26 +26,30 @@
     color: $whiteColor;
     margin-right: 1rem;
     text-align: center;
+
     &-main {
-      font-family: 'Style Script', 'Marck Script', cursive;
+      @include fontFamily($fontStyleScript);
       padding-bottom: 2rem;
       font-size: 3.2em;
       color: $lighterRedColor;
+
       @include tablet {
-        & {
-          font-size: 2em;
-        }
+        font-size: 2em;
       }
     }
+
     &-secondary {
-      font-family: 'Dancing Script', 'Marck Script', cursive;
+      @include fontFamily($fontDancingScript);
       font-size: 3.2em;
       color: $lighterRedColor;
       text-align: center;
+
       @include tablet {
-        & {
-          font-size: 2.6em;
-        }
+        font-size: 2.6em;
+      }
+
+      @include mobile {
+        margin-bottom: 1rem;
       }
     }
   }

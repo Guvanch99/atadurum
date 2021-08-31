@@ -25,14 +25,14 @@ import {
   ROUTER_CART,
   ROUTER_LOGIN,
   ROUTER_SIGN_UP,
-  ROUTER_CHECKOUT
+  ROUTER_CHECKOUT,
+  DARK_GREEN_COLOR,
+  WHITE_COLOR,
+  OVERFLOW_HIDDEN,
+  OVERFLOW_X_HIDDEN
 } from '../constants'
 import { useTheme } from '../hooks'
-import { getFromLocaleStorage } from '../utils'
-import {
-  countTotal,
-  getMenuFromLocaleStorage
-} from '../redux/cart/actionCreators'
+import { countTotal } from '../redux/cart/actionCreators'
 
 import './index.scss'
 
@@ -43,7 +43,6 @@ const App = () => {
   const { cart } = useSelector(state => state.cart)
 
   const [isSidebarVisible, setSidebarVisibility] = useState(true)
-  const [lang, setLang] = useState('en')
 
   const sidebarVisibilityToggle = useCallback(
     () => setSidebarVisibility(prevState => !prevState),
@@ -52,32 +51,21 @@ const App = () => {
 
   const changeLanguageHandler = useCallback(
     e => {
-      setLang(e.target.value)
       i18n.changeLanguage(e.target.value)
     },
     [i18n]
   )
 
-  useEffect(() => {
-    const darkgreenColor = '#1d3c45'
-    const whiteColor = '#fff'
-    document.body.style.background = themeDark ? darkgreenColor : whiteColor
-  }, [themeDark])
+  document.body.style.background = themeDark ? DARK_GREEN_COLOR : WHITE_COLOR
 
   useEffect(() => {
     document.body.style = !isSidebarVisible
-      ? 'overflow:hidden'
-      : 'overflow-x:hidden'
+      ? OVERFLOW_HIDDEN
+      : OVERFLOW_X_HIDDEN
+    window.scrollTo(0, 0)
   }, [isSidebarVisible])
 
   useEffect(() => {
-    const cart = getFromLocaleStorage('cart')
-    const gift = getFromLocaleStorage('gift')
-    dispatch(getMenuFromLocaleStorage({ cart, gift }))
-  }, [dispatch])
-
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart))
     dispatch(countTotal())
   }, [cart, dispatch])
 
@@ -91,10 +79,9 @@ const App = () => {
     >
       <Bar
         sidebarVisibilityToggle={sidebarVisibilityToggle}
-        lang={lang}
         changeLanguageHandler={changeLanguageHandler}
       />
-      <main>
+      <main className="main">
         <Switch>
           <Route exact path={ROUTER_HOME} component={Home} />
           <Route exact path={ROUTER_MENU} component={Menu} />

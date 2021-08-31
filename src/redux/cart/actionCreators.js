@@ -6,8 +6,9 @@ import {
   COUNT_CART_TOTALS,
   REMOVE_PRODUCT,
   TOGGLE_CART_PRODUCT_AMOUNT,
-  GET_FROM_LOCALE_STORAGE,
-  GET_PRESENT
+  GET_PRESENT,
+  CLEAR_ORDER,
+  PROMOCODE_USED
 } from './type'
 
 export const addToCart = payload => ({
@@ -29,15 +30,13 @@ export const toggleAmount = payload => ({
   payload
 })
 
-export const getMenuFromLocaleStorage = payload => ({
-  type: GET_FROM_LOCALE_STORAGE,
-  payload
-})
+export const clearOrder = () => ({ type: CLEAR_ORDER })
 
 export const getPresent = payload => ({
   type: GET_PRESENT,
   payload
 })
+export const userPromocodeUsed = () => ({ type: PROMOCODE_USED })
 
 export const getPresentPromo = id => dispatch => {
   DB(`/all-products?id=${id}`).then(({ data }) => {
@@ -52,6 +51,7 @@ export const getPresentPromo = id => dispatch => {
       type
     }
     dispatch(getPresent(payload))
-    localStorage.setItem('gift', JSON.stringify(payload))
+    dispatch(userPromocodeUsed())
+    dispatch(countTotal())
   })
 }

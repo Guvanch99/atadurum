@@ -5,9 +5,9 @@ import PropTypes from 'prop-types'
 
 import { MenuAuthCart, ToggleButton, Language } from '..'
 import { DATA } from '../../data'
+import { ROUTER_HOME } from '../../constants'
 
 import './index.scss'
-import { ROUTER_HOME } from '../../constants'
 
 const { logo, links } = DATA
 
@@ -45,10 +45,11 @@ const Navbar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
     </nav>
   )
 }
+
+export default memo(Navbar)
+
 Navbar.propTypes = {
   sidebarVisibilityToggle: PropTypes.func.isRequired,
   lang: PropTypes.string,
   changeLanguageHandler: PropTypes.func
 }
-
-export default memo(Navbar)

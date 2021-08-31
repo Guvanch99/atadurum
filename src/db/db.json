@@ -1,9 +1,45 @@
 {
   "users": [
-
+    {
+      "id": "32ed304f-1d02-402f-b189-676241f8fe03",
+      "userName": "Guwanc",
+      "email": "awed@gmail.com",
+      "password": "R3V2YW5jaDk5"
+    }
   ],
-  "orders":[
-
+  "orders": [
+    {
+      "time": "2021/8/31 20:7:47",
+      "cart": [
+        {
+          "id": 1,
+          "name": "products.1.name",
+          "price": 10,
+          "amount": 1,
+          "src": "https://i.ibb.co/vhs7GF2/kombo-cow.jpg",
+          "type": "ADD_TO_CART",
+          "subTotal": 10
+        }
+      ],
+      "gift": {
+        "id": 8,
+        "name": "products.8.name",
+        "src": "https://i.ibb.co/BC88NNp/Doner-bbq.png",
+        "amount": 1,
+        "price": 0,
+        "description": "products.8.description",
+        "type": "durum"
+      },
+      "userName": "Guwanc",
+      "email": "awed@gmail.com",
+      "phone": "259682052",
+      "street": "Tavlay42",
+      "house": "2",
+      "entrance": "3",
+      "storey": "5",
+      "payment": "card",
+      "id": 1
+    }
   ],
   "gallery": [
     {

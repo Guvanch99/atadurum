@@ -5,6 +5,7 @@ import './index.scss'
 
 const ToggleButton = () => {
   const { themeDark, changeThemeDark } = useTheme()
+
   return (
     <div className="toggle">
       <input

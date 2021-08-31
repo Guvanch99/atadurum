@@ -13,10 +13,11 @@ const PageLink = ({ direction, name, eventHandler }) => (
     {name}
   </NavLink>
 )
+
+export default memo(PageLink)
+
 PageLink.propTypes = {
   direction: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   eventHandler: PropTypes.func
 }
-
-export default memo(PageLink)

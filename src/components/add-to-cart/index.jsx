@@ -23,7 +23,7 @@ const AddToCart = ({ singleProduct }) => {
   const decrease = useCallback(() => {
     setAmount(prev => {
       let temp = --prev
-      if (temp < 1) temp = 1
+      temp < 1 && (temp = 1)
       return temp
     })
   }, [])

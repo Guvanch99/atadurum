@@ -12,40 +12,41 @@
     height: 30rem;
     border-radius: 2%;
     transition: all 1s ease-in;
+
     &:hover {
       transform: scale(1.05);
     }
+
     @include tablet {
       width: 50rem;
       height: 20rem;
     }
   }
 }
+
 .arrow {
   position: absolute;
   @extend %sliderIcon;
+
   @include mobile {
-    & {
-      width: 2rem;
-      height: 2rem;
-      font-size: 1.6rem;
-      top: 60%;
-    }
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.6rem;
+    top: 70%;
   }
+
   &-rigth {
     right: 12rem;
+
     @include tablet {
-      & {
-        right: 2rem;
-      }
+      right: 2rem;
     }
   }
+
   &-left {
     left: 12rem;
     @include tablet {
-      & {
-        left: 2rem;
-      }
+      left: 2rem;
     }
   }
 }

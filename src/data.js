@@ -1,6 +1,5 @@
 import {
   ROUTER_ABOUT,
-  ROUTER_CART,
   ROUTER_HOME,
   ROUTER_LOGIN,
   ROUTER_MENU,
@@ -29,14 +28,9 @@ export const DATA = {
   ],
   menuAuthCart: [
     {
-      url: ROUTER_CART,
-      keyName: 'cart',
-      iconName: 'fa-cart-plus'
-    },
-    {
       url: ROUTER_LOGIN,
       keyName: 'login',
-      iconName: 'fa-cart-plus'
+      iconName: 'fa-user'
     },
     {
       url: ROUTER_SIGN_UP,

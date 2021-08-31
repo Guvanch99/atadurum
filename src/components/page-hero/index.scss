@@ -4,28 +4,28 @@
   min-height: 8rem;
   @include flex(center, center);
   background: $mainColor;
-  font-family: 'Roboto', 'Marck Script', sans-serif;
+  @include fontFamily($fontRoboto);
 
   &__text {
-    font-family: 'Roboto', 'Marck Script', sans-serif;
     font-size: 2em;
     color: $secondaryColor;
   }
 
   &__link {
-    font-family: 'Roboto', 'Marck Script', sans-serif;
+    @include fontFamily($fontRoboto);
     font-size: 1em;
     color: $whiteColor;
     &:hover {
       color: $lighterYellowColor;
     }
   }
+
   &__sign {
     color: $lighterRedColor;
   }
 
   &__middle-page {
-    font-family: 'Roboto', 'Marck Script', sans-serif;
+    @include fontFamily($fontRoboto);
     color: $whiteColor;
     font-size: 1em;
     &:hover {

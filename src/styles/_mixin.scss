@@ -3,6 +3,10 @@
   justify-content: $justify;
   align-items: $align;
 }
+@mixin fontFamily($fontFamily) {
+  font-family: $fontFamily, 'Marck Script', sans-serif;
+}
+
 @mixin netbook {
   @media screen and (max-width: 61em) {
     @content;

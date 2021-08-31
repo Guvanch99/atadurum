@@ -3,23 +3,24 @@
 .cart-gift {
   @include flex(space-around, center);
   margin: 2rem;
+
   &__label {
     font-size: 2rem;
     @include mobile {
-      & {
-        display: none;
-      }
+      display: none;
     }
   }
   &__container {
     @include flex(center, flex-start);
     flex-direction: column;
   }
+
   &__image {
     width: 15rem;
     height: 15rem;
     background-color: $whiteColor;
   }
+
   &__name {
     font-size: 1.6rem;
     margin: 0.5rem 0;
@@ -27,6 +28,7 @@
       color: $mainColor;
     }
   }
+
   &__amount {
     font-size: 1.4rem;
     &-color {

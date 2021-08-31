@@ -3,16 +3,18 @@
 .food {
   &__name {
     font-size: 3.2em;
-    font-family: 'Style Script', 'Marck Script', sans-serif;
+    @include fontFamily($fontStyleScript);
   }
+
   &__price {
-    font-family: 'Roboto', sans-serif;
+    @include fontFamily($fontRoboto);
     font-size: 2em;
     color: $mainColor;
     font-weight: bold;
   }
+
   &__description {
     font-size: 1.6em;
-    font-family: 'Roboto', sans-serif;
+    @include fontFamily($fontRoboto);
   }
 }

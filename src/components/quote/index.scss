@@ -6,14 +6,13 @@
     text-align: center;
     margin-top: 1rem;
     font-size: 4em;
-    font-family: 'Dancing Script', 'Marck Script', sans-serif;
+    @include fontFamily($fontDancingScript);
     color: $mainColor;
+
     @include netbook {
-      & {
-        font-size: 2em;
-        text-align: center;
-        margin: 0 2rem;
-      }
+      font-size: 2em;
+      text-align: center;
+      margin: 0 2rem;
     }
   }
 }

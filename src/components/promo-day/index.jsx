@@ -10,6 +10,7 @@ class PromoDay extends PureComponent {
   render() {
     const { promoImage } = DATA
     const { t } = this.props
+
     return (
       <>
         <PageHero title={t('pageHero.promotions')} />

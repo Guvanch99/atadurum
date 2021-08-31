@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { DATA } from '../../data'
-
 import ArticleName from '../article-name'
 
 import './index.scss'

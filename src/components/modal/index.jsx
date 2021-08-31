@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
@@ -23,8 +24,8 @@ const Modal = ({ modalVisibility }) => {
   )
 }
 
+export default memo(Modal)
+
 Modal.propTypes = {
   modalVisibility: PropTypes.func.isRequired
 }
-
-export default Modal

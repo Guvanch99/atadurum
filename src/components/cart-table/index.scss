@@ -1,12 +1,18 @@
 @import 'src/styles/common.scss';
 
 .table {
-  font-family: 'Style Script', 'Marck Script', sans-serif;
+  @include fontFamily($fontStyleScript);
   font-size: 2em;
   text-align: center;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
+
   &__header {
     background: $lighterGrayColor;
+    @include mobile {
+      & th:nth-child(5) {
+        display: none;
+      }
+    }
   }
 }

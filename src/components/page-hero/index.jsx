@@ -10,7 +10,7 @@ import './index.scss'
 const PageHero = ({ title, menu }) => {
   const { t } = useTranslation('translation')
   return (
-    <div className="section">
+    <section className="section">
       <h1 className="section__text">
         <NavLink className="section__link" to={ROUTER_HOME}>
           {t('pageHero.home')}{' '}
@@ -25,9 +25,11 @@ const PageHero = ({ title, menu }) => {
         )}
         <span className="section__sign">&gt;</span> {title}
       </h1>
-    </div>
+    </section>
   )
 }
+
+export default memo(PageHero)
 
 PageHero.propTypes = {
   title: PropTypes.string.isRequired,
@@ -37,4 +39,3 @@ PageHero.propTypes = {
 PageHero.defaultProps = {
   menu: false
 }
-export default memo(PageHero)

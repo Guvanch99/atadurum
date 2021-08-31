@@ -30,7 +30,9 @@ const GridView = ({ products }) => {
     </div>
   )
 }
+
+export default GridView
+
 GridView.propTypes = {
   products: PropTypes.array.isRequired
 }
-export default GridView

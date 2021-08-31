@@ -8,34 +8,38 @@
 
   &__image {
     @include netbook {
-      & {
-        width: 15rem;
-        height: 15rem;
-        margin: 0 auto;
-      }
+      width: 15rem;
+      height: 15rem;
+      margin: 0 auto;
     }
   }
+
   &__container {
     @include flex(normal, normal);
     flex-direction: column;
     position: relative;
+
     &:hover .grid__image {
       opacity: 0.5;
     }
+
     &:hover .product__buy_link {
       opacity: 1;
     }
   }
+
   &__image {
     transition: all 0.4s ease-in;
     background-color: $whiteColor;
   }
+
   &__info {
     margin-top: 1.5rem;
     @include flex(space-around, center);
     flex-wrap: wrap;
   }
 }
+
 .product__buy_link {
   position: absolute;
   top: 50%;
@@ -48,6 +52,7 @@
   cursor: pointer;
   transition: all 0.6s ease-in;
 }
+
 .product__buy_icon {
   font-size: 4rem;
 }

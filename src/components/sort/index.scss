@@ -2,12 +2,12 @@
 
 .sort {
   @include flex(space-between, center);
-  @include tablet {
-    & {
-      flex-direction: column;
-    }
-  }
   margin-top: 1rem;
+  padding: 0 0.5rem;
+  @include tablet {
+    flex-direction: column;
+  }
+
   &__views {
     display: inline-block;
     width: 2rem;
@@ -34,20 +34,28 @@
     max-width: 40rem;
     margin: 0 1rem;
 
+    @include mobile {
+      margin: 0 0.5rem;
+    }
+
     &__option {
       background: transparent;
       border: none;
       cursor: pointer;
       padding: 0.5rem 1rem;
       font-size: 2em;
-      font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      @include fontFamily($fontDancingScript);
+
+      @include mobile {
+        font-size: 1.6em;
+      }
     }
   }
   &-form {
     &__label {
       text-transform: capitalize;
       font-size: 2em;
-      font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      @include fontFamily($fontDancingScript);
       @include netbook {
         font-size: 1.6em;
       }
@@ -55,13 +63,14 @@
     &__select {
       display: inline;
       border-color: transparent;
-      font-family: 'Dancing Script', 'Marck Script', sans-serif;
-      font-size: 1rem;
+      @include fontFamily($fontDancingScript);
+      font-size: 1.6em;
       text-transform: capitalize;
       padding: 0.25rem 0.5rem;
+      width: 10rem;
     }
     &__option {
-      font-family: 'Dancing Script', 'Marck Script', sans-serif;
+      @include fontFamily($fontDancingScript);
     }
   }
 }

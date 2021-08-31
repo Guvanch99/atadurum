@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 
 import { ArticleName } from '..'
 
@@ -16,9 +16,9 @@ const Quote = ({ randomQuote }) => {
   )
 }
 
+export default memo(Quote)
+
 Quote.propTypes = {
   value: PropTypes.string,
   tag: PropTypes.string
 }
-
-export default memo(Quote)

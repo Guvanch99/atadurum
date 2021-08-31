@@ -1,46 +1,52 @@
-import { useRef, useEffect } from 'react'
+import classNames from 'classnames'
 import PropTypes from 'prop-types'
 
 import './index.scss'
 
-const Input = ({ name, value, label, error, type, onChange, required }) => {
-  console.log('error', error)
-  const inputRef = useRef()
-  useEffect(() => {
-    if (name === 'userName') {
-      inputRef.current.focus()
-    }
-  }, [])
-  return (
-    <div className="input-form">
-      <label htmlFor={name} className="input-form__label">
-        {label}
-      </label>
-      {error && <span className="input-form__error">{error}</span>}
-      <input
-        className="input-form__input"
-        type={type}
-        name={name}
-        value={value}
-        onChange={onChange}
-        ref={inputRef}
-        autoComplete="off"
-        placeholder={label}
-        required={required}
-      />
-    </div>
-  )
-}
+const Input = ({
+  name,
+  value,
+  label,
+  error,
+  type,
+  onChange,
+  required,
+  handleBlur,
+  disabled
+}) => (
+  <div className="input-container">
+    <label htmlFor={name} className="input-container__label">
+      {label}
+    </label>
+    <input
+      className={classNames('input-container__input', { error })}
+      type={type}
+      name={name}
+      value={value}
+      onChange={onChange}
+      autoComplete="off"
+      placeholder={label}
+      required={required}
+      autoFocus={name === 'userName'}
+      onBlur={handleBlur}
+      disabled={disabled}
+    />
+
+    {error && <span className="input-container__error">{error}</span>}
+  </div>
+)
+
+export default Input
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  error: PropTypes.string,
   type: PropTypes.string.isRequired,
+  error: PropTypes.string,
   focus: PropTypes.bool,
-  required: PropTypes.bool.isRequired
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
+  handleBlur: PropTypes.func
 }
-
-export default Input

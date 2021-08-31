@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
+
 import { AddToCart } from '..'
 
 import './index.scss'
@@ -31,6 +32,9 @@ const Product = ({ singleProduct }) => {
     </div>
   )
 }
+
+export default memo(Product)
+
 Product.propTypes = {
   singleProduct: PropTypes.shape({
     src: PropTypes.string,
@@ -40,5 +44,3 @@ Product.propTypes = {
     type: PropTypes.string
   })
 }
-
-export default memo(Product)

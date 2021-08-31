@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import PropTypes from 'prop-types'
+
 import './index.scss'
 
-const Language = ({ lang, changeLanguageHandler }) => {
+const Language = ({ changeLanguageHandler }) => {
   const { t } = useTranslation('translation')
 
   return (
@@ -14,7 +15,6 @@ const Language = ({ lang, changeLanguageHandler }) => {
         className="language__select"
         name="language"
         as="select"
-        value={lang}
         onChange={e => changeLanguageHandler(e)}
       >
         <option className="language__option" value="en">
@@ -28,8 +28,9 @@ const Language = ({ lang, changeLanguageHandler }) => {
   )
 }
 
+export default Language
+
 Language.propTypes = {
   lang: PropTypes.string.isRequired,
   changeLanguageHandler: PropTypes.func.isRequired
 }
-export default Language

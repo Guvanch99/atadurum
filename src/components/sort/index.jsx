@@ -29,6 +29,7 @@ const Sort = ({ view, viewHandler }) => {
   useEffect(() => {
     dispatch(filterProducts())
   }, [sort, sortCategory, dispatch])
+
   const { t } = useTranslation('translation')
 
   return (
@@ -80,8 +81,10 @@ const Sort = ({ view, viewHandler }) => {
     </div>
   )
 }
+
+export default memo(Sort)
+
 Sort.propTypes = {
   view: PropTypes.bool.isRequired,
   viewHandler: PropTypes.func.isRequired
 }
-export default memo(Sort)

@@ -3,18 +3,24 @@ import { useTranslation } from 'react-i18next'
 
 import { DATA } from '../../data'
 
-import './index.scss'
+import style from './index.module.scss'
 
 const { logo, whyWeKeys } = DATA
+
 const AboutMain = () => {
   const { t } = useTranslation('translation')
-
+  // ToDO rename whyweKeys
   return (
-    <div className="main-about">
-      <img loading="lazy" className="main-about__image" src={logo} alt="chef" />
+    <div className={style.mainAbout}>
+      <img
+        loading="lazy"
+        className={style.mainAbout__image}
+        src={logo}
+        alt="chef"
+      />
       <div className="main-about__item">
         {whyWeKeys.map(key => (
-          <h1 key={key} className="main-about__title">
+          <h1 key={key} className={style.mainAbout__title}>
             {t(`aboutPage.whyWe.${key}`)}
           </h1>
         ))}

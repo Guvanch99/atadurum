@@ -1,16 +1,22 @@
 @import 'src/styles/common.scss';
 
-.sign-up__error {
-  font-size: 2em;
-  color: $lighterRedColor;
-  font-family: 'Dancing Script', 'Marck Script', sans-serif;
-  text-align: center;
-  margin-top: 1rem;
+.auth {
+  @include flex(center, center);
+  flex-direction: column;
+
+  &__error {
+    font-size: 2em;
+    color: $lighterRedColor;
+    @include fontFamily($fontDancingScript);
+    text-align: center;
+    margin-top: 1rem;
+  }
 }
+
 .form {
   @include flex(space-evenly, center);
   flex-direction: column;
-  font-family: 'Dancing Script', cursive;
+  @include fontFamily($fontDancingScript);
   margin-top: 1rem;
 
   &__group {
@@ -23,7 +29,7 @@
     }
     &_input {
       margin: 0.4rem 0;
-      font-family: 'Dancing Script', cursive;
+      @include fontFamily($fontDancingScript);
       font-size: 1.6em;
       line-height: 1.4rem;
       border: none;
@@ -38,14 +44,16 @@
   &__button {
     color: $whiteColor;
     background: $mainColor;
-    font-family: 'Dancing Script', cursive;
+    @include fontFamily($fontDancingScript);
     font-size: 2em;
     padding: 0.2rem 2rem;
     border: none;
     cursor: pointer;
+
     &:disabled {
       color: $whiteColor;
       background-color: $lighterRedColor;
+      cursor: auto;
     }
   }
 }

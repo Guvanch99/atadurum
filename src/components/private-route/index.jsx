@@ -8,7 +8,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={() => (true ? children : <Redirect to={ROUTER_SIGN_UP} />)}
+      render={() => (user ? children : <Redirect to={ROUTER_SIGN_UP} />)}
     ></Route>
   )
 }

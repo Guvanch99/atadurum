@@ -2,15 +2,17 @@ import {
   ADD_TO_CART,
   CLEAR_CART,
   COUNT_CART_TOTALS,
-  GET_FROM_LOCALE_STORAGE,
   REMOVE_PRODUCT,
   TOGGLE_CART_PRODUCT_AMOUNT,
-  GET_PRESENT
+  GET_PRESENT,
+  CLEAR_ORDER,
+  PROMOCODE_USED
 } from './type'
 
 const initialState = {
   cart: [],
   gift: null,
+  promocodeUsed: false,
   totalAmount: 0,
   totalItems: 0
 }
@@ -52,10 +54,6 @@ export const cartReducer = (state = initialState, { type, payload }) => {
 
     case CLEAR_CART:
       return { ...state, cart: [] }
-
-    case GET_FROM_LOCALE_STORAGE:
-      const { cart, gift } = payload
-      return { ...state, cart, gift }
 
     case REMOVE_PRODUCT:
       const filteredProduct = state.cart.filter(
@@ -105,6 +103,10 @@ export const cartReducer = (state = initialState, { type, payload }) => {
       return { ...state, cart: tempCart }
     case GET_PRESENT:
       return { ...state, gift: payload }
+    case CLEAR_ORDER:
+      return { ...state, cart: [], gift: null }
+    case PROMOCODE_USED:
+      return { ...state, promocodeUsed: true }
     default:
       return state
   }

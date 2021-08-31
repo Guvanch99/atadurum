@@ -7,19 +7,31 @@
     background: $lighterYellowColor;
   }
 
+  @include mobile {
+    & td:nth-child(5) {
+      display: none;
+    }
+  }
+
   &__image {
     width: 5rem;
     height: 5rem;
     margin-top: 0.6rem;
   }
+
   &__name {
     display: block;
   }
+
   &__remover {
     @extend %button;
-    font-size: 1rem;
+    font-size: 1.6em;
     background: $lighterRedColor;
     padding: 0.5rem;
     color: $whiteColor;
+
+    @include mobile {
+      font-size: 0.5em;
+    }
   }
 }

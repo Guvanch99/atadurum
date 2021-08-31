@@ -4,7 +4,7 @@
   @include flex(space-around, flex-start);
   flex-wrap: wrap;
   margin: 5rem 1rem 0 1rem;
-  font-family: 'Dancing Script', 'Marck Script', cursive;
+  @include fontFamily($fontDancingScript);
   &__footer-container {
     @include tablet {
       & {
@@ -12,34 +12,41 @@
       }
     }
   }
+
   &__info {
     color: $mainColor;
     text-align: center;
     margin-bottom: 2rem;
   }
+
   &__label {
     font-size: 1.6em;
   }
+
   &__group {
     @include flex(space-between, flex-end);
   }
+
   input[type='checkbox'] {
     margin-top: 1.6rem;
   }
-  &__button {
-    align-self: center;
-    flex-grow: 0.3;
-    border-radius: 12%;
-    background-color: $greenSuccessColor;
-    font-family: 'Dancing Script', 'Marck Script', cursive;
-    font-size: 4em;
+}
+.order__button {
+  align-self: center;
+  flex-grow: 0.3;
+  border-radius: 12%;
+  background-color: $greenSuccessColor;
+  @include fontFamily($fontDancingScript);
+  font-size: 4em;
+  color: $whiteColor;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  &:disabled {
     color: $whiteColor;
-    cursor: pointer;
+    background-color: $lighterRedColor;
+    cursor: auto;
   }
 }
 .order-modal {
   @include flex(center, center);
-  height: 100vh;
-  width: 100vw;
-  margin: -10rem;
 }

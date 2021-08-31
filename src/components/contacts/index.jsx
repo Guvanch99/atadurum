@@ -7,6 +7,7 @@ import { DATA } from '../../data'
 import './index.scss'
 
 const { contactsKey } = DATA
+
 const Contacts = () => {
   const { t } = useTranslation('translation')
 

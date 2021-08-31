@@ -49,8 +49,7 @@
       "cart":"Cart",
       "goToCheckout":"Go to checkout",
       "addBasket":"Add meal to basket",
-      "signUp":" We suggest to Sign Up",
-      "login":" we suggest to Login"
+      "signUp":" We suggest to Sign Up"
    },
    "pageHero":{
       "home":"Home",
@@ -187,11 +186,10 @@
       "button":"Login"
    },
    "registration":{
-      "registered":"This user already registered",
+      "registered":"This UserName with name or email already registered",
       "labelUser":"User Name",
       "password":"Password",
       "email":"email",
-      "passwordConFirm":"password Confirm",
       "button":"Sign up"
    },
    "orderForm":{
@@ -199,7 +197,7 @@
       "mainInfo":{
          "user":"User Name",
          "email":"Email",
-         "phone":"Phone Number"
+         "phone":"Phone Number (+375)"
       },
       "address":"Address",
       "addressInfo":{
@@ -216,11 +214,11 @@
       },
       "orderButton":"Order",
       "orderErrors":{
-         "phone":"Phone NUmber is Empty or less than 13",
-         "storey":"Storey field is Empty",
-         "street":"Street field is Empty",
-         "entrance":"Entrance field is Empty",
-         "house":"House field is Empty"
+         "phone":"Phone Number is Empty or is not number ",
+         "storey":"Storey field is Empty or is not number" ,
+         "street":"Street field is Empty or less than 3",
+         "entrance":"Entrance field is Empty or is not number",
+         "house":"House field is Empty or is not number"
 
       }
       
@@ -306,5 +304,6 @@
    "emailError":"Email is Invalid or Empty",
    "userNameError":"Name field is Empty or less than 4",
    "modal":"Success",
-   "close":"Close"
+   "close":"Close",
+   "logout":"LogOut"
 }

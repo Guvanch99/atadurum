@@ -29,18 +29,37 @@ ul {
   list-style: none;
 }
 a {
+  @include fontFamily($fontDancingScript);
   text-decoration: none;
-  font-family: 'Dancing Script', 'Marck Script';
   font-size: 2em;
   color: $secondaryColor;
   &:hover {
     border-bottom: 1px solid $mainColor;
   }
 }
-.container {
-  max-width: 80rem;
-  margin: 0 auto;
+
+input {
+  @include mobile {
+    &::-webkit-input-placeholder {
+      text-align: center;
+    }
+
+    &:-moz-placeholder {
+      /* Firefox 18- */
+      text-align: center;
+    }
+
+    &::-moz-placeholder {
+      /* Firefox 19+ */
+      text-align: center;
+    }
+
+    &:-ms-input-placeholder {
+      text-align: center;
+    }
+  }
 }
+
 .is-darkGreen {
   background: $darkGreen;
   a,
@@ -63,5 +82,20 @@ a {
 .is-sidebar {
   .arrow {
     display: none;
+  }
+  .menu {
+    align-items: center;
+  }
+
+  .language {
+    margin: 0;
+  }
+
+  .toggle {
+    margin-left: 2rem;
+
+    @include mobile {
+      margin-left: 1.2rem;
+    }
   }
 }
