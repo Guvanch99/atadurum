@@ -15,7 +15,9 @@ const { sortOptions, buttonTranslateKeys } = DATA
 
 const Sort = ({ view, viewHandler }) => {
   const dispatch = useDispatch()
-  const { sort, sortCategory } = useSelector(state => state.menu)
+  const { sort, sortCategory, filteredProducts } = useSelector(
+    state => state.menu
+  )
 
   const updateSort = ({ target }) => {
     const { value, name } = target
@@ -31,7 +33,7 @@ const Sort = ({ view, viewHandler }) => {
   }, [sort, sortCategory, dispatch])
 
   const { t } = useTranslation('translation')
-
+  console.log(filteredProducts)
   return (
     <div className="sort">
       <div className="sort__views">
@@ -56,6 +58,11 @@ const Sort = ({ view, viewHandler }) => {
           )
         })}
       </div>
+      {filteredProducts.length > 0 && (
+        <h2 className="menu-count">
+          {t('menuCount', { count: filteredProducts.length })}
+        </h2>
+      )}
       <form className="sort-form">
         <label className="sort-form__label" htmlFor="sort">
           {t('sort.sortLabel')}

@@ -73,4 +73,8 @@
       @include fontFamily($fontDancingScript);
     }
   }
+  & .menu-count {
+    @include fontFamily($fontDancingScript);
+    text-align: center;
+  }
 }

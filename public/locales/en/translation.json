@@ -305,5 +305,7 @@
    "userNameError":"Name field is Empty or less than 4",
    "modal":"Success",
    "close":"Close",
-   "logout":"LogOut"
+   "logout":"LogOut",
+   "menuCount":"Count: {{count}}"
+   
 }
