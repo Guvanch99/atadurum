@@ -5,7 +5,7 @@ import ThemeContext from './theme-context'
 const ThemeState = ({ children }) => {
   const [themeDark, setThemeDark] = useState(false)
   const changeThemeDark = () => setThemeDark(!themeDark)
-  console.log('th', themeDark)
+
   useEffect(() => {
     localStorage.getItem('theme') &&
       setThemeDark(JSON.parse(localStorage.getItem('theme')))
@@ -21,4 +21,5 @@ const ThemeState = ({ children }) => {
     </ThemeContext.Provider>
   )
 }
+
 export default ThemeState

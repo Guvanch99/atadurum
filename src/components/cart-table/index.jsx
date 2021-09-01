@@ -6,13 +6,13 @@ import { DATA } from '../../data'
 
 import './index.scss'
 
-const { tableNameKeys } = DATA
+const { tableNameTranslateKeys } = DATA
 
 const CartTable = () => {
   const { t } = useTranslation('translation')
   const { cart } = useSelector(state => state.cart)
 
-  let tableHeadRows = tableNameKeys.map(key => (
+  let tableHeadRows = tableNameTranslateKeys.map(key => (
     <th key={key}>
       <h4 style={{ margin: '0 0.4rem' }}>{t(`cartTable.${key}`)}</h4>
     </th>

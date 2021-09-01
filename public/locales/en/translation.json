@@ -214,10 +214,10 @@
       },
       "orderButton":"Order",
       "orderErrors":{
-         "phone":"Phone Number is Empty or is not number ",
+         "phone":"Phone Number is Empty or is not number(integer) or more than 9  ",
          "storey":"Storey field is Empty or is not number" ,
          "street":"Street field is Empty or less than 3",
-         "entrance":"Entrance field is Empty or is not number",
+         "entrance":"Entrance field is Empty or is not number(integer)",
          "house":"House field is Empty or is not number"
 
       }

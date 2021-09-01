@@ -31,6 +31,5 @@ const Language = ({ changeLanguageHandler }) => {
 export default Language
 
 Language.propTypes = {
-  lang: PropTypes.string.isRequired,
   changeLanguageHandler: PropTypes.func.isRequired
 }

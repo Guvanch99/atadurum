@@ -5,11 +5,11 @@ import { DATA } from '../../data'
 
 import style from './index.module.scss'
 
-const { logo, whyWeKeys } = DATA
+const { logo, whyWeTranslateKeys } = DATA
 
 const AboutMain = () => {
   const { t } = useTranslation('translation')
-  // ToDO rename whyweKeys
+
   return (
     <div className={style.mainAbout}>
       <img
@@ -19,7 +19,7 @@ const AboutMain = () => {
         alt="chef"
       />
       <div className="main-about__item">
-        {whyWeKeys.map(key => (
+        {whyWeTranslateKeys.map(key => (
           <h1 key={key} className={style.mainAbout__title}>
             {t(`aboutPage.whyWe.${key}`)}
           </h1>

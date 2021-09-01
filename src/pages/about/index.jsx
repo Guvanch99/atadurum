@@ -11,7 +11,7 @@ import { DATA } from '../../data'
 
 import './index.scss'
 
-const { ourValueKeys } = DATA
+const { ourValueTranslateKeys } = DATA
 const About = () => {
   const { t } = useTranslation('translation')
   return (
@@ -19,7 +19,7 @@ const About = () => {
       <PageHero title={t('pageHero.about')} />
       <ArticleName name={t('articleNames.ourValue')} />
       <div className="accordian-container">
-        {ourValueKeys.map(key => (
+        {ourValueTranslateKeys.map(key => (
           <Accordion
             key={key}
             label={t(`aboutPage.ourValue.${key}.label`)}

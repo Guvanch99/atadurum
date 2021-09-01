@@ -5,14 +5,18 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Input, Modal } from '..'
 import { DB } from '../../core/axios'
 import { clearOrder } from '../../redux/cart/actionCreators'
-
+import {
+  INTEGER_VALIDATION,
+  PHONE_VALIDATION,
+  INTEGER_AND_ZERO_VALIDATION
+} from '../../constants'
 import './index.scss'
 
 const OrderForm = () => {
   const { t } = useTranslation('translation')
   const {
     auth: { user },
-    cart: { cart, gift }
+    cart: { cart, gift, totalAmount, totalItems }
   } = useSelector(state => state)
 
   const dispatch = useDispatch()
@@ -33,12 +37,12 @@ const OrderForm = () => {
     street: '',
     house: '',
     entrance: '',
-    storey: '',
-    payment: 'cash'
+    storey: ''
   })
   const [isModalVisible, setIsModalVisible] = useState(false)
 
-  const { userName, email, phone, street, house, entrance, storey } = userInfo
+  const { userName, email, phone, street, house, entrance, storey, payment } =
+    userInfo
 
   const isButtonDisabled =
     !userName ||
@@ -56,7 +60,7 @@ const OrderForm = () => {
     errors.entrance ||
     errors.storey
   const phoneValidation = () => {
-    !Number.isInteger(Number.parseInt(phone)) &&
+    !PHONE_VALIDATION.test(phone) &&
       setErrors({ ...errors, phone: 'orderForm.orderErrors.phone' })
   }
   const streetValidation = () => {
@@ -64,15 +68,15 @@ const OrderForm = () => {
       setErrors({ ...errors, street: 'orderForm.orderErrors.street' })
   }
   const houseValidation = () => {
-    !Number.isInteger(Number.parseInt(house)) &&
+    !INTEGER_AND_ZERO_VALIDATION.test(house) &&
       setErrors({ ...errors, house: 'orderForm.orderErrors.house' })
   }
   const entranceValidation = () => {
-    !Number.isInteger(Number.parseInt(entrance)) &&
+    !INTEGER_VALIDATION &&
       setErrors({ ...errors, entrance: 'orderForm.orderErrors.entrance' })
   }
   const storeyValidation = () => {
-    !Number.isInteger(Number.parseInt(storey)) &&
+    !INTEGER_AND_ZERO_VALIDATION &&
       setErrors({ ...errors, storey: 'orderForm.orderErrors.storey' })
   }
   /* eslint-disable */
@@ -83,7 +87,6 @@ const OrderForm = () => {
           name: 'userName',
           value: userName,
           label: 'orderForm.mainInfo.user',
-          error: errors.userName,
           type: 'text',
           disabled: true
         },
@@ -91,7 +94,6 @@ const OrderForm = () => {
           name: 'email',
           value: email,
           label: 'orderForm.mainInfo.email',
-          error: errors.email,
           type: 'email',
           disabled: true
         },
@@ -173,6 +175,7 @@ const OrderForm = () => {
     errors[name] && setErrors({ ...errors, [name]: '' })
     setUserInfo({ ...userInfo, [name]: value })
   }
+
   const order = async orderData => {
     await DB.post('/orders', orderData)
   }
@@ -191,11 +194,27 @@ const OrderForm = () => {
       m.getUTCMinutes() +
       ':' +
       m.getUTCSeconds()
+
+    let updatedUser = {
+      userName,
+      email
+    }
+    let address = {
+      street,
+      house,
+      entrance,
+      storey,
+      payment
+    }
+
     const userBought = {
       time: dateString,
+      user: updatedUser,
       cart,
       gift,
-      ...userInfo
+      address,
+      totalItems,
+      totalAmount
     }
     order(userBought)
     dispatch(clearOrder())

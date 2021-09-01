@@ -14,7 +14,6 @@ const Payment = () => {
   } = useSelector(state => state)
 
   let total = totalAmount + SHIPPING_FEE
-  console.log(user)
   return (
     <div className="payment">
       <h2 className="payment__subtotal">

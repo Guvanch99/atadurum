@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 
 import { ArticleName, Input } from '../../../components'
 import { createUser } from '../../../redux/auth/actionCreator'
-import { EMAIL_REGEX } from '../../../constants'
+import { EMAIL_VALIDATION } from '../../../constants'
 
 import '../index.scss'
 
@@ -47,7 +47,7 @@ const Register = () => {
       })
   }
   const emailValidation = () => {
-    EMAIL_REGEX.test(email) === false &&
+    EMAIL_VALIDATION.test(email) === false &&
       setErrors({
         ...errors,
         email: 'emailError'

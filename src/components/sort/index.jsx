@@ -11,7 +11,7 @@ import { DATA } from '../../data'
 
 import './index.scss'
 
-const { sortOptions, buttonKeys } = DATA
+const { sortOptions, buttonTranslateKeys } = DATA
 
 const Sort = ({ view, viewHandler }) => {
   const dispatch = useDispatch()
@@ -42,7 +42,7 @@ const Sort = ({ view, viewHandler }) => {
         </button>
       </div>
       <div className="sort-buttons">
-        {buttonKeys.map(key => {
+        {buttonTranslateKeys.map(key => {
           return (
             <button
               onClick={updateSort}

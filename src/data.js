@@ -121,13 +121,25 @@ export const DATA = {
     ]
   ],
 
-  buttonKeys: ['All', 'Combo', 'Durum', 'Beverage'],
+  buttonTranslateKeys: ['All', 'Combo', 'Durum', 'Beverage'],
 
-  tableNameKeys: ['img', 'name', 'amount', 'price', 'subTotal', 'remove'],
+  tableNameTranslateKeys: [
+    'img',
+    'name',
+    'amount',
+    'price',
+    'subTotal',
+    'remove'
+  ],
 
-  whyWeKeys: ['Health', 'Food', 'Style', 'Afford'],
+  whyWeTranslateKeys: ['Health', 'Food', 'Style', 'Afford'],
 
-  ourValueKeys: ['firstValue', 'secondValue', 'thirdValue', 'fourthValue'],
+  ourValueTranslateKeys: [
+    'firstValue',
+    'secondValue',
+    'thirdValue',
+    'fourthValue'
+  ],
 
   mottoImage:
     'https://thumbs.dreamstime.com/b/food-delivery-man-motorcycle-isolated-white-background-helmet-yellow-moped-vector-illustration-214857732.jpg',
