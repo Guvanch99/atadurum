@@ -8,6 +8,7 @@ class PromoCodeGift extends Component {
   render() {
     const { name, src, description } = this.props.present
     const { t } = this.props
+
     return (
       <div className="promocode-gift">
         <h1 className="promocde-gift__text">{t('promoCodeGift.label')}</h1>

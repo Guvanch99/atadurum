@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import { PromoCodeGift, Spinner, Quote } from '..'
 import { getPresentPromo } from '../../redux/cart/actionCreators'
+import { randomId } from '../../utils'
 
 import './index.scss'
 
@@ -18,13 +19,14 @@ class PromoCode extends Component {
   promocodeSubmit = e => {
     e.preventDefault()
     if (this.state.promocode.toUpperCase() === 'HALYAVA') {
-      let id = Math.floor(Math.random() * 16)
+      let id = randomId(1, 17)
       this.props.getFreeMeal(id)
       this.setState({ promocode: '' })
     } else {
       this.setState({ error: true, promocode: '' })
     }
   }
+
   async componentDidMount() {
     axios('https://tronalddump.io/random/quote').then(({ data }) => {
       const { value } = data

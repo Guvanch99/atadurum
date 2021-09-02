@@ -14,6 +14,7 @@ const Modal = ({ modalVisibility }) => {
     modalVisibility(true)
     history.push(ROUTER_HOME)
   }
+
   return (
     <div className="modal">
       <h1 className="modal__label">{t('modal')}</h1>

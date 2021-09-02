@@ -9,6 +9,7 @@ import './index.scss'
 
 const PageHero = ({ title, menu }) => {
   const { t } = useTranslation('translation')
+
   return (
     <section className="section">
       <h1 className="section__text">

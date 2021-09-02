@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
+import PropTypes from 'prop-types'
 
 import './index.scss'
 
@@ -19,3 +20,7 @@ const InformationList = ({ info }) => {
 }
 
 export default memo(InformationList)
+
+InformationList.propTypes = {
+  info: PropTypes.array.isRequired
+}

@@ -1,12 +1,12 @@
 import { DB } from '../../core/axios'
 import { GET_FEATURED_PRODUCTS } from './type'
 
-const getFeaturedProducts = payload => ({
+export const getFeaturedProducts = payload => ({
   type: GET_FEATURED_PRODUCTS,
   payload
 })
 export const fetchFeaturedProducts = () => dispatch => {
-  DB('/featured-products').then(products =>
-    dispatch(getFeaturedProducts(products.data))
+  DB('/featured-products').then(({ data }) =>
+    dispatch(getFeaturedProducts(data))
   )
 }

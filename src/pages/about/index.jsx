@@ -14,6 +14,7 @@ import './index.scss'
 const { ourValueTranslateKeys } = DATA
 const About = () => {
   const { t } = useTranslation('translation')
+
   return (
     <div className="about-container">
       <PageHero title={t('pageHero.about')} />

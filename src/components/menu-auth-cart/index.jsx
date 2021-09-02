@@ -23,6 +23,7 @@ const MenuAuthCart = ({ sidebarVisibilityToggle }) => {
   const logout = () => {
     dispatch(logOut())
   }
+
   return (
     <ul className="menu">
       <li className="menu__list">

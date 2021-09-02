@@ -8,6 +8,7 @@ import './index.scss'
 
 const Quote = ({ randomQuote }) => {
   const { t } = useTranslation('translation')
+
   return (
     <div className="quote">
       <ArticleName name={t('articleNames.randomQuote')} />

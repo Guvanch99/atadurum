@@ -21,6 +21,7 @@ const Sidebar = ({ sidebarVisibilityToggle, lang, changeLanguageHandler }) => {
       </div>
     </NavLink>
   )
+
   return (
     <div className="sidebar">
       <ul className="sidebar__menu">

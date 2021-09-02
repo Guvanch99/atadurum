@@ -3,8 +3,7 @@ const initialState = {
   allProducts: [],
   filteredProducts: [],
   sort: '',
-  sortCategory: 'All',
-  loading: false
+  sortCategory: 'All'
 }
 
 export const menuReducer = (state = initialState, { type, payload }) => {
