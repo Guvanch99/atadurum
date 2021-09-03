@@ -8,6 +8,7 @@ import { getPresentPromo } from '../../redux/cart/actionCreators'
 import { randomId } from '../../utils'
 
 import './index.scss'
+import { DONALD_THRUMP_API } from '../../constants'
 
 class PromoCode extends Component {
   state = {
@@ -28,7 +29,7 @@ class PromoCode extends Component {
   }
 
   async componentDidMount() {
-    axios('https://tronalddump.io/random/quote').then(({ data }) => {
+    axios(DONALD_THRUMP_API).then(({ data }) => {
       const { value } = data
       this.setState({ randomQuote: value })
     })

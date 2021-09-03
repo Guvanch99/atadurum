@@ -26,6 +26,7 @@ describe('single product reducer tree', () => {
       'description'
     )
   })
+
   it('getting single product from server', async () => {
     const thunk = fetchSingleProduct(3)
     const dispatchMock = jest.fn()

@@ -76,5 +76,6 @@
   & .menu-count {
     @include fontFamily($fontDancingScript);
     text-align: center;
+    font-size: 2em;
   }
 }

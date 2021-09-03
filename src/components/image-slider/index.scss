@@ -2,24 +2,21 @@
 
 .slider {
   @include flex(center, center);
-  height: 30rem;
+  height: 33rem;
   padding-bottom: 2rem;
   margin: 1rem 2rem;
+  max-width: 100%;
 
   &__image {
     position: relative;
-    width: 80rem;
     height: 30rem;
+    width: 100%;
+    max-height: 100%;
     border-radius: 2%;
     transition: all 1s ease-in;
 
     &:hover {
       transform: scale(1.05);
-    }
-
-    @include tablet {
-      width: 50rem;
-      height: 20rem;
     }
   }
 }
@@ -27,26 +24,16 @@
 .arrow {
   position: absolute;
   @extend %sliderIcon;
-
-  @include mobile {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.6rem;
-    top: 70%;
-  }
-
+  top: 45%;
   &-rigth {
-    right: 12rem;
-
-    @include tablet {
-      right: 2rem;
-    }
+    right: 13%;
   }
 
   &-left {
-    left: 12rem;
-    @include tablet {
-      left: 2rem;
-    }
+    left: 13%;
+  }
+
+  @include mobile {
+    display: none;
   }
 }
