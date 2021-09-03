@@ -26,22 +26,21 @@ export const logOut = () => ({
 
 export const userNotFound = () => ({ type: USER_NOT_FOUND })
 
-export const createUser =
-  (user, location, history) => async (dispatch, getState) => {
-    const { data: searchedUser } = await DB(
-      `/users?userName=${user.userName}&email{${user.email}}`
-    )
-    if (searchedUser.length) {
-      dispatch(isUserExist())
-    } else {
-      const { data } = await DB.post('/users', user)
+export const createUser = (user, location, history) => async dispatch => {
+  const { data: searchedUser } = await DB(
+    `/users?userName=${user.userName}&email{${user.email}}`
+  )
+  if (searchedUser.length) {
+    dispatch(isUserExist())
+  } else {
+    const { data } = await DB.post('/users', user)
 
-      dispatch(signUp(data))
-      location.state !== null && location.state.from === '/login'
-        ? history.push(ROUTER_HOME)
-        : history.goBack()
-    }
+    dispatch(signUp(data))
+    location.state !== null && location.state.from === '/login'
+      ? history.push(ROUTER_HOME)
+      : history.goBack()
   }
+}
 
 export const loginUser =
   (userName, password, location, history) => async dispatch => {

@@ -5,12 +5,54 @@ import {
   userPromocodeUsed,
   clearCart,
   getPresent,
-  addToCart
+  addToCart,
+  removeProduct,
+  toggleAmount,
+  getPresentPromo
 } from './actionCreators'
 
 const state = {
-  cart: [],
-  gift: null,
+  cart: [
+    {
+      id: 1,
+      name: 'Durum',
+      src: 'https://i.ibb.co/vhs7GF2/kombo-cow.jpg',
+      price: 10,
+      description: 'description about product',
+      amount: 1,
+      subTotal: 10,
+      type: 'durum'
+    },
+    {
+      id: 2,
+      name: 'Durum',
+      src: 'https://i.ibb.co/vhs7GF2/kombo-cow.jpg',
+      price: 10,
+      description: 'description about product',
+      amount: 2,
+      subTotal: 20,
+      type: 'durum'
+    },
+    {
+      id: 3,
+      name: 'Durum',
+      src: 'https://i.ibb.co/vhs7GF2/kombo-cow.jpg',
+      price: 10,
+      description: 'description about product',
+      amount: 3,
+      subTotal: 30,
+      type: 'durum'
+    }
+  ],
+  gift: {
+    id: 1,
+    name: 'Durum',
+    src: 'https://i.ibb.co/vhs7GF2/kombo-cow.jpg',
+    amount: 1,
+    price: 0,
+    description: 'description description',
+    type: 'Durum'
+  },
   promocodeUsed: false,
   totalAmount: 0,
   totalItems: 0
@@ -38,9 +80,17 @@ describe('cart reducer tree', () => {
   it('user promoce used', () => {
     let newState = reducer(userPromocodeUsed())
     expect.assertions(1)
-    expect(newState.promocodeUsed).toBe(true)
+    expect(newState.promocodeUsed).toBeTruthy()
   })
   it('get present for user', () => {
+    let state = {
+      cart: [],
+      gift: null,
+      promocodeUsed: false,
+      totalAmount: 0,
+      totalItems: 0
+    }
+
     let giftForUser = {
       id: 1,
       name: 'Durum',
@@ -50,9 +100,10 @@ describe('cart reducer tree', () => {
       description: 'description description',
       type: 'Durum'
     }
-    let { gift } = reducer(getPresent(giftForUser))
+
+    let { gift } = cartReducer(state, getPresent(giftForUser))
     expect.assertions(4)
-    expect(gift && typeof gift === 'object').toBe(true)
+    expect(gift && typeof gift === 'object').toBeTruthy()
     expect(gift).not.toBeNull()
     expect(gift).not.toBeUndefined()
     expect(gift).toHaveProperty(
@@ -76,31 +127,51 @@ describe('cart reducer tree', () => {
     expect(totalItems).not.toBeNull()
     expect(totalItems).not.toBeUndefined()
   })
-  /*it('adding product to cart', () => {
-    let product = {
+  it('remove product from menu', () => {
+    let { cart } = reducer(removeProduct(2))
+    expect(cart).not.toBeUndefined()
+    expect(cart).not.toBeNull()
+    expect(Array.isArray(cart)).toBeTruthy()
+    expect(cart.length).toBe(2)
+  })
+  it('toggle amount to increase', () => {
+    expect.assertions(4)
+    const { cart } = reducer(toggleAmount({ id: 1, inc: 'inc' }))
+    expect(cart && typeof cart === 'object').toBeTruthy()
+    expect(cart).not.toBeNull()
+    expect(cart).not.toBeUndefined()
+    expect(cart.length).toBeGreaterThanOrEqual(1)
+  })
+  it('toggle amount to decrease', () => {
+    expect.assertions(4)
+    const { cart } = reducer(toggleAmount({ id: 2, dec: 'dec' }))
+    expect(cart && typeof cart === 'object').toBeTruthy()
+    expect(cart).not.toBeNull()
+    expect(cart).not.toBeUndefined()
+    expect(cart.length).toBeGreaterThanOrEqual(1)
+  })
+  it('adding product to cart', () => {
+    let singleProduct = {
       id: 3,
       name: 'Durum',
       src: 'https://i.ibb.co/vhs7GF2/kombo-cow.jpg',
-      price: 10,
-      description: 'description about product',
-      amount: 1,
-      type: 'Durum',
-      subTotal: 10
+      price: 10
     }
-    let { cart } = reducer(addToCart(product))
+    let payload = {
+      amount: 3,
+      singleProduct
+    }
+    let { cart } = reducer(addToCart(payload))
     expect.assertions(4)
-    expect(cart && typeof cart === 'object').toBe(true)
+    expect(cart && typeof cart === 'object').toBeTruthy()
     expect(cart).not.toBeNull()
     expect(cart).not.toBeUndefined()
-    expect(cart).toHaveProperty(
-      'id',
-      'name',
-      'src',
-      'amount',
-      'price',
-      'description',
-      'type',
-      'subTotal'
-    )
-  })*/
+    expect(cart.length).toBeGreaterThanOrEqual(1)
+  })
+  it('get random gift from server', async () => {
+    const thunk = getPresentPromo(3)
+    const dispatchMock = jest.fn()
+    await thunk(dispatchMock)
+    expect(dispatchMock).toBeCalledTimes(3)
+  })
 })

@@ -4,7 +4,9 @@ import {
   login,
   isUserExist,
   logOut,
-  userNotFound
+  userNotFound,
+  createUser,
+  loginUser
 } from './actionCreator'
 
 const state = {
@@ -24,7 +26,7 @@ describe('auth reducer tree', () => {
     }
     let { user } = reducer(signUp(newUser))
     expect.assertions(4)
-    expect(user && typeof user === 'object').toBe(true)
+    expect(user && typeof user === 'object').toBeTruthy()
     expect(user).not.toEqual(null)
     expect(user).not.toBeUndefined()
     expect(user).toHaveProperty('userName', 'email', 'password')
@@ -36,7 +38,7 @@ describe('auth reducer tree', () => {
     }
     let { user } = reducer(login(newUser))
     expect.assertions(4)
-    expect(user && typeof user === 'object').toBe(true)
+    expect(user && typeof user === 'object').toBeTruthy()
     expect(user).not.toEqual(null)
     expect(user).not.toBeUndefined()
     expect(user).toHaveProperty('userName', 'email', 'password')
@@ -44,16 +46,48 @@ describe('auth reducer tree', () => {
   it('if user registered before', () => {
     let { userExist } = reducer(isUserExist())
     expect.assertions(1)
-    expect(userExist).toBe(true)
+    expect(userExist).toBeTruthy()
   })
   it('if user never registered', () => {
     let newState = reducer(userNotFound())
     expect.assertions(1)
-    expect(newState.userNotFound).toBe(true)
+    expect(newState.userNotFound).toBeTruthy()
   })
   it('user log out', () => {
-    let { user } = reducer(logOut())
-    expect.assertions(1)
+    const state = {
+      user: {
+        userName: 'Guvanch',
+        email: 'awediyewguwanc@gmail.com',
+        password: 'Guvanch99'
+      },
+      userExist: false,
+      userNotFound: false
+    }
+
+    let { user } = authReducer(state, logOut())
+    expect.assertions(2)
     expect(user).toBeNull()
+    expect(user).not.toBeUndefined()
+  })
+  it('create user', async () => {
+    let user = {
+      userName: 'Guwanc9999999',
+      email: 'awed@gmail.com',
+      password: 'Guvanch99'
+    }
+    const thunk = createUser(user)
+    const dispatchMock = jest.fn()
+    await thunk(dispatchMock)
+    expect(dispatchMock).toBeCalled()
+  })
+  it('login user', async () => {
+    let user = {
+      userName: 'Guwanc9999999',
+      password: 'Guvanch99'
+    }
+    const thunk = loginUser(user)
+    const dispatchMock = jest.fn()
+    await thunk(dispatchMock)
+    expect(dispatchMock).toBeCalled()
   })
 })

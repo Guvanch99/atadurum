@@ -5,8 +5,7 @@ export const getFeaturedProducts = payload => ({
   type: GET_FEATURED_PRODUCTS,
   payload
 })
-export const fetchFeaturedProducts = () => dispatch => {
+export const fetchFeaturedProducts = () => dispatch =>
   DB('/featured-products').then(({ data }) =>
     dispatch(getFeaturedProducts(data))
   )
-}

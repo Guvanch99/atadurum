@@ -12,6 +12,5 @@ export const onChangeHandler = payload => ({
 export const filterProducts = () => ({
   type: FILTER_PRODUCTS
 })
-export const fetchAllProducts = () => dispatch => {
+export const fetchAllProducts = () => dispatch =>
   DB('/all-products').then(({ data }) => dispatch(getAllProducts(data)))
-}

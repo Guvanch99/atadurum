@@ -38,7 +38,7 @@ export const getPresent = payload => ({
 })
 export const userPromocodeUsed = () => ({ type: PROMOCODE_USED })
 
-export const getPresentPromo = id => dispatch => {
+export const getPresentPromo = id => dispatch =>
   DB(`/all-products?id=${id}`).then(({ data }) => {
     const { id, name, src, description, type } = data[0]
     const payload = {
@@ -54,4 +54,3 @@ export const getPresentPromo = id => dispatch => {
     dispatch(userPromocodeUsed())
     dispatch(countTotal())
   })
-}
