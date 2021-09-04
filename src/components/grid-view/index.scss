@@ -20,7 +20,7 @@
     position: relative;
 
     &:hover .grid__image {
-      opacity: 0.5;
+      opacity: .5;
     }
 
     &:hover .product__buy_link {
@@ -29,7 +29,7 @@
   }
 
   &__image {
-    transition: all 0.4s ease-in;
+    transition: all .4s ease-in;
     background-color: $whiteColor;
   }
 
@@ -50,7 +50,7 @@
   color: $mainColor;
   opacity: 0;
   cursor: pointer;
-  transition: all 0.6s ease-in;
+  transition: all .6s ease-in;
 }
 
 .product__buy_icon {

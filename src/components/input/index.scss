@@ -7,11 +7,11 @@
 
   &__label {
     font-size: 1.5em;
-    margin-bottom: 0.4rem;
+    margin-bottom: .4rem;
   }
 
   &__input {
-    margin: 0.4rem 0;
+    margin: .4rem 0;
     @include fontFamily($fontDancingScript);
     font-size: 1.6em;
     line-height: 1.4rem;

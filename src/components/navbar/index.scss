@@ -6,7 +6,7 @@
 
   &__container {
     @include flex(space-between, center);
-    flex: 0.5;
+    flex: .5;
 
     @include netbook {
       display: none;

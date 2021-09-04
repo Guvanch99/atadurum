@@ -16,7 +16,7 @@
   &__image {
     width: 5rem;
     height: 5rem;
-    margin-top: 0.6rem;
+    margin-top: .6rem;
   }
 
   &__name {
@@ -27,7 +27,7 @@
     @extend %button;
     font-size: 1.6em;
     background: $lighterRedColor;
-    padding: 0 0.4rem;
+    padding: 0 .4rem;
     color: $whiteColor;
 
     @include mobile {

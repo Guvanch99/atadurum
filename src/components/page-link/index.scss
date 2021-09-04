@@ -2,7 +2,7 @@
 .page-link {
   background: $mainColor;
   color: $whiteColor;
-  padding: 0.5rem 1rem;
+  padding: .5rem 1rem;
   border-radius: 10%;
   width: 10rem;
   background: $mainColor;
@@ -18,5 +18,5 @@
   color: $mainColor;
   opacity: 0;
   cursor: pointer;
-  transition: all 0.6s ease-in;
+  transition: all .6s ease-in;
 }

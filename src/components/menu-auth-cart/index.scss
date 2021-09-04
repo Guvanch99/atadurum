@@ -16,7 +16,7 @@
     @include flex(center, center);
 
     @include mobile {
-      padding-left: 0.5rem;
+      padding-left: .5rem;
     }
 
     &-link {
@@ -24,7 +24,7 @@
       margin-left: 1rem;
 
       @include netbook {
-        margin: 0.4rem 0;
+        margin: .4rem 0;
       }
 
       @include tablet {
@@ -33,14 +33,14 @@
     }
 
     &-icon {
-      padding-left: 0.4rem;
-      font-size: 0.8em;
+      padding-left: .4rem;
+      font-size: .8em;
     }
   }
 
   .order-count {
     font-size: 0.8em;
-    margin: 0 0 1rem 0.3rem;
+    margin: 0 0 1rem .3rem;
     color: $lighterRedColor;
   }
 
@@ -52,7 +52,7 @@
 
     @include mobile {
       margin: 0;
-      padding: 0 0.4rem;
+      padding: 0 .4rem;
     }
   }
 }

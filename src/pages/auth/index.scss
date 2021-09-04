@@ -28,7 +28,7 @@
       font-size: 1.5em;
     }
     &_input {
-      margin: 0.4rem 0;
+      margin: .4rem 0;
       @include fontFamily($fontDancingScript);
       font-size: 1.6em;
       line-height: 1.4rem;
@@ -46,7 +46,7 @@
     background: $mainColor;
     @include fontFamily($fontDancingScript);
     font-size: 2em;
-    padding: 0.2rem 2rem;
+    padding: .2rem 2rem;
     border: none;
     cursor: pointer;
 
