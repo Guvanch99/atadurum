@@ -24,11 +24,12 @@ describe('auth reducer tree', () => {
       email: 'awediyewguwanc@gmail.com',
       password: 'Guvanch99'
     }
-    let { user } = reducer(signUp(newUser))
-    expect.assertions(4)
+    let { user, userExist } = reducer(signUp(newUser))
+    expect.assertions(5)
     expect(user && typeof user === 'object').toBeTruthy()
     expect(user).not.toEqual(null)
     expect(user).not.toBeUndefined()
+    expect(userExist).toBeFalsy()
     expect(user).toHaveProperty('userName', 'email', 'password')
   })
   it('user login', () => {
@@ -36,11 +37,12 @@ describe('auth reducer tree', () => {
       userName: 'Guvanch',
       password: 'Guvanch99'
     }
-    let { user } = reducer(login(newUser))
-    expect.assertions(4)
+    let { user, userNotFound } = reducer(login(newUser))
+    expect.assertions(5)
     expect(user && typeof user === 'object').toBeTruthy()
     expect(user).not.toEqual(null)
     expect(user).not.toBeUndefined()
+    expect(userNotFound).toBeFalsy()
     expect(user).toHaveProperty('userName', 'email', 'password')
   })
   it('if user registered before', () => {

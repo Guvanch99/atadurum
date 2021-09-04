@@ -35,7 +35,6 @@ export const createUser = (user, location, history) => async dispatch => {
   } else {
     const { data } = await DB.post('/users', user)
     dispatch(signUp(data))
-
     location.state !== null && location.state.from === '/login'
       ? history.push(ROUTER_HOME)
       : history.goBack()
