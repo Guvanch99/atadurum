@@ -33,7 +33,7 @@ const Sort = ({ view, viewHandler }) => {
   }, [sort, sortCategory, dispatch])
 
   const { t } = useTranslation('translation')
-  console.log(filteredProducts)
+
   return (
     <div className="sort">
       <div className="sort__views">
