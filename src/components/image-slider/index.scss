@@ -7,6 +7,10 @@
   margin: 1rem 2rem;
   max-width: 100%;
 
+  @include mobile {
+    height: 18rem;
+  }
+
   &__image {
     position: relative;
     height: 30rem;

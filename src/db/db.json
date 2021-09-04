@@ -1,9 +1,42 @@
 {
   "users": [
- 
+    {
+      "id": "1b28fbd1-f545-470c-85ec-429de351c48c",
+      "userName": "Guwanc",
+      "email": "awediyewguwanc@gmail.com",
+      "password": "R3V2YW5jaDk5"
+    }
   ],
   "orders": [
-   
+    {
+      "time": "2021/9/4 14:23:13",
+      "user": {
+        "userName": "Guwanc",
+        "email": "awediyewguwanc@gmail.com"
+      },
+      "cart": [
+        {
+          "id": 1,
+          "name": "products.1.name",
+          "price": 10,
+          "amount": 5,
+          "src": "https://i.ibb.co/vhs7GF2/kombo-cow.jpg",
+          "type": "ADD_TO_CART",
+          "subTotal": 50
+        }
+      ],
+      "gift": null,
+      "address": {
+        "street": "limoza",
+        "house": "2",
+        "entrance": "3",
+        "storey": "2",
+        "payment": "cash"
+      },
+      "totalItems": 5,
+      "totalAmount": 50,
+      "id": 1
+    }
   ],
   "gallery": [
     {
