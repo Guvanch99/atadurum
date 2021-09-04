@@ -3,7 +3,8 @@ import {
   LOGOUT,
   USER_EXIST,
   USER_NOT_FOUND,
-  LOGIN_USER
+  LOGIN_USER,
+  TURNOFF_ERROR_AUTH
 } from './type'
 
 const initialState = {
@@ -25,6 +26,8 @@ export const authReducer = (state = initialState, { type, payload }) => {
     }
     case LOGOUT:
       return { ...state, user: null }
+    case TURNOFF_ERROR_AUTH:
+      return { ...state, userExist: false, userNotFound: false }
     default:
       return state
   }

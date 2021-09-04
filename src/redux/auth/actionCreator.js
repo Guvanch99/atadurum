@@ -3,7 +3,8 @@ import {
   LOGIN_USER,
   USER_NOT_FOUND,
   LOGOUT,
-  USER_EXIST
+  USER_EXIST,
+  TURNOFF_ERROR_AUTH
 } from './type'
 import { DB } from '../../core/axios'
 import { ROUTER_HOME } from '../../constants'
@@ -23,7 +24,7 @@ export const isUserExist = () => ({
 export const logOut = () => ({
   type: LOGOUT
 })
-
+export const turnOffErrorAuth = () => ({ type: TURNOFF_ERROR_AUTH })
 export const userNotFound = () => ({ type: USER_NOT_FOUND })
 
 export const createUser = (user, location, history) => async dispatch => {
@@ -36,6 +37,7 @@ export const createUser = (user, location, history) => async dispatch => {
     const { data } = await DB.post('/users', user)
 
     dispatch(signUp(data))
+    dispatch(turnOffErrorAuth())
     location.state !== null && location.state.from === '/login'
       ? history.push(ROUTER_HOME)
       : history.goBack()
@@ -49,7 +51,7 @@ export const loginUser =
     )
     if (user.length > 0) {
       dispatch(login(user[0]))
-
+      dispatch(turnOffErrorAuth())
       location.state !== null && location.state.from === '/sign-up'
         ? history.push(ROUTER_HOME)
         : history.goBack()
