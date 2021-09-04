@@ -16,11 +16,15 @@ const Modal = ({ modalVisibility }) => {
   }
 
   return (
-    <div className="modal">
-      <h1 className="modal__label">{t('modal')}</h1>
-      <button onClick={closeModal} className="modal__button">
-        {t('close')}
-      </button>
+    <div className="modal-wrapper">
+      <div className="modal" onClick={closeModal}>
+        <h1 className="modal__label">{t('modal')}</h1>
+        <i className="far fa-check-circle modal__success-icon" />
+        <button onClick={closeModal} className="modal__button">
+          {t('close')}
+        </button>
+      </div>
+      <div className="app-overlay" />
     </div>
   )
 }

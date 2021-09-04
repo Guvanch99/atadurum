@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { Input, Modal } from '..'
+import { Input, Modal, Portal } from '..'
 import { DB } from '../../core/axios'
 import { clearOrder } from '../../redux/cart/actionCreators'
 import {
@@ -72,11 +72,11 @@ const OrderForm = () => {
       setErrors({ ...errors, house: 'orderForm.orderErrors.house' })
   }
   const entranceValidation = () => {
-    !INTEGER_VALIDATION &&
+    !INTEGER_VALIDATION.test(entrance) &&
       setErrors({ ...errors, entrance: 'orderForm.orderErrors.entrance' })
   }
   const storeyValidation = () => {
-    !INTEGER_AND_ZERO_VALIDATION &&
+    !INTEGER_AND_ZERO_VALIDATION.test(storey) &&
       setErrors({ ...errors, storey: 'orderForm.orderErrors.storey' })
   }
   /* eslint-disable */
@@ -224,9 +224,11 @@ const OrderForm = () => {
   return (
     <>
       {isModalVisible ? (
-        <div className="order-modal">
-          <Modal modalVisibility={setIsModalVisible} />
-        </div>
+        <Portal
+          component={Modal}
+          nameOfClass="success-modal-js"
+          modalVisibility={setIsModalVisible}
+        />
       ) : (
         <form className="order-form">
           <div className="order-form__header-container">

@@ -27,11 +27,11 @@
     @extend %button;
     font-size: 1.6em;
     background: $lighterRedColor;
-    padding: 0.5rem;
+    padding: 0 0.4rem;
     color: $whiteColor;
 
     @include mobile {
-      font-size: 0.5em;
+      font-size: 1em;
     }
   }
 }

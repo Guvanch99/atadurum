@@ -13,3 +13,16 @@
 main {
   flex: 1 1 auto;
 }
+
+.app-overlay {
+  position: fixed;
+  z-index: 5;
+  opacity: 0.5;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+}

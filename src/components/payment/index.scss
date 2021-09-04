@@ -3,7 +3,7 @@
 .payment {
   @include flex(center, flex-end);
   flex-direction: column;
-  margin: 3rem;
+  margin: 0.5rem 3rem 1rem;
 
   @include tablet {
     align-items: center;

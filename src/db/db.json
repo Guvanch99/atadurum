@@ -1,31 +1,10 @@
 {
   "users": [
-    {
-      "id": "cfdc03cb-38ce-470c-8418-9873a4d0096f",
-      "userName": "Guwanc",
-      "email": "awediyewguwanc@gmail.com",
-      "password": "R3V2YW5jaDk5"
-    },
-    {
-      "id": "c26dc9fe-3175-4805-b293-3b8ea7e64edc",
-      "userName": "Merdan",
-      "email": "merdan@gmail.com",
-      "password": "TWVyZGFuOTk="
-    },
-    {
-      "id": "1d2906e0-d7cd-4ebd-bb27-4f9b2211a19d",
-      "userName": "Meret",
-      "email": "meret@gmail.com",
-      "password": "R3V2YW5jaDk5"
-    },
-    {
-      "userName": "Guwanc9999999",
-      "email": "awed@gmail.com",
-      "password": "Guvanch99",
-      "id": "taOrBF4"
-    }
+ 
   ],
-  "orders": [],
+  "orders": [
+   
+  ],
   "gallery": [
     {
       "id": 1,

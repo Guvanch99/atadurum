@@ -20,6 +20,7 @@
     outline: none;
     @include fontFamily($fontDancingScript);
     font-size: 2em;
+    background-color: $whiteColor;
 
     @include tablet {
       margin-bottom: 0.3rem;
