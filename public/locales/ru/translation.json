@@ -81,7 +81,8 @@
       "placeholderError":"Недействительный промокод",
       "placeholderDefault":"Введите промо-код",
       "buttonDisabled":"Отключено",
-      "buttonSubmit":"Отправить"
+      "buttonSubmit":"Отправить",
+      "usedPromoCode": "Вы уже использовали этот код ,{{promocode}} "
    },
    "promoCodeGift":{
       "label":"Ура твой бесплатный подарок "
@@ -306,5 +307,8 @@
    "modal":"Успешно",
    "close":"Закрыть",
    "logout":"Выйти",
-   "menuCount":"Кол-во: {{count}}"
+   "menuCount":"Кол-во: {{count}}",
+   "deliveryTime": "Время доставки: {{timeDelivery}}",
+   "lateDelivery": "если время прошло, возьми бесплатно",
+   "modalError": "Использованные промокоды будут удалены !!!"
 }

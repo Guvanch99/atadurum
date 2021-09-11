@@ -1,7 +1,8 @@
 @import 'src/styles/common.scss';
 
 .promocode {
-  @include flex(space-evenly, center);
+  @include flex(center, center);
+  flex-direction: column;
   @include fontFamily($fontDancingScript);
   margin: 1rem 1rem;
 
@@ -55,4 +56,9 @@
       }
     }
   }
+}
+.promo-used{
+  text-align: center;
+  font-size: 3em;
+  color: $lighterRedColor;
 }

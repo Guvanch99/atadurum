@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 
 import { Input, Modal, Portal } from '..'
 import { DB } from '../../core/axios'
@@ -61,23 +62,23 @@ const OrderForm = () => {
     errors.storey
   const phoneValidation = () => {
     !PHONE_VALIDATION.test(phone) &&
-      setErrors({ ...errors, phone: 'orderForm.orderErrors.phone' })
+    setErrors({ ...errors, phone: 'orderForm.orderErrors.phone' })
   }
   const streetValidation = () => {
     street.length < 3 &&
-      setErrors({ ...errors, street: 'orderForm.orderErrors.street' })
+    setErrors({ ...errors, street: 'orderForm.orderErrors.street' })
   }
   const houseValidation = () => {
     !INTEGER_AND_ZERO_VALIDATION.test(house) &&
-      setErrors({ ...errors, house: 'orderForm.orderErrors.house' })
+    setErrors({ ...errors, house: 'orderForm.orderErrors.house' })
   }
   const entranceValidation = () => {
     !INTEGER_VALIDATION.test(entrance) &&
-      setErrors({ ...errors, entrance: 'orderForm.orderErrors.entrance' })
+    setErrors({ ...errors, entrance: 'orderForm.orderErrors.entrance' })
   }
   const storeyValidation = () => {
     !INTEGER_AND_ZERO_VALIDATION.test(storey) &&
-      setErrors({ ...errors, storey: 'orderForm.orderErrors.storey' })
+    setErrors({ ...errors, storey: 'orderForm.orderErrors.storey' })
   }
   /* eslint-disable */
   const orderData = useMemo(
@@ -181,19 +182,7 @@ const OrderForm = () => {
   }
   const orderMenu = e => {
     e.preventDefault()
-    var m = new Date()
-    var dateString =
-      m.getUTCFullYear() +
-      '/' +
-      (m.getUTCMonth() + 1) +
-      '/' +
-      m.getUTCDate() +
-      ' ' +
-      m.getUTCHours() +
-      ':' +
-      m.getUTCMinutes() +
-      ':' +
-      m.getUTCSeconds()
+
 
     let updatedUser = {
       userName,
@@ -207,8 +196,10 @@ const OrderForm = () => {
       payment
     }
 
+
     const userBought = {
-      time: dateString,
+      timeOrder:moment().format('DD MM YYYY hh:mm:ss'),
+      deliveryTime: moment().add(30, 'm').format('DD MM YYYY hh:mm:ss'),
       user: updatedUser,
       cart,
       gift,
@@ -226,13 +217,13 @@ const OrderForm = () => {
       {isModalVisible ? (
         <Portal
           component={Modal}
-          nameOfClass="success-modal-js"
+          nameOfClass='success-modal-js'
           modalVisibility={setIsModalVisible}
         />
       ) : (
-        <form className="order-form">
-          <div className="order-form__header-container">
-            <h1 className="order-form__info">{t('orderForm.main')}</h1>
+        <form className='order-form'>
+          <div className='order-form__header-container'>
+            <h1 className='order-form__info'>{t('orderForm.main')}</h1>
             {orderData.mainInfo.map(
               (
                 { name, value, label, error, type, functionError, disabled },
@@ -253,8 +244,8 @@ const OrderForm = () => {
               )
             )}
           </div>
-          <div className="order-form__body-container">
-            <h1 className="order-form__info">{t('orderForm.address')}</h1>
+          <div className='order-form__body-container'>
+            <h1 className='order-form__info'>{t('orderForm.address')}</h1>
             {orderData.address.map(
               ({ name, value, label, error, type, functionError }, index) => (
                 <Input
@@ -271,12 +262,12 @@ const OrderForm = () => {
               )
             )}
           </div>
-          <div className="order-form__footer-container">
-            <h1 className="order-form__info">{t('orderForm.payment')}</h1>
+          <div className='order-form__footer-container'>
+            <h1 className='order-form__info'>{t('orderForm.payment')}</h1>
 
             {orderData.payment.map(({ label, name, value }, index) => (
-              <div key={index} className="order-form__group">
-                <label className="order-form__label">{t(label)}</label>
+              <div key={index} className='order-form__group'>
+                <label className='order-form__label'>{t(label)}</label>
                 <input
                   onChange={e =>
                     setUserInfo({
@@ -285,7 +276,7 @@ const OrderForm = () => {
                     })
                   }
                   value={value}
-                  type="radio"
+                  type='radio'
                   name={name}
                   id={value}
                   defaultChecked={index === 0 && true}
@@ -295,7 +286,7 @@ const OrderForm = () => {
           </div>
           <button
             onClick={orderMenu}
-            className="order__button"
+            className='order__button'
             disabled={isButtonDisabled}
           >
             {t('orderForm.orderButton')}

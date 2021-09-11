@@ -6,6 +6,12 @@ export const getFeaturedProducts = payload => ({
   payload
 })
 export const fetchFeaturedProducts = () => dispatch =>
-  DB('/featured-products').then(({ data }) =>
-    dispatch(getFeaturedProducts(data))
+  DB('/featured-products').then(({ data }) =>{
+    console.log(data)
+      return(
+        dispatch(getFeaturedProducts(data))
+      )
+    }
+
+
   )

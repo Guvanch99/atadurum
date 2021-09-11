@@ -1,15 +1,17 @@
 @import 'src/styles/common.scss';
 
+.cart__label {
+  font-size: 5em;
+  text-align: center;
+  @include mobile {
+    display: none;
+  }
+}
+
 .cart-gift {
   @include flex(space-around, center);
-  margin: 2rem;
+  margin: 1.5rem;
 
-  &__label {
-    font-size: 2rem;
-    @include mobile {
-      display: none;
-    }
-  }
   &__container {
     @include flex(center, flex-start);
     flex-direction: column;

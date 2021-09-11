@@ -19,3 +19,7 @@ export const PHONE_VALIDATION =
 export const INTEGER_VALIDATION = /^\d*[1-9]\d*$/
 export const INTEGER_AND_ZERO_VALIDATION = /^\d*[0-9]\d*$/
 export const DONALD_THRUMP_API = 'https://tronalddump.io/random/quote'
+export const HALYAVA_PROMOCODE='HALYAVA'
+export const BEVERAGE_PROMOCODE='BEVERAGE'
+export const DONER_PROMOCODE='DONER'
+export const PROMOCODES_FOR_USER=["HALYAVA", "BEVERAGE", "DONER"]

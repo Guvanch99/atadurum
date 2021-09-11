@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { ArticleName, Input } from '../../../components'
+import { ArticleName, Input, ModalPromoError, Portal } from '../../../components'
 import { loginUser } from '../../../redux/auth/actionCreator'
 
 import '../index.scss'
@@ -22,7 +22,7 @@ const Login = () => {
   const history = useHistory()
   const location = useLocation()
   const { t } = useTranslation('translation')
-  const { userNotFound } = useSelector(state => state.auth)
+  const { isModalPromoError,userNotFound} = useSelector(state => state.auth)
   let { userName, password } = userLogin
 
   const isButtonDisabled =
@@ -82,11 +82,14 @@ const Login = () => {
   }
 
   return (
+    <>
     <div className="auth">
+
       <ArticleName name={t('articleNames.login')} />
-      {userNotFound && (
+        {userNotFound && (
         <h1 className="auth__error">{t('login.userNotFound')}</h1>
       )}
+      {isModalPromoError ?(< Portal component={ModalPromoError} nameOfClass='modalPromoError'/>):(
       <form className="form">
         {LOGIN_DATA.map(
           ({ name, value, label, error, type, functionError }, index) => (
@@ -111,8 +114,9 @@ const Login = () => {
         >
           {t('login.button')}
         </button>
-      </form>
+      </form>)}
     </div>
+    </>
   )
 }
 

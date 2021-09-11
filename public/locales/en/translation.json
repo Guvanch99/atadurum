@@ -80,7 +80,8 @@
       "placeholderError":"Invalid promo code",
       "placeholderDefault":"Enter promo code",
       "buttonDisabled":"Disabled",
-      "buttonSubmit":"Submit"
+      "buttonSubmit":"Submit",
+      "usedPromoCode": "You are already used  this code,{{promocode}} "
    },
    "promoCodeGift":{
       "label":"Hurrey your Free Gift "
@@ -306,6 +307,8 @@
    "modal":"Success",
    "close":"Close",
    "logout":"LogOut",
-   "menuCount":"Count: {{count}}"
-   
+   "menuCount":"Count: {{count}}",
+   "deliveryTime": "Delivery time: {{timeDelivery}}",
+   "lateDelivery": "If time is passed take free",
+   "modalError": "Used promocodes will be removed !!!"
 }
