@@ -73,7 +73,7 @@ export const loginUser =
 
             dispatch(updateGift(updatedGift))
             dispatch(countTotal())
-           intersectionPromoCode.length>0&& dispatch(modalPromoErrorToggle())
+            intersectionPromoCode.length > 0 && dispatch(modalPromoErrorToggle())
             dispatch(login(data))
             dispatch(updateRestrictedPromoCode(data.restrictedPromoCode)
             )

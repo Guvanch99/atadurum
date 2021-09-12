@@ -61,7 +61,6 @@ export const getPresentPromo = (idProduct, promocode) => async (dispatch, getSta
     dispatch(getPresent(payload))
     dispatch(userPromocodeUsed(promocode))
     dispatch(countTotal())
-    console.log('restricted', restrictedPromoCode)
     const promoCodes = [
         ...restrictedPromoCode,
         promocode
@@ -71,5 +70,5 @@ export const getPresentPromo = (idProduct, promocode) => async (dispatch, getSta
     )
 
 
-    console.log('truefalseuser', user !== null)
+
 }
